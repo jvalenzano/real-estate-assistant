@@ -1,0 +1,34 @@
+[
+  {
+    "id": "txn-001",
+    "propertyId": "prop-8615",
+    "buyerId": "user-buyer-1",
+    "sellerId": "user-seller-1",
+    "agentId": "user-agent-1",
+    "status": "in-progress",
+    "documents": ["doc-rpa-8615", "doc-disc-8615"],
+    "createdAt": "2024-06-01T09:55:00Z",
+    "updatedAt": "2024-06-01T10:10:00Z",
+    "timeline": [
+      { "event": "offer-made", "timestamp": "2024-06-01T09:55:00Z" },
+      { "event": "rpa-generated", "timestamp": "2024-06-01T10:00:00Z" },
+      { "event": "disclosure-signed", "timestamp": "2024-06-01T10:05:00Z" }
+    ]
+  },
+  {
+    "id": "txn-002",
+    "propertyId": "prop-7420",
+    "buyerId": "user-buyer-1",
+    "sellerId": "user-seller-1",
+    "agentId": "user-agent-2",
+    "status": "completed",
+    "documents": ["doc-rpa-7420"],
+    "createdAt": "2024-06-02T08:50:00Z",
+    "updatedAt": "2024-06-02T09:10:00Z",
+    "timeline": [
+      { "event": "offer-made", "timestamp": "2024-06-02T08:50:00Z" },
+      { "event": "rpa-generated", "timestamp": "2024-06-02T09:00:00Z" },
+      { "event": "rpa-signed", "timestamp": "2024-06-02T09:10:00Z" }
+    ]
+  }
+] 

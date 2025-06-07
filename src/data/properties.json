@@ -1,0 +1,47 @@
+[
+  {
+    "id": "prop-8615",
+    "address": "8615 Circle R Course Ln, Escondido, CA 92026",
+    "city": "Escondido",
+    "state": "CA",
+    "zip": "92026",
+    "price": 1250000,
+    "beds": 4,
+    "baths": 3,
+    "sqft": 3120,
+    "image": "/assets/properties/8615.jpg",
+    "status": "active",
+    "mls": "SD1234567",
+    "description": "Stunning golf course home with panoramic views, open floor plan, and modern upgrades."
+  },
+  {
+    "id": "prop-7420",
+    "address": "7420 Rancho Cabrillo Trail, San Diego, CA 92127",
+    "city": "San Diego",
+    "state": "CA",
+    "zip": "92127",
+    "price": 2150000,
+    "beds": 5,
+    "baths": 4.5,
+    "sqft": 4200,
+    "image": "/assets/properties/7420.jpg",
+    "status": "pending",
+    "mls": "SD2345678",
+    "description": "Luxury estate in gated community with resort-style pool and chef's kitchen."
+  },
+  {
+    "id": "prop-1123",
+    "address": "1123 Coast Blvd, La Jolla, CA 92037",
+    "city": "La Jolla",
+    "state": "CA",
+    "zip": "92037",
+    "price": 3850000,
+    "beds": 3,
+    "baths": 3,
+    "sqft": 2800,
+    "image": "/assets/properties/1123.jpg",
+    "status": "sold",
+    "mls": "SD3456789",
+    "description": "Oceanfront property with private beach access and breathtaking sunset views."
+  }
+] 

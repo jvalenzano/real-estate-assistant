@@ -1,0 +1,32 @@
+[
+  {
+    "id": "doc-rpa-8615",
+    "type": "RPA",
+    "propertyId": "prop-8615",
+    "title": "Residential Purchase Agreement",
+    "status": "pending-signature",
+    "createdBy": "user-agent-1",
+    "createdAt": "2024-06-01T10:00:00Z",
+    "pdf": "/assets/documents/rpa-8615.pdf"
+  },
+  {
+    "id": "doc-disc-8615",
+    "type": "Disclosure",
+    "propertyId": "prop-8615",
+    "title": "Seller Property Questionnaire",
+    "status": "signed",
+    "createdBy": "user-seller-1",
+    "createdAt": "2024-06-01T10:05:00Z",
+    "pdf": "/assets/documents/disc-8615.pdf"
+  },
+  {
+    "id": "doc-rpa-7420",
+    "type": "RPA",
+    "propertyId": "prop-7420",
+    "title": "Residential Purchase Agreement",
+    "status": "signed",
+    "createdBy": "user-agent-2",
+    "createdAt": "2024-06-02T09:00:00Z",
+    "pdf": "/assets/documents/rpa-7420.pdf"
+  }
+] 

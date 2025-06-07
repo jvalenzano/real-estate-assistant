@@ -2,18 +2,50 @@
 @tailwind components;
 @tailwind utilities;
 
+/*
+  Design Tokens (see tailwind.config.js for full config):
+  - Primary: #2563eb (blue-600)
+  - Secondary: #f59e42 (orange-400)
+  - Accent: #10b981 (emerald-500)
+  - Neutral: #f3f4f6 (gray-100)
+  - Success: #22c55e (green-500)
+  - Warning: #facc15 (yellow-400)
+  - Error: #ef4444 (red-500)
+  - Info: #0ea5e9 (sky-500)
+  - Font: Inter, Montserrat
+  - Border radius: 8px, 12px, 16px, full
+  - Shadows: sm, md, lg
+*/
+
 @layer base {
   html {
-    @apply antialiased;
+    @apply antialiased bg-neutral text-gray-900 font-sans;
+    font-size: 16px;
   }
-  
   body {
-    @apply bg-gray-50 text-gray-900;
+    @apply min-h-screen bg-neutral text-gray-900;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading font-bold text-gray-900;
+  }
+  a {
+    @apply text-primary underline hover:text-primary-dark transition-colors;
   }
 }
 
 @layer components {
-  /* We'll add our custom component classes here */
+  .btn {
+    @apply px-4 py-2 rounded font-semibold shadow-sm transition-colors focus:outline-none focus:ring-2 focus:ring-primary;
+  }
+  .btn-primary {
+    @apply bg-primary text-white hover:bg-primary-dark;
+  }
+  .btn-secondary {
+    @apply bg-secondary text-white hover:bg-secondary-dark;
+  }
+  .card {
+    @apply bg-white rounded shadow-md p-4;
+  }
 }
 
 @layer utilities {

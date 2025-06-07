@@ -1,0 +1,34 @@
+[
+  {
+    "id": "user-agent-1",
+    "role": "agent",
+    "name": "Jessica Tran",
+    "email": "jessica.tran@sdhomes.com",
+    "phone": "858-555-1234",
+    "avatar": "/assets/users/jessica.jpg"
+  },
+  {
+    "id": "user-buyer-1",
+    "role": "buyer",
+    "name": "Michael Chen",
+    "email": "michael.chen@email.com",
+    "phone": "619-555-5678",
+    "avatar": "/assets/users/michael.jpg"
+  },
+  {
+    "id": "user-seller-1",
+    "role": "seller",
+    "name": "Linda Garcia",
+    "email": "linda.garcia@email.com",
+    "phone": "760-555-9012",
+    "avatar": "/assets/users/linda.jpg"
+  },
+  {
+    "id": "user-agent-2",
+    "role": "agent",
+    "name": "Carlos Rivera",
+    "email": "carlos.rivera@sdhomes.com",
+    "phone": "858-555-4321",
+    "avatar": "/assets/users/carlos.jpg"
+  }
+] 
