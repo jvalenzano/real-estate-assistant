@@ -34,6 +34,41 @@ interface DemoMetrics {
   customerSat: string
 }
 
+// Add scenario timing configurations
+const scenarioConfigs = {
+  'happy-path': {
+    totalDuration: 90000, // 90 seconds
+    steps: [
+      { view: 'search', duration: 8000, action: 'search_initiated' as DemoAction },
+      { view: 'property-details', duration: 15000, action: 'property_selected' as DemoAction },
+      { view: 'document-generation', duration: 25000, action: 'rpa_generation_started' as DemoAction },
+      { view: 'document-generation', duration: 20000, action: 'rpa_generated' as DemoAction },
+      { view: 'signature', duration: 12000, action: 'signature_sent' as DemoAction },
+      { view: 'transaction-complete', duration: 10000, action: 'transaction_completed' as DemoAction }
+    ]
+  },
+  'power-user': {
+    totalDuration: 180000, // 3 minutes
+    steps: [
+      { view: 'search', duration: 10000, action: 'search_initiated' as DemoAction },
+      { view: 'property-details', duration: 25000, action: 'properties_compared' as DemoAction },
+      { view: 'document-generation', duration: 40000, action: 'rpa_customization' as DemoAction },
+      { view: 'document-generation', duration: 30000, action: 'rpa_generated' as DemoAction },
+      { view: 'signature', duration: 45000, action: 'signature_workflow' as DemoAction },
+      { view: 'transaction-complete', duration: 30000, action: 'transaction_completed' as DemoAction }
+    ]
+  },
+  'problem-demo': {
+    totalDuration: 30000, // 30 seconds
+    steps: [
+      { view: 'search', duration: 5000, action: 'show_traditional_workflow' as DemoAction },
+      { view: 'property-details', duration: 8000, action: 'show_our_solution' as DemoAction },
+      { view: 'document-generation', duration: 7000, action: 'show_time_comparison' as DemoAction },
+      { view: 'transaction-complete', duration: 10000, action: 'transaction_completed' as DemoAction }
+    ]
+  }
+}
+
 interface DemoState {
   // Core state
   currentScenario: DemoScenario
@@ -50,6 +85,11 @@ interface DemoState {
   metrics: DemoMetrics
   isMetricsVisible: boolean
   
+  // Add scenario automation properties
+  currentStepIndex: number
+  isAutoProgressing: boolean
+  stepTimeoutId: number | null
+  
   // Actions
   setScenario: (scenario: DemoScenario) => void
   setDemoSpeed: (speed: DemoSpeed) => void
@@ -61,6 +101,10 @@ interface DemoState {
   startDemo: () => void
   trackAction: (action: DemoAction) => void
   updateMetrics: (metrics: Partial<DemoMetrics>) => void
+  startScenario: () => void
+  pauseScenario: () => void
+  resumeScenario: () => void
+  nextStep: () => void
 }
 
 const traditionalTimeMap: Record<DemoStep, string> = {
@@ -132,11 +176,23 @@ export const useDemoController = create<DemoState>()(
   devtools(
     (set, get) => ({
       ...initialState,
+      currentStepIndex: 0,
+      isAutoProgressing: false,
+      stepTimeoutId: null,
 
       setScenario: (scenario) => {
+        const state = get()
+        // Clear any existing timeouts
+        if (state.stepTimeoutId) {
+          clearTimeout(state.stepTimeoutId)
+        }
+        
         const newState = {
           ...initialState,
-          currentScenario: scenario
+          currentScenario: scenario,
+          currentStepIndex: 0,
+          isAutoProgressing: false,
+          stepTimeoutId: null
         }
         set(newState)
       },
@@ -153,20 +209,43 @@ export const useDemoController = create<DemoState>()(
         };
       }),
       
-      resetDemo: () => set((state) => ({
-        ...initialState,
-        currentScenario: state.currentScenario // Preserve current scenario
-      })),
-      
-      startDemo: () => set({
-        startTime: Date.now(),
-        isRunning: true,
-        metrics: {
-          ...get().metrics,
-          status: 'running',
-          currentStep: "Starting demo..."
+      resetDemo: () => {
+        const state = get()
+        // Clear any existing timeouts
+        if (state.stepTimeoutId) {
+          clearTimeout(state.stepTimeoutId)
         }
-      }),
+        
+        set({
+          ...initialState,
+          currentScenario: state.currentScenario, // Preserve current scenario
+          currentStepIndex: 0,
+          isAutoProgressing: false,
+          stepTimeoutId: null
+        })
+      },
+      
+      startDemo: () => {
+        const state = get()
+        const config = scenarioConfigs[state.currentScenario]
+        
+        set({
+          startTime: Date.now(),
+          isRunning: true,
+          isAutoProgressing: true,
+          currentStepIndex: 0,
+          currentView: config.steps[0].view,
+          metrics: {
+            ...state.metrics,
+            status: 'running',
+            currentStep: "Starting scenario...",
+            totalSteps: config.steps.length
+          }
+        })
+        
+        // Start the first step
+        get().nextStep()
+      },
       
       trackAction: (action) => {
         const { step, message } = getActionDetails(action)
@@ -226,6 +305,90 @@ export const useDemoController = create<DemoState>()(
           ...newMetrics
         }
       })),
+
+      startScenario: () => {
+        const state = get()
+        const config = scenarioConfigs[state.currentScenario]
+        
+        set({
+          startTime: Date.now(),
+          isRunning: true,
+          isAutoProgressing: true,
+          currentStepIndex: 0,
+          currentView: config.steps[0].view,
+          metrics: {
+            ...state.metrics,
+            status: 'running',
+            currentStep: "Starting scenario...",
+            totalSteps: config.steps.length
+          }
+        })
+        
+        // Start the first step
+        get().nextStep()
+      },
+
+      pauseScenario: () => {
+        const state = get()
+        if (state.stepTimeoutId) {
+          clearTimeout(state.stepTimeoutId)
+        }
+        set({
+          isAutoProgressing: false,
+          stepTimeoutId: null
+        })
+      },
+
+      resumeScenario: () => {
+        const state = get()
+        if (!state.isAutoProgressing && state.isRunning) {
+          set({ isAutoProgressing: true })
+          get().nextStep()
+        }
+      },
+
+      nextStep: () => {
+        const state = get()
+        const config = scenarioConfigs[state.currentScenario]
+        
+        if (state.currentStepIndex >= config.steps.length) {
+          // Scenario complete
+          set({
+            isAutoProgressing: false,
+            stepTimeoutId: null,
+            metrics: {
+              ...state.metrics,
+              status: 'completed',
+              currentStep: "Scenario complete!"
+            }
+          })
+          return
+        }
+
+        const currentStep = config.steps[state.currentStepIndex]
+        const speedMultiplier = state.demoSpeed === 'fast' ? 0.5 : 
+                               state.demoSpeed === 'instant' ? 0.1 : 1.0
+
+        // Update current view and track action
+        set({
+          currentView: currentStep.view,
+          currentStepIndex: state.currentStepIndex + 1
+        })
+        
+        // Track the action for metrics
+        get().trackAction(currentStep.action)
+
+        // Schedule next step if auto-progressing
+        if (state.isAutoProgressing && state.currentStepIndex < config.steps.length) {
+          const timeoutId = window.setTimeout(() => {
+            if (get().isAutoProgressing) {
+              get().nextStep()
+            }
+          }, currentStep.duration * speedMultiplier)
+          
+          set({ stepTimeoutId: timeoutId })
+        }
+      },
     }),
     { name: 'DemoController' }
   )

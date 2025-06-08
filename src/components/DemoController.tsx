@@ -5,13 +5,19 @@ import { motion, AnimatePresence } from 'framer-motion';
 export const DemoController = () => {
   const {
     isVisible,
+    currentScenario,
     metrics,
     demoSpeed,
+    isAutoProgressing,
     toggleVisibility,
     resetDemo,
     jumpToDocGeneration,
     jumpToSuccess,
     setDemoSpeed,
+    setScenario,
+    startScenario,
+    pauseScenario,
+    resumeScenario,
   } = useDemoController();
 
   useEffect(() => {
@@ -35,6 +41,18 @@ export const DemoController = () => {
           e.preventDefault();
           resetDemo();
           break;
+        case ' ': // Spacebar for play/pause
+          e.preventDefault();
+          if (isAutoProgressing) {
+            pauseScenario();
+          } else {
+            resumeScenario();
+          }
+          break;
+        case 's': // Start scenario
+          e.preventDefault();
+          startScenario();
+          break;
         case 'ArrowUp':
           e.preventDefault();
           setDemoSpeed('fast');
@@ -52,7 +70,7 @@ export const DemoController = () => {
 
     window.addEventListener('keydown', handleKeyPress);
     return () => window.removeEventListener('keydown', handleKeyPress);
-  }, [toggleVisibility, isVisible]);
+  }, [toggleVisibility, isVisible, isAutoProgressing, startScenario, pauseScenario, resumeScenario]);
 
   if (!isVisible) return null;
 
@@ -69,6 +87,53 @@ export const DemoController = () => {
           className="fixed inset-4 bg-white/95 backdrop-blur-sm rounded-lg shadow-2xl p-6 text-sm font-mono z-50 border border-gray-200 max-h-[calc(100vh-2rem)] overflow-y-auto"
         >
           <div className="space-y-4">
+            {/* Scenario Selection */}
+            <div className="bg-gray-50 p-3 rounded-lg">
+              <div className="text-sm font-medium text-gray-700 mb-2">Demo Scenario</div>
+              <div className="flex gap-2">
+                {(['happy-path', 'power-user', 'problem-demo'] as const).map((scenario) => (
+                  <button
+                    key={scenario}
+                    onClick={() => setScenario(scenario)}
+                    className={`px-3 py-1 text-xs rounded ${
+                      currentScenario === scenario
+                        ? 'bg-blue-600 text-white'
+                        : 'bg-white text-gray-700 hover:bg-gray-100'
+                    }`}
+                  >
+                    {scenario === 'happy-path' ? 'Happy Path (90s)' :
+                     scenario === 'power-user' ? 'Power User (3m)' :
+                     'Problem Demo (30s)'}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            {/* Scenario Controls */}
+            <div className="bg-gray-50 p-3 rounded-lg">
+              <div className="text-sm font-medium text-gray-700 mb-2">Scenario Controls</div>
+              <div className="flex gap-2">
+                <button
+                  onClick={startScenario}
+                  className="px-3 py-1 text-xs bg-green-600 text-white rounded hover:bg-green-700"
+                >
+                  ▶ Start
+                </button>
+                <button
+                  onClick={isAutoProgressing ? pauseScenario : resumeScenario}
+                  className="px-3 py-1 text-xs bg-yellow-600 text-white rounded hover:bg-yellow-700"
+                >
+                  {isAutoProgressing ? '⏸ Pause' : '▶ Resume'}
+                </button>
+                <button
+                  onClick={resetDemo}
+                  className="px-3 py-1 text-xs bg-gray-600 text-white rounded hover:bg-gray-700"
+                >
+                  🔄 Reset
+                </button>
+              </div>
+            </div>
+
             {/* Progress Bar */}
             <div className="h-1.5 bg-gray-200 rounded-full overflow-hidden">
               <motion.div
@@ -82,6 +147,7 @@ export const DemoController = () => {
             {/* Current Step */}
             <div className="text-center text-gray-800 font-medium text-base">
               {metrics.currentStep}
+              {isAutoProgressing && <span className="ml-2 text-green-600">●</span>}
             </div>
 
             {/* Metrics Grid */}
@@ -137,13 +203,14 @@ export const DemoController = () => {
             {/* Keyboard Shortcuts */}
             <div className="pt-4 border-t border-gray-200">
               <div className="grid grid-cols-2 gap-x-4 gap-y-2 text-xs text-gray-500">
+                <div>Ctrl+S: Start Scenario</div>
+                <div>Ctrl+Space: Play/Pause</div>
                 <div>Ctrl+1: Jump to Docs</div>
                 <div>Ctrl+2: Jump to Success</div>
                 <div>Ctrl+R: Reset Demo</div>
                 <div>Ctrl+D: Toggle Metrics</div>
                 <div>Ctrl+↑: Fast Speed</div>
                 <div>Ctrl+↓: Normal Speed</div>
-                <div>Ctrl+→: Instant Speed</div>
               </div>
             </div>
           </div>
