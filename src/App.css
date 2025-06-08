@@ -1,8 +1,18 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+  /* Mobile-first: full width with no padding */
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
   text-align: center;
+}
+
+/* Desktop-specific styling */
+@media (min-width: 1024px) {
+  #root {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
 }
 
 .logo {

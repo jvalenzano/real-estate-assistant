@@ -6,9 +6,12 @@ The Power User scenario demonstrates a comprehensive 3-minute real estate transa
 ## Pre-Testing Setup
 
 1. **Navigate to the demo application**
-2. **Open DemoController**: Press `Ctrl+D` to show the metrics overlay
-3. **Select Power User Scenario**: Click "Power User (3m)" button in the scenario selection
-4. **Verify Initial State**: Ensure the scenario is selected and ready to start
+2. **Login**: Use demo credentials (sarah@realeai.com, mike@realeai.com, or investor@realeai.com)
+3. **Welcome Screen**: Verify circular scenario badges (#1, #2, #3) are displayed prominently
+4. **Select Power User Scenario**: Click "Advanced Features Demo" card with circular #2 badge
+5. **Auto-Start Verification**: Scenario should start automatically after selection
+6. **Open DemoController**: Press `Ctrl+D` to show the metrics overlay with sign-out button
+7. **Verify Initial State**: Ensure the scenario is selected and auto-started
 
 ## Testing Sections
 
@@ -154,12 +157,27 @@ The Power User scenario demonstrates a comprehensive 3-minute real estate transa
 - Proper state management
 - No conflicts with Happy Path scenario
 - Metrics accuracy
+- Auto-start functionality works consistently
 
 **Test Steps:**
-1. Switch between Power User and Happy Path scenarios
-2. Verify each scenario maintains its own timing and features
-3. Test scenario switching during automation
-4. Confirm metrics update correctly for each scenario
+1. Switch between Power User and Happy Path scenarios from Welcome Screen
+2. Verify each scenario auto-starts when selected
+3. Verify each scenario maintains its own timing and features
+4. Test scenario switching during automation
+5. Confirm metrics update correctly for each scenario
+6. Test sign-out button functionality from metrics overlay
+
+### 11. New Features Testing
+**Expected Behavior:**
+- Auto-start works from Welcome Screen and AI Discovery
+- Circular scenario badges display prominently
+- Sign-out button accessible in metrics overlay
+
+**Test Steps:**
+1. **Auto-Start**: Select Power User from Welcome Screen, verify immediate start
+2. **Circular Badges**: Confirm #2 badge is prominently displayed on scenario card
+3. **Sign-Out Access**: Press Ctrl+D and verify sign-out button is available
+4. **ARIA Integration**: If coming from AI Discovery, verify auto-start still works
 
 ## Success Criteria
 
@@ -172,6 +190,9 @@ The Power User scenario demonstrates a comprehensive 3-minute real estate transa
 ✅ **Purple theme elements appear for Power User features**
 ✅ **Smooth transitions and animations throughout**
 ✅ **Metrics tracking accurate for 3-minute flow**
+✅ **Auto-start functionality works from Welcome Screen**
+✅ **Circular scenario badges (#1, #2, #3) display prominently**
+✅ **Sign-out button accessible in metrics overlay**
 ✅ **No errors in browser console**
 
 ## Troubleshooting

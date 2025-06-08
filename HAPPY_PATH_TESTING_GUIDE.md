@@ -7,9 +7,11 @@ The Happy Path scenario demonstrates the complete "5-Minute Miracle" transformat
 
 ### 1. Initial Setup
 - [ ] Open the application in your browser
-- [ ] Verify the scenario status indicator shows "Happy Path" in the top-right corner
+- [ ] Login with demo credentials (sarah@realeai.com, mike@realeai.com, or investor@realeai.com)
+- [ ] On Welcome Screen, verify circular scenario badges (#1, #2, #3) are displayed prominently
+- [ ] Click "The 5-Minute Miracle" scenario card to auto-start Happy Path
 - [ ] Press `Ctrl + D` to open the DemoController stealth mode overlay
-- [ ] Confirm "Happy Path (90s)" is selected in the scenario selection
+- [ ] Confirm "Happy Path (90s)" is selected and demo has auto-started
 
 ### 2. Manual Scenario Controls Testing
 - [ ] **Start Button**: Click "▶ Start" button
@@ -76,6 +78,9 @@ During the automated progression, verify these metrics update correctly:
 Verify the automated flow progresses through these views in order:
 
 1. [ ] **Search** (8 seconds) - "Searching properties..."
+   - [ ] **ARIA Co-pilot Interaction**: Purple ARIA widget should appear during search
+   - [ ] **Progressive Messages**: "Searching properties..." → "Analyzing market data..." → "Found perfect matches!"
+   - [ ] **Progress Bar**: Animated progress bar should fill during search phase
 2. [ ] **Property Details** (15 seconds) - "Property selected"
 3. [ ] **Document Generation** (25 seconds) - "Generating RPA..."
 4. [ ] **Document Generation** (20 seconds) - "RPA ready for review"
@@ -93,6 +98,12 @@ Verify the automated flow progresses through these views in order:
 - [ ] **Speed Changes During Progression**: Changing speed mid-flow should affect remaining steps
 - [ ] **Browser Refresh**: Refreshing should reset to initial state
 - [ ] **Keyboard Focus**: Shortcuts should work regardless of which element has focus
+
+### 9. New Features Testing
+- [ ] **Auto-Start Functionality**: Scenarios should start automatically when selected from Welcome Screen
+- [ ] **ARIA Search Interaction**: Purple ARIA widget appears during property search with animated progress
+- [ ] **Circular Scenario Badges**: Scenario numbers (#1, #2, #3) display in circular badges on Welcome Screen
+- [ ] **Sign Out from Metrics**: Sign out button available in DemoController metrics overlay (Ctrl+D)
 
 ## Expected Results
 
@@ -125,8 +136,12 @@ Verify the automated flow progresses through these views in order:
 - Verify network requests aren't blocking the UI thread
 
 ## Success Criteria
-✅ All 8 testing sections pass without issues
+✅ All 9 testing sections pass without issues
 ✅ Happy Path scenario completes in expected timeframe
 ✅ All controls and shortcuts work as documented
 ✅ Metrics display accurate time savings calculations
-✅ Visual feedback provides clear status indication 
+✅ Visual feedback provides clear status indication
+✅ Auto-start functionality works from Welcome Screen
+✅ ARIA co-pilot interaction engages users during search
+✅ Circular scenario badges display prominently
+✅ Sign out button accessible from metrics overlay 

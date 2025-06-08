@@ -10,6 +10,7 @@ The DemoController provides powerful keyboard shortcuts for seamless demo presen
   - **Purpose**: Show/hide the full-screen metrics overlay
   - **Use Case**: Reveal impressive metrics when investors ask about time savings
   - **Visual**: Full-screen overlay with real-time metrics and progress tracking
+  - **New Feature**: Sign out button available in metrics overlay for easy logout
 
 ### Emergency Navigation
 - **Ctrl + 1**: Jump to Document Generation
@@ -52,9 +53,10 @@ The DemoController provides powerful keyboard shortcuts for seamless demo presen
 
 ### Demo Flow Recommendations
 1. **Start clean** - metrics hidden by default (stealth mode)
-2. **Build narrative** - let the story unfold naturally
-3. **Reveal metrics contextually** - use Ctrl + D when discussing time savings
-4. **Use emergency controls sparingly** - only when needed for flow or recovery
+2. **Auto-start advantage** - scenarios now start automatically when selected
+3. **Build narrative** - let the story unfold naturally, ARIA interaction engages during search
+4. **Reveal metrics contextually** - use Ctrl + D when discussing time savings
+5. **Use emergency controls sparingly** - only when needed for flow or recovery
 
 ### Troubleshooting
 - If shortcuts don't work, ensure the browser window has focus

@@ -47,9 +47,11 @@
 - Vercel deployment for global reliability
 
 ### **Key Features**
-- Mobile-first responsive design
-- Real-time interactive demonstrations
-- Professional presenter controls
+- Mobile-first responsive design with optimized padding
+- Real-time interactive demonstrations with ARIA co-pilot engagement
+- Professional presenter controls with auto-start functionality
+- Circular scenario badges for enhanced visual hierarchy
+- Integrated sign-out functionality in metrics overlay
 - Scalable architecture for production
 
 ## Strategic Value
@@ -75,9 +77,12 @@
 
 ### **Demo Best Practices**
 - Start with AI discovery to show intelligence
+- Scenarios auto-start for seamless presentation flow
+- ARIA co-pilot engages users during property search phase
 - Match scenario to audience (investors, tech-savvy, ROI-focused)
 - Emphasize transformation, not just efficiency
 - Use real data examples for credibility
+- Access sign-out easily from metrics overlay (Ctrl+D)
 
 ## Key Messaging
 

@@ -11,11 +11,17 @@ module.exports = {
   theme: {
     extend: {
       screens: {
-        'xs': '320px',
-        'sm': '428px',
-        'md': '768px',
-        'lg': '1024px',
-        'xl': '1280px',
+        'xs': '360px',    // Small Android (Galaxy A series, older devices)
+        'sm': '390px',    // iPhone 12/13/14/15
+        'md': '393px',    // Google Pixel 7, Pixel 6, Samsung Galaxy S22
+        'lg': '412px',    // Large Android (Pixel 7 Pro, Galaxy S21+, OnePlus)
+        'xl': '768px',    // Tablets (iPad, Android tablets)
+        '2xl': '1024px',  // Desktop
+        '3xl': '1280px',  // Large desktop
+      },
+      spacing: {
+        'safe': '1rem',    // Safe mobile padding
+        'demo': '2rem',    // Demo desktop padding
       },
       colors: {
         primary: {

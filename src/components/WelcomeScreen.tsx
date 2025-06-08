@@ -91,12 +91,16 @@ const X = ({ className }: { className?: string }) => (
 );
 
 export const WelcomeScreen = ({ user, onScenarioSelect, onAIDiscovery, onLogout }: WelcomeScreenProps) => {
-  const { resetDemo } = useDemoController();
+  const { resetDemo, startScenario } = useDemoController();
   const [isPanelOpen, setIsPanelOpen] = useState(false);
 
   const handleScenarioSelect = (scenarioId: 'happy-path' | 'power-user' | 'problem-demo') => {
     resetDemo();
     onScenarioSelect(scenarioId);
+    // Auto-start the demo scenario
+    setTimeout(() => {
+      startScenario();
+    }, 100); // Small delay to ensure scenario is set
   };
 
   // Keyboard shortcuts
@@ -248,7 +252,9 @@ export const WelcomeScreen = ({ user, onScenarioSelect, onAIDiscovery, onLogout 
                 <div className="flex items-center justify-between mb-4">
                   <div className="text-3xl">{scenario.icon}</div>
                   <div className="text-right">
-                    <div className="text-2xl font-bold">#{scenario.number}</div>
+                    <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mb-2">
+                      <div className="text-xl font-bold text-white">#{scenario.number}</div>
+                    </div>
                     <div className="text-sm opacity-90">{scenario.duration}</div>
                   </div>
                 </div>

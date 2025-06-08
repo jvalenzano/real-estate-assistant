@@ -69,14 +69,16 @@ The prototype showcases **ARIA** (Automated Real Estate Intelligence Assistant),
 
 #### **Getting Started:**
 1. Visit: https://real-estate-assistant.vercel.app
-2. Click "Meet ARIA First" to experience AI discovery
-3. Choose your demo scenario based on audience and time available
-4. Use presenter controls for professional presentation
+2. Login with demo credentials (sarah@realeai.com, mike@realeai.com, or investor@realeai.com)
+3. Click "Meet ARIA First" to experience AI discovery with enhanced interaction
+4. Choose your demo scenario - note the prominent circular badges (#1, #2, #3)
+5. Scenarios auto-start for seamless presentation flow
+6. Use presenter controls (Ctrl+D) for professional presentation and easy sign-out
 
 #### **Demo Flow:**
 ```
-Welcome Screen → AI Discovery Chat → Scenario Selection → 
-Property Search → Document Generation → Signature Workflow → 
+Welcome Screen (Circular Badges) → AI Discovery Chat → Auto-Start Scenario Selection → 
+Property Search (ARIA Co-pilot Interaction) → Document Generation → Signature Workflow → 
 Neighborhood Intelligence → Results Summary
 ```
 
@@ -98,9 +100,11 @@ Neighborhood Intelligence → Results Summary
 - **Deployment**: Vercel for reliable, fast global delivery
 
 ### **Key Technical Features:**
-- **Mobile-First Design**: Optimized for all device sizes
-- **Real-Time Animations**: Engaging visual storytelling
-- **Professional UI/UX**: Investor-grade presentation quality
+- **Mobile-First Design**: Optimized for all device sizes with enhanced padding
+- **Real-Time Animations**: Engaging visual storytelling with ARIA co-pilot interaction
+- **Auto-Start Functionality**: Seamless demo flow with automatic scenario initiation
+- **Enhanced Visual Design**: Circular scenario badges for improved hierarchy
+- **Professional UI/UX**: Investor-grade presentation quality with integrated controls
 - **Scalable Architecture**: Ready for production enhancement
 
 ---
@@ -142,11 +146,12 @@ Neighborhood Intelligence → Results Summary
 ## Demo Best Practices
 
 ### **For Investor Meetings:**
-1. **Start with AI Discovery**: Show intelligence before efficiency
-2. **Match Scenario to Audience**: Use appropriate demo length and focus
-3. **Emphasize ROI**: Highlight cost savings and time reduction
-4. **Show Real Data**: Use authentic San Diego property examples
-5. **Control Pacing**: Use presenter controls for optimal timing
+1. **Start with AI Discovery**: Show intelligence before efficiency with enhanced ARIA interaction
+2. **Leverage Auto-Start**: Scenarios begin immediately for seamless flow
+3. **Match Scenario to Audience**: Use appropriate demo length and focus
+4. **Emphasize ROI**: Highlight cost savings and time reduction
+5. **Show Real Data**: Use authentic San Diego property examples
+6. **Control Pacing**: Use presenter controls (Ctrl+D) for optimal timing and easy sign-out
 
 ### **Key Talking Points:**
 - **"This isn't just faster - it's smarter"**

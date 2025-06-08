@@ -15,7 +15,7 @@ function App() {
   const [currentUser, setCurrentUser] = useState<{ email: string; name: string; role: string; avatar: string } | null>(null)
   const [showWelcome, setShowWelcome] = useState(true)
   const [showAIDiscovery, setShowAIDiscovery] = useState(false)
-  const { setScenario, demoSpeed } = useDemoController()
+  const { setScenario, demoSpeed, startScenario } = useDemoController()
 
   // Preload property images for smooth demo performance
   useEffect(() => {
@@ -78,6 +78,10 @@ function App() {
     setScenario(scenario)
     setShowWelcome(false)
     setShowAIDiscovery(false)
+    // Auto-start the demo scenario
+    setTimeout(() => {
+      startScenario();
+    }, 100); // Small delay to ensure scenario is set
   }
 
   const handleAIDiscovery = () => {
@@ -174,7 +178,7 @@ function App() {
       {/* Main Application */}
       <main className="relative">
         <DemoContainer />
-        <DemoController />
+        <DemoController onLogout={handleLogout} />
         <GlobalPauseButton />
         <ARIAAssistant />
       </main>

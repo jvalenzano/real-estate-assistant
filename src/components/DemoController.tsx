@@ -99,7 +99,11 @@ const ViewToggle = () => {
   );
 };
 
-export const DemoController = () => {
+interface DemoControllerProps {
+  onLogout?: () => void;
+}
+
+export const DemoController = ({ onLogout }: DemoControllerProps) => {
   const {
     viewMode,
     currentScenario,
@@ -451,6 +455,18 @@ export const DemoController = () => {
                   </div>
                 </details>
               </div>
+
+              {/* Sign Out Button */}
+              {onLogout && (
+                <div className="pt-4 border-t border-gray-200">
+                  <button
+                    onClick={onLogout}
+                    className="w-full px-3 py-2 text-sm bg-red-600 text-white rounded hover:bg-red-700 flex items-center justify-center gap-1 transition-colors"
+                  >
+                    🚪 Sign Out
+                  </button>
+                </div>
+              )}
             </div>
           </motion.div>
         )}

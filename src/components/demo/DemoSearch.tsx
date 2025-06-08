@@ -318,7 +318,79 @@ export const DemoSearch = () => {
           </button>
         </div>
 
-
+        {/* ARIA Co-pilot Interaction During Search */}
+        <AnimatePresence>
+          {isSearching && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              className="mb-6 bg-gradient-to-r from-purple-50 to-blue-50 border-2 border-purple-200 rounded-xl p-6"
+            >
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 bg-gradient-to-br from-purple-600 to-blue-600 rounded-full flex items-center justify-center flex-shrink-0">
+                  <svg className="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2Z"/>
+                    <path d="M18 8H6C4.9 8 4 8.9 4 10V18C4 19.1 4.9 20 6 20H18C19.1 20 20 19.1 20 18V10C20 8.9 19.1 8 18 8ZM8 16C7.4 16 7 15.6 7 15S7.4 14 8 14S9 14.4 9 15S8.6 16 8 16ZM16 16C15.4 16 15 15.6 15 15S15.4 14 16 14S17 14.4 17 15S16.6 16 16 16ZM16 12H8V11H16V12Z"/>
+                    <circle cx="8" cy="11" r="1"/>
+                    <circle cx="16" cy="11" r="1"/>
+                  </svg>
+                </div>
+                <div className="flex-1">
+                  <div className="flex items-center gap-2 mb-2">
+                    <h3 className="font-bold text-lg text-purple-800">ARIA</h3>
+                    <div className="flex items-center gap-1">
+                      <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+                      <span className="text-sm text-purple-600">AI Assistant Active</span>
+                    </div>
+                  </div>
+                  <div className="space-y-3">
+                    <motion.p
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ delay: 0.5 }}
+                      className="text-purple-700"
+                    >
+                      🔍 <strong>Searching properties in your area...</strong>
+                    </motion.p>
+                    <motion.p
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ delay: 1.0 }}
+                      className="text-purple-700"
+                    >
+                      📊 Analyzing market data, comparable sales, and neighborhood insights...
+                    </motion.p>
+                    <motion.p
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ delay: 1.5 }}
+                      className="text-purple-700"
+                    >
+                      🎯 <strong>Found perfect matches!</strong> Prioritizing based on your criteria.
+                    </motion.p>
+                  </div>
+                  
+                  {/* Progress indicator */}
+                  <div className="mt-4">
+                    <div className="flex justify-between text-sm text-purple-600 mb-1">
+                      <span>Search Progress</span>
+                      <span>Analyzing...</span>
+                    </div>
+                    <div className="w-full bg-purple-200 rounded-full h-2">
+                      <motion.div
+                        className="bg-gradient-to-r from-purple-500 to-blue-500 h-2 rounded-full"
+                        initial={{ width: 0 }}
+                        animate={{ width: "100%" }}
+                        transition={{ duration: 1.5, ease: "easeInOut" }}
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
 
         {/* Search Results */}
         <AnimatePresence>
