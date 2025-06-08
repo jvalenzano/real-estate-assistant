@@ -30,16 +30,16 @@ The DemoController provides powerful keyboard shortcuts for seamless demo presen
 ## Speed Controls
 
 ### Demo Pace Adjustment
-- **Ctrl + ↑ (Up Arrow)**: Set to Fast Speed
-  - **Purpose**: Accelerate animations and transitions
+- **Ctrl + 3**: Set to Fast Speed
+  - **Purpose**: Accelerate animations and transitions (0.5x timing)
   - **Use Case**: Speed up demo for time-constrained presentations
 
-- **Ctrl + ↓ (Down Arrow)**: Set to Normal Speed
-  - **Purpose**: Return to standard demo pace
+- **Ctrl + 4**: Set to Normal Speed
+  - **Purpose**: Return to standard demo pace (1.0x timing)
   - **Use Case**: Default presentation speed for detailed walkthroughs
 
-- **Ctrl + → (Right Arrow)**: Set to Instant Speed
-  - **Purpose**: Skip animations for immediate results
+- **Ctrl + 5**: Set to Instant Speed
+  - **Purpose**: Skip animations for immediate results (0.1x timing)
   - **Use Case**: Quick demonstrations or when focusing on outcomes
 
 ## Presenter Guidelines

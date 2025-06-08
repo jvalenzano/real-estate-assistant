@@ -53,15 +53,15 @@ export const DemoController = () => {
           e.preventDefault();
           startScenario();
           break;
-        case 'ArrowUp':
+        case '3': // Fast speed
           e.preventDefault();
           setDemoSpeed('fast');
           break;
-        case 'ArrowDown':
+        case '4': // Normal speed
           e.preventDefault();
           setDemoSpeed('normal');
           break;
-        case 'ArrowRight':
+        case '5': // Instant speed
           e.preventDefault();
           setDemoSpeed('instant');
           break;
@@ -209,8 +209,9 @@ export const DemoController = () => {
                 <div>Ctrl+2: Jump to Success</div>
                 <div>Ctrl+R: Reset Demo</div>
                 <div>Ctrl+D: Toggle Metrics</div>
-                <div>Ctrl+↑: Fast Speed</div>
-                <div>Ctrl+↓: Normal Speed</div>
+                <div>Ctrl+3: Fast Speed</div>
+                <div>Ctrl+4: Normal Speed</div>
+                <div>Ctrl+5: Instant Speed</div>
               </div>
             </div>
           </div>

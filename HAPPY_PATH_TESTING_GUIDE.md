@@ -49,11 +49,11 @@ The Happy Path scenario demonstrates the complete "5-Minute Miracle" transformat
   - Should take approximately 90 seconds total
   - Steps: 8s → 15s → 25s → 20s → 12s → 10s
 
-- [ ] **Fast Speed (Ctrl + ↑)**:
+- [ ] **Fast Speed (Ctrl + 3)**:
   - Change to fast speed and start scenario
   - Should take approximately 45 seconds (0.5x multiplier)
   
-- [ ] **Instant Speed (Ctrl + →)**:
+- [ ] **Instant Speed (Ctrl + 5)**:
   - Change to instant speed and start scenario
   - Should take approximately 9 seconds (0.1x multiplier)
 
