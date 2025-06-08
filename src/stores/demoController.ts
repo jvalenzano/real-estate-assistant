@@ -19,6 +19,9 @@ export type DemoAction =
   | 'show_traditional_workflow'
   | 'show_our_solution'
   | 'show_time_comparison'
+  | 'neighborhood_dashboard_viewed'
+  | 'back_to_property_from_neighborhood'
+  | 'proceed_from_neighborhood_to_documents'
 
 interface DemoMetrics {
   timeElapsed: string
@@ -69,6 +72,8 @@ const scenarioConfigs = {
   }
 }
 
+export type ViewMode = 'demo' | 'live-app' | 'metrics'
+
 interface DemoState {
   // Core state
   currentScenario: DemoScenario
@@ -80,6 +85,7 @@ interface DemoState {
   
   // View state (for hybrid routing)
   currentView: string
+  viewMode: ViewMode
   
   // Metrics
   metrics: DemoMetrics
@@ -90,11 +96,16 @@ interface DemoState {
   isAutoProgressing: boolean
   stepTimeoutId: number | null
   
+  // Live timer properties
+  liveTimerIntervalId: NodeJS.Timeout | null
+  
   // Actions
   setScenario: (scenario: DemoScenario) => void
   setDemoSpeed: (speed: DemoSpeed) => void
   toggleMetrics: () => void
   toggleVisibility: () => void
+  setViewMode: (mode: ViewMode) => void
+  toggleViewMode: () => void
   resetDemo: () => void
   jumpToDocGeneration: () => void
   jumpToSuccess: () => void
@@ -105,6 +116,9 @@ interface DemoState {
   pauseScenario: () => void
   resumeScenario: () => void
   nextStep: () => void
+  startLiveTimer: () => void
+  stopLiveTimer: () => void
+  setView: (view: string) => void
 }
 
 const traditionalTimeMap: Record<DemoStep, string> = {
@@ -142,7 +156,10 @@ const getActionDetails = (action: DemoAction) => {
     'signature_workflow': { step: 5, message: "Managing signatures..." },
     'show_traditional_workflow': { step: 1, message: "Traditional workflow..." },
     'show_our_solution': { step: 2, message: "Our automated solution..." },
-    'show_time_comparison': { step: 3, message: "Time savings comparison..." }
+    'show_time_comparison': { step: 3, message: "Time savings comparison..." },
+    'neighborhood_dashboard_viewed': { step: 2, message: "Exploring neighborhood insights..." },
+    'back_to_property_from_neighborhood': { step: 2, message: "Returning to property details..." },
+    'proceed_from_neighborhood_to_documents': { step: 3, message: "Proceeding to document generation..." }
   }
   
   return actions[action] || { step: 0, message: "Unknown action" }
@@ -156,6 +173,7 @@ const initialState = {
   isVisible: false,
   isRunning: false,
   currentView: 'search',
+  viewMode: 'demo' as ViewMode,
   metrics: {
     timeElapsed: "00:00",
     timeSaved: "0 minutes → starting...",
@@ -179,6 +197,7 @@ export const useDemoController = create<DemoState>()(
       currentStepIndex: 0,
       isAutoProgressing: false,
       stepTimeoutId: null,
+      liveTimerIntervalId: null,
 
       setScenario: (scenario) => {
         const state = get()
@@ -190,6 +209,7 @@ export const useDemoController = create<DemoState>()(
         const newState = {
           ...initialState,
           currentScenario: scenario,
+          viewMode: state.viewMode, // Preserve current view mode
           currentStepIndex: 0,
           isAutoProgressing: false,
           stepTimeoutId: null
@@ -208,6 +228,14 @@ export const useDemoController = create<DemoState>()(
           isVisible: !state.isVisible
         };
       }),
+
+      setViewMode: (mode) => set({ viewMode: mode }),
+
+      toggleViewMode: () => set((state) => {
+        // Direct toggle: demo ↔ metrics (skip live-app for main toggle)
+        const nextMode = state.viewMode === 'demo' ? 'metrics' : 'demo';
+        return { viewMode: nextMode };
+      }),
       
       resetDemo: () => {
         const state = get()
@@ -215,13 +243,17 @@ export const useDemoController = create<DemoState>()(
         if (state.stepTimeoutId) {
           clearTimeout(state.stepTimeoutId)
         }
+        // Stop live timer
+        get().stopLiveTimer()
         
         set({
           ...initialState,
           currentScenario: state.currentScenario, // Preserve current scenario
+          viewMode: state.viewMode, // Preserve current view mode
           currentStepIndex: 0,
           isAutoProgressing: false,
-          stepTimeoutId: null
+          stepTimeoutId: null,
+          liveTimerIntervalId: null
         })
       },
       
@@ -324,6 +356,9 @@ export const useDemoController = create<DemoState>()(
           }
         })
         
+        // Start the live timer
+        get().startLiveTimer()
+        
         // Start the first step
         get().nextStep()
       },
@@ -333,6 +368,7 @@ export const useDemoController = create<DemoState>()(
         if (state.stepTimeoutId) {
           clearTimeout(state.stepTimeoutId)
         }
+        // Keep live timer running during pause
         set({
           isAutoProgressing: false,
           stepTimeoutId: null
@@ -352,7 +388,8 @@ export const useDemoController = create<DemoState>()(
         const config = scenarioConfigs[state.currentScenario]
         
         if (state.currentStepIndex >= config.steps.length) {
-          // Scenario complete
+          // Scenario complete - stop live timer
+          get().stopLiveTimer()
           set({
             isAutoProgressing: false,
             stepTimeoutId: null,
@@ -388,6 +425,40 @@ export const useDemoController = create<DemoState>()(
           
           set({ stepTimeoutId: timeoutId })
         }
+      },
+
+      startLiveTimer: () => {
+        const state = get()
+        if (state.liveTimerIntervalId) {
+          clearInterval(state.liveTimerIntervalId)
+        }
+        const intervalId = setInterval(() => {
+          const currentState = get()
+          if (currentState.startTime && currentState.isRunning) {
+            const currentTime = Date.now()
+            const elapsedTime = currentTime - currentState.startTime
+            const formattedTime = formatElapsedTime(elapsedTime)
+            set({
+              metrics: {
+                ...currentState.metrics,
+                timeElapsed: formattedTime
+              }
+            })
+          }
+        }, 1000)
+        set({ liveTimerIntervalId: intervalId })
+      },
+
+      stopLiveTimer: () => {
+        const state = get()
+        if (state.liveTimerIntervalId) {
+          clearInterval(state.liveTimerIntervalId)
+        }
+        set({ liveTimerIntervalId: null })
+      },
+
+      setView: (view) => {
+        set({ currentView: view })
       },
     }),
     { name: 'DemoController' }

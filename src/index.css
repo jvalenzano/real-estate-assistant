@@ -65,6 +65,15 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  /* Primary Brand Colors */
+  --reale-blue: #1976D2;
+  --reale-blue-dark: #1565C0;
+  --reale-blue-light: #42A5F5;
+
+  /* Logo Colors */
+  --logo-bg: #1976D2;
+  --logo-text: #FFFFFF;
 }
 
 a {
@@ -82,6 +91,11 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 h1 {
@@ -118,5 +132,98 @@ button:focus-visible {
   }
   button {
     background-color: #f9f9f9;
+  }
+}
+
+/* Brand Typography */
+.reale-logo {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700; /* Bold */
+}
+
+.reale-tagline {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400; /* Regular */
+  color: #6B7280; /* Gray-500 */
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* Demo-specific styles */
+.demo-container {
+  transition: all 0.3s ease;
+}
+
+.demo-overlay {
+  backdrop-filter: blur(8px);
+  background: rgba(0, 0, 0, 0.5);
+}
+
+/* Animation utilities */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { 
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.4s ease-out;
+}
+
+/* Custom scrollbar for demo areas */
+.demo-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+
+.demo-scroll::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+.demo-scroll::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+
+.demo-scroll::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* Ensure proper z-index stacking */
+.demo-controller {
+  z-index: 50;
+}
+
+.demo-metrics-overlay {
+  z-index: 60;
+}
+
+/* Mobile responsiveness for demo elements */
+@media (max-width: 768px) {
+  .demo-container {
+    padding: 1rem;
+  }
+  
+  .demo-controller {
+    bottom: 1rem;
+    right: 1rem;
+    left: 1rem;
   }
 }
