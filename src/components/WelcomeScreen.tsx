@@ -253,39 +253,39 @@ export const WelcomeScreen = ({ user, onScenarioSelect, onAIDiscovery, onLogout 
               </div>
 
               {/* Card Header - Compact Horizontal Design */}
-              <div className={`bg-gradient-to-r ${scenario.color} p-6 text-white flex-shrink-0`}>
-                <div className="flex items-center justify-between mb-4">
-                  <div className="text-4xl">{scenario.icon}</div>
+              <div className={`bg-gradient-to-r ${scenario.color} p-4 text-white flex-shrink-0`}>
+                <div className="flex items-center justify-between mb-3">
+                  <div className="text-3xl">{scenario.icon}</div>
                   <div className="text-right">
-                    <div className="text-sm font-semibold bg-white/20 px-3 py-1 rounded-full">
+                    <div className="text-xs font-semibold bg-white/20 px-2 py-1 rounded-full">
                       {scenario.duration}
                     </div>
                   </div>
                 </div>
-                <h3 className="text-xl font-bold mb-2 leading-tight">{scenario.title}</h3>
-                <p className="text-sm opacity-90 font-medium">{scenario.subtitle}</p>
+                <h3 className="text-lg font-bold mb-1 leading-tight">{scenario.title}</h3>
+                <p className="text-xs opacity-90 font-medium">{scenario.subtitle}</p>
               </div>
 
               {/* Card Body - Optimized for Horizontal Scanning */}
-              <div className="p-6 flex-grow flex flex-col justify-between">
+              <div className="p-4 flex-grow flex flex-col justify-between">
                 <div>
-                  <p className="text-gray-700 mb-4 leading-relaxed text-sm">
+                  <p className="text-gray-700 mb-3 leading-relaxed text-xs">
                     {scenario.description}
                   </p>
                 </div>
 
-                <div className="space-y-3">
+                <div className="space-y-2">
                   {/* Action Button */}
                   <motion.button
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className={`w-full bg-gradient-to-r ${scenario.color} text-white py-3 rounded-lg font-semibold shadow-lg hover:shadow-xl transition-shadow`}
+                    className={`w-full bg-gradient-to-r ${scenario.color} text-white py-2 rounded-lg font-semibold shadow-lg hover:shadow-xl transition-shadow text-sm`}
                   >
                     Start {scenario.duration === '90 seconds' ? '90-Second' : scenario.duration === '3 minutes' ? '3-Minute' : '30-Second'} Demo
                   </motion.button>
 
                   {/* ROI Metrics Badge - Bottom Position */}
-                  <div className={`text-xs font-semibold text-center py-2 px-3 rounded-lg ${
+                  <div className={`text-xs font-semibold text-center py-1 px-2 rounded ${
                     scenario.id === 'happy-path' ? 'text-green-700 bg-green-100 border border-green-200' :
                     scenario.id === 'power-user' ? 'text-blue-700 bg-blue-100 border border-blue-200' :
                     'text-orange-700 bg-orange-100 border border-orange-200'

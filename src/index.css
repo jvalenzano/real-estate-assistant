@@ -317,24 +317,26 @@ code {
 
 /* FAANG-Inspired Horizontal Card Layout */
 .demo-card-horizontal {
-  min-height: 400px;
+  height: auto;
+  max-height: 500px;
   transition: all 0.3s ease;
 }
 
 .demo-card-horizontal:hover {
-  transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.25);
 }
 
 /* Responsive adjustments for horizontal layout */
 @media (max-width: 640px) {
   .demo-card-horizontal {
-    min-height: 350px;
+    max-height: none;
+    height: auto;
   }
 }
 
 @media (min-width: 1024px) {
   .demo-card-horizontal {
-    min-height: 450px;
+    max-height: 480px;
   }
 }
