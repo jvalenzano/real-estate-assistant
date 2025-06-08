@@ -275,68 +275,32 @@ code {
     margin-right: 1rem !important;
   }
   
-  /* Ensure scenario cards stack vertically on mobile only */
-  .max-w-6xl.mx-auto.grid {
-    grid-template-columns: 1fr !important;
-    gap: 1.5rem !important;
-  }
-  
-  /* Mobile-specific optimizations for scenario cards */
-  .max-w-6xl.mx-auto.grid > div {
-    /* Reduce padding on mobile for more compact cards */
-  }
-  
-  .max-w-6xl.mx-auto.grid > div > div:first-child {
-    /* Card header - reduce padding on mobile */
-    padding: 1rem !important;
-  }
-  
-  .max-w-6xl.mx-auto.grid > div > div:last-child {
-    /* Card body - reduce padding on mobile */
-    padding: 1rem !important;
-  }
-  
-  /* Reduce text sizes and spacing on mobile for scenario cards */
-  .max-w-6xl.mx-auto.grid h3 {
-    font-size: 1.125rem !important; /* text-lg instead of text-xl */
-    margin-bottom: 0.25rem !important;
-  }
-  
-  .max-w-6xl.mx-auto.grid .space-y-3 {
-    gap: 0.5rem !important;
-  }
-  
-  .max-w-6xl.mx-auto.grid .mb-6 {
-    margin-bottom: 1rem !important;
-  }
-  
-  .max-w-6xl.mx-auto.grid .mb-4 {
-    margin-bottom: 0.75rem !important;
-  }
+  /* Scenario cards now use natural Tailwind responsive classes */
+  /* Mobile-first approach: grid-cols-1 lg:grid-cols-3 */
 }
 
-/* FAANG-Inspired Horizontal Card Layout */
-.demo-card-horizontal {
+/* Mobile-First Responsive Card Layout */
+.demo-card-mobile {
   height: auto;
-  max-height: 500px;
   transition: all 0.3s ease;
 }
 
-.demo-card-horizontal:hover {
+.demo-card-mobile:hover {
   transform: translateY(-4px) scale(1.01);
   box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.25);
 }
 
-/* Responsive adjustments for horizontal layout */
-@media (max-width: 640px) {
-  .demo-card-horizontal {
-    max-height: none;
-    height: auto;
+/* Mobile-first responsive adjustments */
+@media (max-width: 1023px) {
+  .demo-card-mobile {
+    /* Mobile: Full-width vertical cards with generous spacing */
+    min-height: auto;
   }
 }
 
 @media (min-width: 1024px) {
-  .demo-card-horizontal {
-    max-height: 480px;
+  .demo-card-mobile {
+    /* Desktop: Constrained height for horizontal layout */
+    max-height: 500px;
   }
 }

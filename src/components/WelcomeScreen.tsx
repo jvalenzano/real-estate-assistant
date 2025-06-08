@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useDemoController } from '../stores/demoController';
 
+// Updated: 2024-12-19 - Responsive Vertical-First Layout Implementation
+// Clean white cards with mobile-first responsive design
+
 interface WelcomeScreenProps {
   user: {
     name: string;
@@ -23,15 +26,6 @@ const scenarios = [
     duration: '90 seconds',
     description: 'Watch a complete offer process that normally takes 2-3 hours. Experience the seamless property search to signed contract workflow.',
     roiMetrics: '90 seconds | Saves $400/transaction',
-    highlights: [
-      'Instant property search and analysis',
-      'Automated document generation',
-      'Digital signature workflow',
-      'Complete transaction in 5 minutes'
-    ],
-    color: 'from-green-500 to-emerald-600',
-    bgColor: 'from-green-50 to-emerald-50',
-    borderColor: 'border-green-200',
     icon: '⏱️'
   },
   {
@@ -42,15 +36,6 @@ const scenarios = [
     duration: '3 minutes',
     description: 'Explore multiple properties, comparisons, and customization options. Demonstrates professional tools and flexibility.',
     roiMetrics: '3 minutes | 10x faster than competitors',
-    highlights: [
-      'Multi-property comparison',
-      'Advanced filtering and analysis',
-      'Custom document templates',
-      'Professional workflow tools'
-    ],
-    color: 'from-blue-500 to-indigo-600',
-    bgColor: 'from-blue-50 to-indigo-50', 
-    borderColor: 'border-blue-200',
     icon: '🔧'
   },
   {
@@ -61,15 +46,6 @@ const scenarios = [
     duration: '30 seconds',
     description: 'See exactly how much money and time agents save per transaction. Dramatic contrast between traditional real estate chaos and our automated solution.',
     roiMetrics: '30 seconds | ROI: 847% time savings',
-    highlights: [
-      'Traditional process problems',
-      'Manual workflow frustrations', 
-      'Instant transformation reveal',
-      'ROI and efficiency metrics'
-    ],
-    color: 'from-orange-500 to-red-600',
-    bgColor: 'from-orange-50 to-red-50',
-    borderColor: 'border-orange-200', 
     icon: '📊'
   }
 ];
@@ -235,8 +211,8 @@ export const WelcomeScreen = ({ user, onScenarioSelect, onAIDiscovery, onLogout 
           </div>
         </motion.div>
 
-        {/* Scenario Cards - FAANG-Inspired Horizontal Layout */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6 max-w-7xl mx-auto">
+        {/* Scenario Cards - Mobile-First Responsive Layout */}
+        <div className="flex flex-col space-y-6 mt-8 max-w-4xl mx-auto">
           {scenarios.map((scenario, index) => (
             <motion.div
               key={scenario.id}
@@ -244,54 +220,56 @@ export const WelcomeScreen = ({ user, onScenarioSelect, onAIDiscovery, onLogout 
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               whileHover={{ scale: 1.02, y: -5 }}
-              className={`demo-card-horizontal bg-gradient-to-br ${scenario.bgColor} rounded-2xl shadow-xl border-2 ${scenario.borderColor} overflow-hidden cursor-pointer relative h-full flex flex-col`}
+              className="w-full bg-white rounded-xl shadow-lg overflow-hidden cursor-pointer"
               onClick={() => handleScenarioSelect(scenario.id)}
             >
-              {/* Bold Number Badge - Top Left */}
-              <div className={`absolute -top-3 -left-3 w-12 h-12 bg-gradient-to-br ${scenario.color} rounded-full flex items-center justify-center shadow-lg border-4 border-white z-10`}>
-                <span className="text-white font-black text-2xl">{scenario.number}</span>
-              </div>
-
-              {/* Card Header - Compact Horizontal Design */}
-              <div className={`bg-gradient-to-r ${scenario.color} p-4 text-white flex-shrink-0`}>
-                <div className="flex items-center justify-between mb-3">
-                  <div className="text-3xl">{scenario.icon}</div>
-                  <div className="text-right">
-                    <div className="text-xs font-semibold bg-white/20 px-2 py-1 rounded-full">
+              {/* Header Section - Mixed alignment */}
+              <div className="p-6 pb-4">
+                <div className="flex items-start space-x-4 mb-4">
+                  <div className={`w-16 h-16 rounded-xl ${
+                    scenario.id === 'happy-path' ? 'bg-green-500' :
+                    scenario.id === 'power-user' ? 'bg-blue-500' :
+                    'bg-orange-500'
+                  } flex items-center justify-center flex-shrink-0`}>
+                    <span className="text-2xl font-bold text-white">#{scenario.number}</span>
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-xl font-semibold text-gray-900 leading-tight text-left">
+                      {scenario.title}
+                    </h3>
+                    <p className="text-gray-600 text-sm mt-1 text-left">
+                      {scenario.subtitle}
+                    </p>
+                    <p className="text-gray-500 text-xs mt-1 text-left">
                       {scenario.duration}
-                    </div>
+                    </p>
                   </div>
                 </div>
-                <h3 className="text-lg font-bold mb-1 leading-tight">{scenario.title}</h3>
-                <p className="text-xs opacity-90 font-medium">{scenario.subtitle}</p>
               </div>
-
-              {/* Card Body - Optimized for Horizontal Scanning */}
-              <div className="p-4 flex-grow flex flex-col justify-between">
-                <div>
-                  <p className="text-gray-700 mb-3 leading-relaxed text-xs">
-                    {scenario.description}
-                  </p>
-                </div>
-
-                <div className="space-y-2">
-                  {/* Action Button */}
-                  <motion.button
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className={`w-full bg-gradient-to-r ${scenario.color} text-white py-2 rounded-lg font-semibold shadow-lg hover:shadow-xl transition-shadow text-sm`}
-                  >
-                    Start {scenario.duration === '90 seconds' ? '90-Second' : scenario.duration === '3 minutes' ? '3-Minute' : '30-Second'} Demo
-                  </motion.button>
-
-                  {/* ROI Metrics Badge - Bottom Position */}
-                  <div className={`text-xs font-semibold text-center py-1 px-2 rounded ${
-                    scenario.id === 'happy-path' ? 'text-green-700 bg-green-100 border border-green-200' :
-                    scenario.id === 'power-user' ? 'text-blue-700 bg-blue-100 border border-blue-200' :
-                    'text-orange-700 bg-orange-100 border border-orange-200'
-                  }`}>
-                    {scenario.roiMetrics}
-                  </div>
+              
+              {/* Description - LEFT ALIGNED for readability */}
+              <div className="px-6 pb-4">
+                <p className="text-gray-700 text-sm leading-relaxed text-left">
+                  {scenario.description}
+                </p>
+              </div>
+              
+              {/* Button - CENTERED */}
+              <div className="px-6 pb-6">
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className={`w-full py-4 ${
+                    scenario.id === 'happy-path' ? 'bg-green-500 hover:bg-green-600' :
+                    scenario.id === 'power-user' ? 'bg-blue-500 hover:bg-blue-600' :
+                    'bg-orange-500 hover:bg-orange-600'
+                  } text-white rounded-lg text-lg font-medium transition-colors text-center`}
+                >
+                  Start {scenario.duration === '90 seconds' ? '90-Second' : scenario.duration === '3 minutes' ? '3-Minute' : '30-Second'} Demo
+                </motion.button>
+                {/* Stats - CENTERED */}
+                <div className="mt-3 text-center text-sm text-gray-600">
+                  {scenario.roiMetrics}
                 </div>
               </div>
             </motion.div>
