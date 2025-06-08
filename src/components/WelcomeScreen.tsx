@@ -235,8 +235,8 @@ export const WelcomeScreen = ({ user, onScenarioSelect, onAIDiscovery, onLogout 
           </div>
         </motion.div>
 
-        {/* Scenario Cards */}
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        {/* Scenario Cards - FAANG-Inspired Horizontal Layout */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6 max-w-7xl mx-auto">
           {scenarios.map((scenario, index) => (
             <motion.div
               key={scenario.id}
@@ -244,55 +244,55 @@ export const WelcomeScreen = ({ user, onScenarioSelect, onAIDiscovery, onLogout 
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               whileHover={{ scale: 1.02, y: -5 }}
-              className={`bg-gradient-to-br ${scenario.bgColor} rounded-2xl shadow-xl border-2 ${scenario.borderColor} overflow-hidden cursor-pointer`}
+              className={`demo-card-horizontal bg-gradient-to-br ${scenario.bgColor} rounded-2xl shadow-xl border-2 ${scenario.borderColor} overflow-hidden cursor-pointer relative h-full flex flex-col`}
               onClick={() => handleScenarioSelect(scenario.id)}
             >
-              {/* Card Header */}
-              <div className={`bg-gradient-to-r ${scenario.color} p-6 text-white`}>
-                <div className="flex items-center justify-between mb-4">
-                  <div className="text-3xl">{scenario.icon}</div>
-                  <div className="text-right">
-                    <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mb-2">
-                      <div className="text-xl font-bold text-white">#{scenario.number}</div>
-                    </div>
-                    <div className="text-sm opacity-90">{scenario.duration}</div>
-                  </div>
-                </div>
-                <h3 className="text-xl font-bold mb-1">{scenario.title}</h3>
-                <p className="text-sm opacity-90">{scenario.subtitle}</p>
+              {/* Bold Number Badge - Top Left */}
+              <div className={`absolute -top-3 -left-3 w-12 h-12 bg-gradient-to-br ${scenario.color} rounded-full flex items-center justify-center shadow-lg border-4 border-white z-10`}>
+                <span className="text-white font-black text-2xl">{scenario.number}</span>
               </div>
 
-              {/* Card Body */}
-              <div className="p-6">
-                {/* ROI Metrics */}
-                <div className="bg-white/80 backdrop-blur-sm rounded-lg p-3 mb-4 border border-gray-200">
-                  <div className="text-center">
-                    <span className="text-sm font-semibold text-gray-800">{scenario.roiMetrics}</span>
+              {/* Card Header - Compact Horizontal Design */}
+              <div className={`bg-gradient-to-r ${scenario.color} p-6 text-white flex-shrink-0`}>
+                <div className="flex items-center justify-between mb-4">
+                  <div className="text-4xl">{scenario.icon}</div>
+                  <div className="text-right">
+                    <div className="text-sm font-semibold bg-white/20 px-3 py-1 rounded-full">
+                      {scenario.duration}
+                    </div>
                   </div>
                 </div>
+                <h3 className="text-xl font-bold mb-2 leading-tight">{scenario.title}</h3>
+                <p className="text-sm opacity-90 font-medium">{scenario.subtitle}</p>
+              </div>
 
-                <p className="text-gray-700 mb-6 leading-relaxed">
-                  {scenario.description}
-                </p>
-
-                {/* Highlights */}
-                <div className="space-y-3 mb-6">
-                  {scenario.highlights.map((highlight, idx) => (
-                    <div key={idx} className="flex items-center gap-3">
-                      <div className="w-2 h-2 bg-blue-500 rounded-full flex-shrink-0"></div>
-                      <span className="text-sm text-gray-600">{highlight}</span>
-                    </div>
-                  ))}
+              {/* Card Body - Optimized for Horizontal Scanning */}
+              <div className="p-6 flex-grow flex flex-col justify-between">
+                <div>
+                  <p className="text-gray-700 mb-4 leading-relaxed text-sm">
+                    {scenario.description}
+                  </p>
                 </div>
 
-                {/* Action Button */}
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className={`w-full bg-gradient-to-r ${scenario.color} text-white py-3 rounded-lg font-semibold shadow-lg hover:shadow-xl transition-shadow`}
-                >
-                  Start {scenario.duration === '90 seconds' ? '90-Second' : scenario.duration === '3 minutes' ? '3-Minute' : '30-Second'} Demo
-                </motion.button>
+                <div className="space-y-3">
+                  {/* Action Button */}
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className={`w-full bg-gradient-to-r ${scenario.color} text-white py-3 rounded-lg font-semibold shadow-lg hover:shadow-xl transition-shadow`}
+                  >
+                    Start {scenario.duration === '90 seconds' ? '90-Second' : scenario.duration === '3 minutes' ? '3-Minute' : '30-Second'} Demo
+                  </motion.button>
+
+                  {/* ROI Metrics Badge - Bottom Position */}
+                  <div className={`text-xs font-semibold text-center py-2 px-3 rounded-lg ${
+                    scenario.id === 'happy-path' ? 'text-green-700 bg-green-100 border border-green-200' :
+                    scenario.id === 'power-user' ? 'text-blue-700 bg-blue-100 border border-blue-200' :
+                    'text-orange-700 bg-orange-100 border border-orange-200'
+                  }`}>
+                    {scenario.roiMetrics}
+                  </div>
+                </div>
               </div>
             </motion.div>
           ))}

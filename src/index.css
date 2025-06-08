@@ -231,6 +231,7 @@ code {
 /* MOBILE PADDING OPTIMIZATION - Immediate Fix */
 @media (max-width: 767px) {
   /* Override problematic container max-widths for edge-to-edge mobile experience */
+  /* Exclude scenario cards grid container (.max-w-6xl) from these overrides */
   .max-w-4xl, .max-w-7xl, .max-w-md, .max-w-2xl, .max-w-xl, .max-w-lg {
     max-width: 100% !important;
     margin-left: 0 !important;
@@ -240,7 +241,8 @@ code {
   }
   
   /* Remove auto margins that center content unnecessarily on mobile */
-  .mx-auto {
+  /* But preserve centering for scenario cards grid */
+  .mx-auto:not(.max-w-6xl) {
     margin-left: 0 !important;
     margin-right: 0 !important;
   }
@@ -264,5 +266,75 @@ code {
   .sm\:px-6, .sm\:px-8 {
     padding-left: 1rem !important;
     padding-right: 1rem !important;
+  }
+  
+  /* Specific fixes for scenario cards on mobile */
+  .max-w-6xl {
+    max-width: calc(100% - 2rem) !important;
+    margin-left: 1rem !important;
+    margin-right: 1rem !important;
+  }
+  
+  /* Ensure scenario cards stack vertically on mobile only */
+  .max-w-6xl.mx-auto.grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
+  
+  /* Mobile-specific optimizations for scenario cards */
+  .max-w-6xl.mx-auto.grid > div {
+    /* Reduce padding on mobile for more compact cards */
+  }
+  
+  .max-w-6xl.mx-auto.grid > div > div:first-child {
+    /* Card header - reduce padding on mobile */
+    padding: 1rem !important;
+  }
+  
+  .max-w-6xl.mx-auto.grid > div > div:last-child {
+    /* Card body - reduce padding on mobile */
+    padding: 1rem !important;
+  }
+  
+  /* Reduce text sizes and spacing on mobile for scenario cards */
+  .max-w-6xl.mx-auto.grid h3 {
+    font-size: 1.125rem !important; /* text-lg instead of text-xl */
+    margin-bottom: 0.25rem !important;
+  }
+  
+  .max-w-6xl.mx-auto.grid .space-y-3 {
+    gap: 0.5rem !important;
+  }
+  
+  .max-w-6xl.mx-auto.grid .mb-6 {
+    margin-bottom: 1rem !important;
+  }
+  
+  .max-w-6xl.mx-auto.grid .mb-4 {
+    margin-bottom: 0.75rem !important;
+  }
+}
+
+/* FAANG-Inspired Horizontal Card Layout */
+.demo-card-horizontal {
+  min-height: 400px;
+  transition: all 0.3s ease;
+}
+
+.demo-card-horizontal:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+/* Responsive adjustments for horizontal layout */
+@media (max-width: 640px) {
+  .demo-card-horizontal {
+    min-height: 350px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .demo-card-horizontal {
+    min-height: 450px;
   }
 }
