@@ -412,88 +412,148 @@ export const AIDiscoveryDemo = ({ onComplete, onScenarioSelect, demoSpeed }: AID
                   </p>
                 </div>
 
-                {/* Three Scenario Options */}
-                <div className="grid md:grid-cols-3 gap-4">
+                {/* Three Scenario Options - Vertical First Layout */}
+                <div className="flex flex-col space-y-6 max-w-4xl mx-auto">
                   {/* Happy Path */}
-                  <motion.button
+                  <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.1 }}
+                    className="w-full bg-white rounded-xl shadow-lg overflow-hidden cursor-pointer"
                     onClick={() => onScenarioSelect('happy-path')}
-                    className="bg-gradient-to-br from-green-50 to-emerald-50 border-2 border-green-200 rounded-xl p-6 text-left hover:shadow-lg transition-all transform hover:scale-105 relative"
                   >
-                    {/* Bold Number Badge */}
-                    <div className="absolute -top-3 -left-3 w-10 h-10 bg-gradient-to-br from-green-600 to-green-700 rounded-full flex items-center justify-center shadow-lg border-4 border-white">
-                      <span className="text-white font-black text-xl">1</span>
-                    </div>
-                    <div className="flex items-center gap-3 mb-3">
-                      <div className="text-2xl">⏱️</div>
-                      <div>
-                        <div className="font-bold text-green-700">The 5-Minute Miracle</div>
-                        <div className="text-sm text-green-600">90 seconds</div>
+                    {/* Header Section - Mixed alignment */}
+                    <div className="p-6 pb-4">
+                      <div className="flex items-start space-x-4 mb-4">
+                        <div className="w-16 h-16 rounded-xl bg-green-500 flex items-center justify-center flex-shrink-0">
+                          <span className="text-2xl font-bold text-white">#1</span>
+                        </div>
+                        <div className="flex-1">
+                          <h3 className="text-xl font-semibold text-gray-900 leading-tight text-left">
+                            The 5-Minute Miracle
+                          </h3>
+                          <p className="text-gray-600 text-sm mt-1 text-left">
+                            Happy Path Demo
+                          </p>
+                          <p className="text-gray-500 text-xs mt-1 text-left">
+                            90 seconds
+                          </p>
+                        </div>
                       </div>
                     </div>
-                    <p className="text-sm text-gray-700 mb-3">
-                      Watch the complete property-to-contract workflow that normally takes 2-3 hours.
-                    </p>
-                    <div className="text-xs font-semibold text-green-600 bg-green-100 px-2 py-1 rounded">
-                      Saves $400/transaction
+                    
+                    {/* Description - LEFT ALIGNED for readability */}
+                    <div className="px-6 pb-4">
+                      <p className="text-gray-700 text-sm leading-relaxed text-left">
+                        Watch the complete property-to-contract workflow that normally takes 2-3 hours.
+                      </p>
                     </div>
-                  </motion.button>
+                    
+                    {/* Button - CENTERED */}
+                    <div className="px-6 pb-6">
+                      <button className="w-full py-4 bg-green-500 hover:bg-green-600 text-white rounded-lg text-lg font-medium transition-colors text-center">
+                        Start 90-Second Demo
+                      </button>
+                      {/* Stats - CENTERED */}
+                      <div className="mt-3 text-center text-sm text-gray-600">
+                        90 seconds | Saves $400/transaction
+                      </div>
+                    </div>
+                  </motion.div>
 
                   {/* Power User */}
-                  <motion.button
+                  <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.2 }}
+                    className="w-full bg-white rounded-xl shadow-lg overflow-hidden cursor-pointer"
                     onClick={() => onScenarioSelect('power-user')}
-                    className="bg-gradient-to-br from-blue-50 to-indigo-50 border-2 border-blue-200 rounded-xl p-6 text-left hover:shadow-lg transition-all transform hover:scale-105 relative"
                   >
-                    {/* Bold Number Badge */}
-                    <div className="absolute -top-3 -left-3 w-10 h-10 bg-gradient-to-br from-blue-600 to-blue-700 rounded-full flex items-center justify-center shadow-lg border-4 border-white">
-                      <span className="text-white font-black text-xl">2</span>
-                    </div>
-                    <div className="flex items-center gap-3 mb-3">
-                      <div className="text-2xl">🔧</div>
-                      <div>
-                        <div className="font-bold text-blue-700">Advanced Features</div>
-                        <div className="text-sm text-blue-600">3 minutes</div>
+                    {/* Header Section - Mixed alignment */}
+                    <div className="p-6 pb-4">
+                      <div className="flex items-start space-x-4 mb-4">
+                        <div className="w-16 h-16 rounded-xl bg-blue-500 flex items-center justify-center flex-shrink-0">
+                          <span className="text-2xl font-bold text-white">#2</span>
+                        </div>
+                        <div className="flex-1">
+                          <h3 className="text-xl font-semibold text-gray-900 leading-tight text-left">
+                            Advanced Features Demo
+                          </h3>
+                          <p className="text-gray-600 text-sm mt-1 text-left">
+                            Power User Experience
+                          </p>
+                          <p className="text-gray-500 text-xs mt-1 text-left">
+                            3 minutes
+                          </p>
+                        </div>
                       </div>
                     </div>
-                    <p className="text-sm text-gray-700 mb-3">
-                      Explore multiple properties, comparisons, and professional customization tools.
-                    </p>
-                    <div className="text-xs font-semibold text-blue-600 bg-blue-100 px-2 py-1 rounded">
-                      10x faster than competitors
+                    
+                    {/* Description - LEFT ALIGNED for readability */}
+                    <div className="px-6 pb-4">
+                      <p className="text-gray-700 text-sm leading-relaxed text-left">
+                        Explore multiple properties, comparisons, and professional customization tools.
+                      </p>
                     </div>
-                  </motion.button>
+                    
+                    {/* Button - CENTERED */}
+                    <div className="px-6 pb-6">
+                      <button className="w-full py-4 bg-blue-500 hover:bg-blue-600 text-white rounded-lg text-lg font-medium transition-colors text-center">
+                        Start 3-Minute Demo
+                      </button>
+                      {/* Stats - CENTERED */}
+                      <div className="mt-3 text-center text-sm text-gray-600">
+                        3 minutes | 10x faster than competitors
+                      </div>
+                    </div>
+                  </motion.div>
 
                   {/* Problem Demo */}
-                  <motion.button
+                  <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.3 }}
+                    className="w-full bg-white rounded-xl shadow-lg overflow-hidden cursor-pointer"
                     onClick={() => onScenarioSelect('problem-demo')}
-                    className="bg-gradient-to-br from-orange-50 to-red-50 border-2 border-orange-200 rounded-xl p-6 text-left hover:shadow-lg transition-all transform hover:scale-105 relative"
                   >
-                    {/* Bold Number Badge */}
-                    <div className="absolute -top-3 -left-3 w-10 h-10 bg-gradient-to-br from-orange-600 to-red-600 rounded-full flex items-center justify-center shadow-lg border-4 border-white">
-                      <span className="text-white font-black text-xl">3</span>
-                    </div>
-                    <div className="flex items-center gap-3 mb-3">
-                      <div className="text-2xl">📊</div>
-                      <div>
-                        <div className="font-bold text-orange-700">Time Savings Demo</div>
-                        <div className="text-sm text-orange-600">30 seconds</div>
+                    {/* Header Section - Mixed alignment */}
+                    <div className="p-6 pb-4">
+                      <div className="flex items-start space-x-4 mb-4">
+                        <div className="w-16 h-16 rounded-xl bg-orange-500 flex items-center justify-center flex-shrink-0">
+                          <span className="text-2xl font-bold text-white">#3</span>
+                        </div>
+                        <div className="flex-1">
+                          <h3 className="text-xl font-semibold text-gray-900 leading-tight text-left">
+                            The $10,000 Time Savings Demo
+                          </h3>
+                          <p className="text-gray-600 text-sm mt-1 text-left">
+                            Problem/Solution Demo
+                          </p>
+                          <p className="text-gray-500 text-xs mt-1 text-left">
+                            30 seconds
+                          </p>
+                        </div>
                       </div>
                     </div>
-                    <p className="text-sm text-gray-700 mb-3">
-                      See the dramatic before/after comparison and ROI metrics that close deals.
-                    </p>
-                    <div className="text-xs font-semibold text-orange-600 bg-orange-100 px-2 py-1 rounded">
-                      847% time savings
+                    
+                    {/* Description - LEFT ALIGNED for readability */}
+                    <div className="px-6 pb-4">
+                      <p className="text-gray-700 text-sm leading-relaxed text-left">
+                        See the dramatic before/after comparison and ROI metrics that close deals.
+                      </p>
                     </div>
-                  </motion.button>
+                    
+                    {/* Button - CENTERED */}
+                    <div className="px-6 pb-6">
+                      <button className="w-full py-4 bg-orange-500 hover:bg-orange-600 text-white rounded-lg text-lg font-medium transition-colors text-center">
+                        Start 30-Second Demo
+                      </button>
+                      {/* Stats - CENTERED */}
+                      <div className="mt-3 text-center text-sm text-gray-600">
+                        30 seconds | ROI: 847% time savings
+                      </div>
+                    </div>
+                  </motion.div>
                 </div>
 
                 {/* Alternative Option */}
