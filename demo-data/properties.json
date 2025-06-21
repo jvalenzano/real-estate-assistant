@@ -1,0 +1,1625 @@
+{
+  "properties": [
+    {
+      "id": "prop-001",
+      "mls_number": "ML81234567",
+      "address": {
+        "line1": "789 Ocean View Dr",
+        "line2": null,
+        "city": "San Diego",
+        "state": "CA",
+        "zip_code": "92037",
+        "county": "San Diego"
+      },
+      "property_type": "Single Family",
+      "bedrooms": 4,
+      "bathrooms": 3.5,
+      "square_feet": 2850,
+      "lot_size_sqft": 8200,
+      "year_built": 2018,
+      "list_price": 1250000,
+      "price_per_sqft": 439,
+      "estimated_monthly_payment": 6200,
+      "property_taxes_annual": 15600,
+      "hoa_fees_monthly": 0,
+      "listing_status": "active",
+      "days_on_market": 3,
+      "listing_date": "2024-01-12",
+      "demo_scenario": "dream_home",
+      "demo_priority": 1,
+      "description": "Stunning modern home with panoramic ocean views from the master bedroom. Recently built with premium finishes throughout.",
+      "features": {
+        "exterior": ["Ocean views", "3-car garage", "Landscaped yard", "Outdoor kitchen"],
+        "interior": ["Hardwood floors", "Granite counters", "Fireplace", "Walk-in closets"],
+        "utilities": ["Central AC", "Solar panels", "Tankless water heater"]
+      },
+      "images": [
+        {
+          "url": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&h=600",
+          "alt_text": "Modern home exterior with ocean views",
+          "is_primary": true,
+          "display_order": 1
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=600",
+          "alt_text": "Spacious living room with large windows",
+          "is_primary": false,
+          "display_order": 2
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&h=600",
+          "alt_text": "Gourmet kitchen with granite counters",
+          "is_primary": false,
+          "display_order": 3
+        }
+      ]
+    },
+    {
+      "id": "prop-002",
+      "mls_number": "ML81234568",
+      "address": {
+        "line1": "456 Valley Road",
+        "line2": null,
+        "city": "La Jolla",
+        "state": "CA",
+        "zip_code": "92037",
+        "county": "San Diego"
+      },
+      "property_type": "Single Family",
+      "bedrooms": 3,
+      "bathrooms": 2.5,
+      "square_feet": 1950,
+      "lot_size_sqft": 6500,
+      "year_built": 2010,
+      "list_price": 850000,
+      "price_per_sqft": 436,
+      "estimated_monthly_payment": 4200,
+      "property_taxes_annual": 10600,
+      "hoa_fees_monthly": 0,
+      "listing_status": "active",
+      "days_on_market": 12,
+      "listing_date": "2024-01-03",
+      "demo_scenario": "fixer_upper",
+      "demo_priority": 2,
+      "description": "Charming home with great bones in desirable La Jolla location. Perfect opportunity for buyer to add personal touches.",
+      "features": {
+        "exterior": ["Mature trees", "2-car garage", "Brick pathway", "Private backyard"],
+        "interior": ["Original hardwood", "Bay windows", "Built-in bookcases", "Eat-in kitchen"],
+        "utilities": ["Forced air heating", "Dual pane windows", "220V outlet garage"]
+      },
+      "images": [
+        {
+          "url": "https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=800&h=600",
+          "alt_text": "Charming traditional home exterior",
+          "is_primary": true,
+          "display_order": 1
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&h=600",
+          "alt_text": "Cozy living room with fireplace",
+          "is_primary": false,
+          "display_order": 2
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1556909909-f8e8f7e0ad7?w=800&h=600",
+          "alt_text": "Traditional kitchen with potential",
+          "is_primary": false,
+          "display_order": 3
+        }
+      ]
+    },
+    {
+      "id": "prop-003",
+      "mls_number": "ML81234569",
+      "address": {
+        "line1": "1234 Sunset Blvd",
+        "line2": "Unit 15A",
+        "city": "San Diego",
+        "state": "CA",
+        "zip_code": "92101",
+        "county": "San Diego"
+      },
+      "property_type": "Condominium",
+      "bedrooms": 2,
+      "bathrooms": 2,
+      "square_feet": 1100,
+      "lot_size_sqft": 0,
+      "year_built": 2020,
+      "list_price": 575000,
+      "price_per_sqft": 523,
+      "estimated_monthly_payment": 3100,
+      "property_taxes_annual": 7200,
+      "hoa_fees_monthly": 350,
+      "listing_status": "active",
+      "days_on_market": 7,
+      "listing_date": "2024-01-08",
+      "demo_scenario": "investment",
+      "demo_priority": 3,
+      "description": "Modern downtown condo with city views. Perfect for urban living or investment property with excellent rental potential.",
+      "features": {
+        "exterior": ["Rooftop deck", "Secure parking", "Building gym", "Concierge"],
+        "interior": ["Stainless appliances", "Quartz counters", "In-unit laundry", "Floor-to-ceiling windows"],
+        "utilities": ["Central air", "High-speed internet ready", "Energy efficient"]
+      },
+      "images": [
+        {
+          "url": "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&h=600",
+          "alt_text": "Modern high-rise condominium building",
+          "is_primary": true,
+          "display_order": 1
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=800&h=600",
+          "alt_text": "Modern living space with city views",
+          "is_primary": false,
+          "display_order": 2
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&h=600",
+          "alt_text": "Sleek modern kitchen",
+          "is_primary": false,
+          "display_order": 3
+        }
+      ]
+    },
+    {
+      "id": "prop-004",
+      "mls_number": "ML81234570",
+      "address": {
+        "line1": "8615 Circle R Course Ln",
+        "line2": null,
+        "city": "Escondido",
+        "state": "CA",
+        "zip_code": "92026",
+        "county": "San Diego"
+      },
+      "property_type": "Single Family",
+      "bedrooms": 3,
+      "bathrooms": 2,
+      "square_feet": 1650,
+      "lot_size_sqft": 7200,
+      "year_built": 1995,
+      "list_price": 700000,
+      "price_per_sqft": 424,
+      "estimated_monthly_payment": 3800,
+      "property_taxes_annual": 8750,
+      "hoa_fees_monthly": 0,
+      "listing_status": "active",
+      "days_on_market": 5,
+      "listing_date": "2024-01-10",
+      "demo_scenario": "family_home",
+      "demo_priority": 4,
+      "description": "Well-maintained family home in quiet Escondido neighborhood. Move-in ready with updated kitchen and bathrooms.",
+      "features": {
+        "exterior": ["Pool", "Spa", "RV parking", "Fruit trees"],
+        "interior": ["Tile floors", "Updated kitchen", "Master suite", "Family room"],
+        "utilities": ["Dual zone AC", "Whole house fan", "Covered patio"]
+      },
+      "images": [
+        {
+          "url": "https://images.unsplash.com/photo-1613977257592-4871e5fcd7c4?w=800&h=600",
+          "alt_text": "Family home with pool in backyard",
+          "is_primary": true,
+          "display_order": 1
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1560449752-0d6cd69845b4?w=800&h=600",
+          "alt_text": "Updated kitchen with modern appliances",
+          "is_primary": false,
+          "display_order": 2
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1560184897-9eb5f8c6eb50?w=800&h=600",
+          "alt_text": "Comfortable family room",
+          "is_primary": false,
+          "display_order": 3
+        }
+      ]
+    },
+    {
+      "id": "prop-005",
+      "mls_number": "ML81234571",
+      "address": {
+        "line1": "2468 Coastal Highway",
+        "line2": null,
+        "city": "Encinitas",
+        "state": "CA",
+        "zip_code": "92024",
+        "county": "San Diego"
+      },
+      "property_type": "Single Family",
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "square_feet": 3200,
+      "lot_size_sqft": 9800,
+      "year_built": 2005,
+      "list_price": 1650000,
+      "price_per_sqft": 516,
+      "estimated_monthly_payment": 8200,
+      "property_taxes_annual": 20600,
+      "hoa_fees_monthly": 0,
+      "listing_status": "active",
+      "days_on_market": 15,
+      "listing_date": "2024-01-01",
+      "demo_scenario": "luxury",
+      "demo_priority": 5,
+      "description": "Luxury coastal home with breathtaking ocean views. Custom finishes throughout with resort-style backyard.",
+      "features": {
+        "exterior": ["Ocean views", "Pool/spa", "Outdoor kitchen", "3-car garage"],
+        "interior": ["Vaulted ceilings", "Marble floors", "Wine cellar", "Home theater"],
+        "utilities": ["Smart home system", "Solar panels", "Generator backup"]
+      },
+      "images": [
+        {
+          "url": "https://images.unsplash.com/photo-1613977257592-4871e5fcd7c4?w=800&h=600",
+          "alt_text": "Luxury home with ocean views",
+          "is_primary": true,
+          "display_order": 1
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=800&h=600",
+          "alt_text": "Elegant living room with ocean views",
+          "is_primary": false,
+          "display_order": 2
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1556909114-5dcace1b0fed?w=800&h=600",
+          "alt_text": "Gourmet kitchen with island",
+          "is_primary": false,
+          "display_order": 3
+        }
+      ]
+    },
+    {
+      "id": "prop-006",
+      "mls_number": "ML81234572",
+      "address": {
+        "line1": "951 Harbor View St",
+        "line2": null,
+        "city": "Carlsbad",
+        "state": "CA",
+        "zip_code": "92008",
+        "county": "San Diego"
+      },
+      "property_type": "Townhouse",
+      "bedrooms": 3,
+      "bathrooms": 2.5,
+      "square_feet": 1580,
+      "lot_size_sqft": 0,
+      "year_built": 2015,
+      "list_price": 795000,
+      "price_per_sqft": 503,
+      "estimated_monthly_payment": 4300,
+      "property_taxes_annual": 9940,
+      "hoa_fees_monthly": 285,
+      "listing_status": "active",
+      "days_on_market": 8,
+      "listing_date": "2024-01-07",
+      "demo_scenario": "starter_home",
+      "demo_priority": 6,
+      "description": "Modern townhome in desirable Carlsbad community. Low maintenance living with community amenities.",
+      "features": {
+        "exterior": ["Attached garage", "Private patio", "Community pool", "Walking trails"],
+        "interior": ["Open floor plan", "Upgraded flooring", "Island kitchen", "Master loft"],
+        "utilities": ["Energy efficient", "Pre-wired security", "USB outlets"]
+      },
+      "images": [
+        {
+          "url": "https://images.unsplash.com/photo-1449844908441-8829872d2607?w=800&h=600",
+          "alt_text": "Modern townhome community",
+          "is_primary": true,
+          "display_order": 1
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&h=600",
+          "alt_text": "Open concept living area",
+          "is_primary": false,
+          "display_order": 2
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1556909114-5e9b5800d06b?w=800&h=600",
+          "alt_text": "Contemporary kitchen design",
+          "is_primary": false,
+          "display_order": 3
+        }
+      ]
+    },
+    {
+      "id": "prop-007",
+      "mls_number": "ML81234573",
+      "address": {
+        "line1": "3751 Park Boulevard",
+        "line2": null,
+        "city": "San Diego",
+        "state": "CA",
+        "zip_code": "92103",
+        "county": "San Diego"
+      },
+      "property_type": "Single Family",
+      "bedrooms": 2,
+      "bathrooms": 1,
+      "square_feet": 950,
+      "lot_size_sqft": 5200,
+      "year_built": 1925,
+      "list_price": 525000,
+      "price_per_sqft": 553,
+      "estimated_monthly_payment": 2950,
+      "property_taxes_annual": 6563,
+      "hoa_fees_monthly": 0,
+      "listing_status": "active",
+      "days_on_market": 21,
+      "listing_date": "2023-12-25",
+      "demo_scenario": "vintage_charm",
+      "demo_priority": 7,
+      "description": "Charming vintage bungalow in trendy Hillcrest. Original character with modern updates. Great investment opportunity.",
+      "features": {
+        "exterior": ["Original hardwood", "Vintage details", "Large lot", "Detached garage"],
+        "interior": ["Coved ceilings", "Built-ins", "Refinished floors", "Period fixtures"],
+        "utilities": ["Updated electrical", "Copper plumbing", "Dual pane windows"]
+      },
+      "images": [
+        {
+          "url": "https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=800&h=600",
+          "alt_text": "Charming vintage bungalow",
+          "is_primary": true,
+          "display_order": 1
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&h=600",
+          "alt_text": "Original hardwood and built-ins",
+          "is_primary": false,
+          "display_order": 2
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1556909114-5e9b5800d06b?w=800&h=600",
+          "alt_text": "Updated vintage kitchen",
+          "is_primary": false,
+          "display_order": 3
+        }
+      ]
+    },
+    {
+      "id": "prop-008",
+      "mls_number": "ML81234574",
+      "address": {
+        "line1": "1847 Mission Bay Drive",
+        "line2": "Unit 203",
+        "city": "San Diego",
+        "state": "CA",
+        "zip_code": "92109",
+        "county": "San Diego"
+      },
+      "property_type": "Condominium",
+      "bedrooms": 1,
+      "bathrooms": 1,
+      "square_feet": 720,
+      "lot_size_sqft": 0,
+      "year_built": 1980,
+      "list_price": 435000,
+      "price_per_sqft": 604,
+      "estimated_monthly_payment": 2650,
+      "property_taxes_annual": 5438,
+      "hoa_fees_monthly": 420,
+      "listing_status": "active",
+      "days_on_market": 14,
+      "listing_date": "2024-01-02",
+      "demo_scenario": "beach_lifestyle",
+      "demo_priority": 8,
+      "description": "Beachside condo steps from Mission Bay. Perfect for beach lovers or vacation rental investment.",
+      "features": {
+        "exterior": ["Bay views", "Beach access", "Pool/spa", "Assigned parking"],
+        "interior": ["Bay views", "Updated bathroom", "Balcony", "In-unit storage"],
+        "utilities": ["Wall AC unit", "Washer/dryer hookups", "Cable ready"]
+      },
+      "images": [
+        {
+          "url": "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&h=600",
+          "alt_text": "Beachside condominium complex",
+          "is_primary": true,
+          "display_order": 1
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=800&h=600",
+          "alt_text": "Cozy living space with bay views",
+          "is_primary": false,
+          "display_order": 2
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1556909909-5e9b5800d06b?w=800&h=600",
+          "alt_text": "Compact efficient kitchen",
+          "is_primary": false,
+          "display_order": 3
+        }
+      ]
+    },
+    {
+      "id": "prop-009",
+      "mls_number": "ML81234575",
+      "address": {
+        "line1": "4521 Del Mar Heights Rd",
+        "line2": null,
+        "city": "Del Mar",
+        "state": "CA",
+        "zip_code": "92014",
+        "county": "San Diego"
+      },
+      "property_type": "Single Family",
+      "bedrooms": 4,
+      "bathrooms": 3,
+      "square_feet": 2400,
+      "lot_size_sqft": 8800,
+      "year_built": 2000,
+      "list_price": 1350000,
+      "price_per_sqft": 563,
+      "estimated_monthly_payment": 6800,
+      "property_taxes_annual": 16875,
+      "hoa_fees_monthly": 0,
+      "listing_status": "pending",
+      "days_on_market": 18,
+      "listing_date": "2023-12-28",
+      "demo_scenario": "under_contract",
+      "demo_priority": 9,
+      "description": "Contemporary home in prestigious Del Mar Heights. Open floor plan with canyon views and designer finishes.",
+      "features": {
+        "exterior": ["Canyon views", "Pool/spa", "Outdoor entertaining", "3-car garage"],
+        "interior": ["Vaulted ceilings", "Designer kitchen", "Master retreat", "Office/den"],
+        "utilities": ["Smart home features", "Surround sound", "Security system"]
+      },
+      "images": [
+        {
+          "url": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&h=600",
+          "alt_text": "Contemporary Del Mar home",
+          "is_primary": true,
+          "display_order": 1
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=600",
+          "alt_text": "Spacious living with canyon views",
+          "is_primary": false,
+          "display_order": 2
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&h=600",
+          "alt_text": "Designer kitchen with island",
+          "is_primary": false,
+          "display_order": 3
+        }
+      ]
+    },
+    {
+      "id": "prop-010",
+      "mls_number": "ML81234576",
+      "address": {
+        "line1": "9876 Rancho Estates Way",
+        "line2": null,
+        "city": "Rancho Santa Fe",
+        "state": "CA",
+        "zip_code": "92067",
+        "county": "San Diego"
+      },
+      "property_type": "Single Family",
+      "bedrooms": 6,
+      "bathrooms": 5.5,
+      "square_feet": 4800,
+      "lot_size_sqft": 43560,
+      "year_built": 2012,
+      "list_price": 3250000,
+      "price_per_sqft": 677,
+      "estimated_monthly_payment": 16200,
+      "property_taxes_annual": 40625,
+      "hoa_fees_monthly": 125,
+      "listing_status": "active",
+      "days_on_market": 32,
+      "listing_date": "2023-12-14",
+      "demo_scenario": "luxury_estate",
+      "demo_priority": 10,
+      "description": "Magnificent estate on 1-acre lot in exclusive Rancho Santa Fe. Custom built with no expense spared.",
+      "features": {
+        "exterior": ["1-acre lot", "Guest house", "Tennis court", "6-car garage"],
+        "interior": ["Great room", "Library", "Wine cellar", "Gym"],
+        "utilities": ["Whole house generator", "Advanced automation", "Geothermal system"]
+      },
+      "images": [
+        {
+          "url": "https://images.unsplash.com/photo-1613977257592-4871e5fcd7c4?w=800&h=600",
+          "alt_text": "Luxury estate with extensive grounds",
+          "is_primary": true,
+          "display_order": 1
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=800&h=600",
+          "alt_text": "Grand living spaces",
+          "is_primary": false,
+          "display_order": 2
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1556909114-5dcace1b0fed?w=800&h=600",
+          "alt_text": "Chef's kitchen with premium finishes",
+          "is_primary": false,
+          "display_order": 3
+        }
+      ]
+    },
+    {
+      "id": "prop-011",
+      "mls_number": "ML81234577",
+      "address": {
+        "line1": "1357 Garnet Avenue",
+        "line2": "Unit 4B",
+        "city": "San Diego",
+        "state": "CA",
+        "zip_code": "92109",
+        "county": "San Diego"
+      },
+      "property_type": "Condominium",
+      "bedrooms": 2,
+      "bathrooms": 1.5,
+      "square_feet": 980,
+      "lot_size_sqft": 0,
+      "year_built": 1985,
+      "list_price": 495000,
+      "price_per_sqft": 505,
+      "estimated_monthly_payment": 2850,
+      "property_taxes_annual": 6188,
+      "hoa_fees_monthly": 395,
+      "listing_status": "active",
+      "days_on_market": 9,
+      "listing_date": "2024-01-06",
+      "demo_scenario": "pacific_beach",
+      "demo_priority": 11,
+      "description": "Bright Pacific Beach condo blocks from the beach. Perfect for beach lifestyle or rental investment.",
+      "features": {
+        "exterior": ["Steps to beach", "Balcony", "Assigned parking", "Storage unit"],
+        "interior": ["Updated flooring", "Open layout", "Large windows", "Ceiling fans"],
+        "utilities": ["Central heating", "Laundry in unit", "High-speed internet"]
+      },
+      "images": [
+        {
+          "url": "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&h=600",
+          "alt_text": "Pacific Beach condo building",
+          "is_primary": true,
+          "display_order": 1
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=800&h=600",
+          "alt_text": "Bright living space near beach",
+          "is_primary": false,
+          "display_order": 2
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1556909909-5e9b5800d06b?w=800&h=600",
+          "alt_text": "Updated kitchen with dining area",
+          "is_primary": false,
+          "display_order": 3
+        }
+      ]
+    },
+    {
+      "id": "prop-012",
+      "mls_number": "ML81234578",
+      "address": {
+        "line1": "2890 University Ave",
+        "line2": null,
+        "city": "San Diego",
+        "state": "CA",
+        "zip_code": "92104",
+        "county": "San Diego"
+      },
+      "property_type": "Single Family",
+      "bedrooms": 3,
+      "bathrooms": 2,
+      "square_feet": 1450,
+      "lot_size_sqft": 6000,
+      "year_built": 1940,
+      "list_price": 650000,
+      "price_per_sqft": 448,
+      "estimated_monthly_payment": 3600,
+      "property_taxes_annual": 8125,
+      "hoa_fees_monthly": 0,
+      "listing_status": "active",
+      "days_on_market": 6,
+      "listing_date": "2024-01-09",
+      "demo_scenario": "north_park",
+      "demo_priority": 12,
+      "description": "Charming North Park bungalow with original character and modern updates. Walking distance to shops and restaurants.",
+      "features": {
+        "exterior": ["Corner lot", "Drought-tolerant landscaping", "Detached garage", "Front porch"],
+        "interior": ["Original hardwood", "Updated kitchen", "Clawfoot tub", "Built-in storage"],
+        "utilities": ["Updated electrical", "Copper plumbing", "Central heat"]
+      },
+      "images": [
+        {
+          "url": "https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=800&h=600",
+          "alt_text": "North Park bungalow with character",
+          "is_primary": true,
+          "display_order": 1
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&h=600",
+          "alt_text": "Charming living room with original details",
+          "is_primary": false,
+          "display_order": 2
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1556909114-5e9b5800d06b?w=800&h=600",
+          "alt_text": "Updated kitchen with vintage charm",
+          "is_primary": false,
+          "display_order": 3
+        }
+      ]
+    },
+    {
+      "id": "prop-013",
+      "mls_number": "ML81234579",
+      "address": {
+        "line1": "5674 La Jolla Mesa Dr",
+        "line2": null,
+        "city": "La Jolla",
+        "state": "CA",
+        "zip_code": "92037",
+        "county": "San Diego"
+      },
+      "property_type": "Single Family",
+      "bedrooms": 4,
+      "bathrooms": 3.5,
+      "square_feet": 2650,
+      "lot_size_sqft": 9200,
+      "year_built": 1998,
+      "list_price": 1450000,
+      "price_per_sqft": 547,
+      "estimated_monthly_payment": 7300,
+      "property_taxes_annual": 18125,
+      "hoa_fees_monthly": 0,
+      "listing_status": "active",
+      "days_on_market": 11,
+      "listing_date": "2024-01-04",
+      "demo_scenario": "la_jolla_family",
+      "demo_priority": 13,
+      "description": "Elegant La Jolla home with canyon and partial ocean views. Perfect for entertaining with spacious layout.",
+      "features": {
+        "exterior": ["Canyon views", "Pool/spa", "Outdoor kitchen", "3-car garage"],
+        "interior": ["Formal dining", "Family room", "Office", "Wine storage"],
+        "utilities": ["Central air", "Intercom system", "Surround sound prewire"]
+      },
+      "images": [
+        {
+          "url": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&h=600",
+          "alt_text": "Elegant La Jolla home with views",
+          "is_primary": true,
+          "display_order": 1
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=600",
+          "alt_text": "Spacious family room",
+          "is_primary": false,
+          "display_order": 2
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&h=600",
+          "alt_text": "Gourmet kitchen for entertaining",
+          "is_primary": false,
+          "display_order": 3
+        }
+      ]
+    },
+    {
+      "id": "prop-014",
+      "mls_number": "ML81234580",
+      "address": {
+        "line1": "3456 Presidio Drive",
+        "line2": null,
+        "city": "San Diego",
+        "state": "CA",
+        "zip_code": "92103",
+        "county": "San Diego"
+      },
+      "property_type": "Townhouse",
+      "bedrooms": 2,
+      "bathrooms": 2.5,
+      "square_feet": 1280,
+      "lot_size_sqft": 0,
+      "year_built": 2008,
+      "list_price": 625000,
+      "price_per_sqft": 488,
+      "estimated_monthly_payment": 3450,
+      "property_taxes_annual": 7813,
+      "hoa_fees_monthly": 265,
+      "listing_status": "active",
+      "days_on_market": 16,
+      "listing_date": "2023-12-30",
+      "demo_scenario": "mission_hills",
+      "demo_priority": 14,
+      "description": "Modern Mission Hills townhome with city views. Low maintenance living in desirable neighborhood.",
+      "features": {
+        "exterior": ["City views", "Rooftop deck", "2-car garage", "Private entrance"],
+        "interior": ["Open floor plan", "High ceilings", "Master suite", "Guest room"],
+        "utilities": ["Central air", "Tankless water heater", "Pre-wired security"]
+      },
+      "images": [
+        {
+          "url": "https://images.unsplash.com/photo-1449844908441-8829872d2607?w=800&h=600",
+          "alt_text": "Modern Mission Hills townhome",
+          "is_primary": true,
+          "display_order": 1
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&h=600",
+          "alt_text": "Open concept living with city views",
+          "is_primary": false,
+          "display_order": 2
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1556909114-5e9b5800d06b?w=800&h=600",
+          "alt_text": "Contemporary kitchen design",
+          "is_primary": false,
+          "display_order": 3
+        }
+      ]
+    },
+    {
+      "id": "prop-015",
+      "mls_number": "ML81234581",
+      "address": {
+        "line1": "7890 Genesee Ave",
+        "line2": "Unit 12",
+        "city": "La Jolla",
+        "state": "CA",
+        "zip_code": "92037",
+        "county": "San Diego"
+      },
+      "property_type": "Condominium",
+      "bedrooms": 3,
+      "bathrooms": 2,
+      "square_feet": 1350,
+      "lot_size_sqft": 0,
+      "year_built": 1975,
+      "list_price": 675000,
+      "price_per_sqft": 500,
+      "estimated_monthly_payment": 3750,
+      "property_taxes_annual": 8438,
+      "hoa_fees_monthly": 425,
+      "listing_status": "active",
+      "days_on_market": 24,
+      "listing_date": "2023-12-22",
+      "demo_scenario": "la_jolla_condo",
+      "demo_priority": 15,
+      "description": "Well-maintained La Jolla condo with recent updates. Great value in prestigious area with excellent schools.",
+      "features": {
+        "exterior": ["Pool/spa", "Tennis court", "Covered parking", "Storage unit"],
+        "interior": ["Updated kitchen", "Fireplace", "Balcony", "In-unit laundry"],
+        "utilities": ["Central air", "Double pane windows", "Updated electrical"]
+      },
+      "images": [
+        {
+          "url": "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&h=600",
+          "alt_text": "La Jolla condominium complex",
+          "is_primary": true,
+          "display_order": 1
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=800&h=600",
+          "alt_text": "Comfortable living space with balcony",
+          "is_primary": false,
+          "display_order": 2
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1556909909-5e9b5800d06b?w=800&h=600",
+          "alt_text": "Updated kitchen with modern appliances",
+          "is_primary": false,
+          "display_order": 3
+        }
+      ]
+    },
+    {
+      "id": "prop-016",
+      "mls_number": "ML81234582",
+      "address": {
+        "line1": "1234 Broadway",
+        "line2": "Unit 806",
+        "city": "San Diego",
+        "state": "CA",
+        "zip_code": "92101",
+        "county": "San Diego"
+      },
+      "property_type": "Condominium",
+      "bedrooms": 1,
+      "bathrooms": 1,
+      "square_feet": 650,
+      "lot_size_sqft": 0,
+      "year_built": 2019,
+      "list_price": 525000,
+      "price_per_sqft": 808,
+      "estimated_monthly_payment": 3200,
+      "property_taxes_annual": 6563,
+      "hoa_fees_monthly": 380,
+      "listing_status": "active",
+      "days_on_market": 4,
+      "listing_date": "2024-01-11",
+      "demo_scenario": "downtown_high_rise",
+      "demo_priority": 16,
+      "description": "Ultra-modern downtown high-rise unit with spectacular city and bay views. Premium amenities and prime location.",
+      "features": {
+        "exterior": ["City/bay views", "Rooftop deck", "Concierge", "Valet parking"],
+        "interior": ["Floor-to-ceiling windows", "Premium finishes", "Smart home ready", "Custom closet"],
+        "utilities": ["Central air", "High-speed fiber", "Energy efficient"]
+      },
+      "images": [
+        {
+          "url": "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&h=600",
+          "alt_text": "Downtown high-rise tower",
+          "is_primary": true,
+          "display_order": 1
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=800&h=600",
+          "alt_text": "Modern unit with city views",
+          "is_primary": false,
+          "display_order": 2
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&h=600",
+          "alt_text": "Sleek modern kitchen",
+          "is_primary": false,
+          "display_order": 3
+        }
+      ]
+    },
+    {
+      "id": "prop-017",
+      "mls_number": "ML81234583",
+      "address": {
+        "line1": "9876 Soledad Mountain Rd",
+        "line2": null,
+        "city": "La Jolla",
+        "state": "CA",
+        "zip_code": "92037",
+        "county": "San Diego"
+      },
+      "property_type": "Single Family",
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "square_feet": 3850,
+      "lot_size_sqft": 12000,
+      "year_built": 1985,
+      "list_price": 2250000,
+      "price_per_sqft": 584,
+      "estimated_monthly_payment": 11200,
+      "property_taxes_annual": 28125,
+      "hoa_fees_monthly": 0,
+      "listing_status": "active",
+      "days_on_market": 42,
+      "listing_date": "2023-12-04",
+      "demo_scenario": "soledad_mountain",
+      "demo_priority": 17,
+      "description": "Stunning Soledad Mountain estate with panoramic ocean and canyon views. Extensively renovated with premium finishes.",
+      "features": {
+        "exterior": ["Panoramic views", "Infinity pool", "Guest house", "Wine cellar"],
+        "interior": ["Great room", "Gourmet kitchen", "Master retreat", "Media room"],
+        "utilities": ["Smart home automation", "Solar system", "Backup generator"]
+      },
+      "images": [
+        {
+          "url": "https://images.unsplash.com/photo-1613977257592-4871e5fcd7c4?w=800&h=600",
+          "alt_text": "Soledad Mountain estate with views",
+          "is_primary": true,
+          "display_order": 1
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=800&h=600",
+          "alt_text": "Great room with panoramic views",
+          "is_primary": false,
+          "display_order": 2
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1556909114-5dcace1b0fed?w=800&h=600",
+          "alt_text": "Gourmet kitchen with premium finishes",
+          "is_primary": false,
+          "display_order": 3
+        }
+      ]
+    },
+    {
+      "id": "prop-018",
+      "mls_number": "ML81234584",
+      "address": {
+        "line1": "4567 Clairemont Dr",
+        "line2": null,
+        "city": "San Diego",
+        "state": "CA",
+        "zip_code": "92117",
+        "county": "San Diego"
+      },
+      "property_type": "Single Family",
+      "bedrooms": 3,
+      "bathrooms": 2,
+      "square_feet": 1550,
+      "lot_size_sqft": 7000,
+      "year_built": 1962,
+      "list_price": 575000,
+      "price_per_sqft": 371,
+      "estimated_monthly_payment": 3200,
+      "property_taxes_annual": 7188,
+      "hoa_fees_monthly": 0,
+      "listing_status": "active",
+      "days_on_market": 19,
+      "listing_date": "2023-12-27",
+      "demo_scenario": "clairemont_starter",
+      "demo_priority": 18,
+      "description": "Well-maintained Clairemont home with large lot and great potential. Perfect starter home or investment property.",
+      "features": {
+        "exterior": ["Large lot", "Mature trees", "RV parking", "Workshop"],
+        "interior": ["Original hardwood", "Updated kitchen", "Family room", "Indoor laundry"],
+        "utilities": ["Central heat", "Window AC", "220V garage"]
+      },
+      "images": [
+        {
+          "url": "https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=800&h=600",
+          "alt_text": "Clairemont family home",
+          "is_primary": true,
+          "display_order": 1
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1560449752-0d6cd69845b4?w=800&h=600",
+          "alt_text": "Updated kitchen with breakfast nook",
+          "is_primary": false,
+          "display_order": 2
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1560184897-9eb5f8c6eb50?w=800&h=600",
+          "alt_text": "Comfortable family room",
+          "is_primary": false,
+          "display_order": 3
+        }
+      ]
+    },
+    {
+      "id": "prop-019",
+      "mls_number": "ML81234585",
+      "address": {
+        "line1": "8765 Vacation Isle Dr",
+        "line2": null,
+        "city": "San Diego",
+        "state": "CA",
+        "zip_code": "92109",
+        "county": "San Diego"
+      },
+      "property_type": "Single Family",
+      "bedrooms": 4,
+      "bathrooms": 3,
+      "square_feet": 2200,
+      "lot_size_sqft": 6800,
+      "year_built": 1978,
+      "list_price": 1850000,
+      "price_per_sqft": 841,
+      "estimated_monthly_payment": 9200,
+      "property_taxes_annual": 23125,
+      "hoa_fees_monthly": 0,
+      "listing_status": "active",
+      "days_on_market": 28,
+      "listing_date": "2023-12-18",
+      "demo_scenario": "vacation_isle",
+      "demo_priority": 19,
+      "description": "Rare Vacation Isle waterfront home with private dock. Ultimate boating lifestyle with bay access.",
+      "features": {
+        "exterior": ["Private dock", "Bay frontage", "Patio", "Boat access"],
+        "interior": ["Bay views", "Vaulted ceilings", "Fireplace", "Wet bar"],
+        "utilities": ["Central air", "Dock utilities", "Security system"]
+      },
+      "images": [
+        {
+          "url": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&h=600",
+          "alt_text": "Vacation Isle waterfront home",
+          "is_primary": true,
+          "display_order": 1
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=600",
+          "alt_text": "Living room with bay views",
+          "is_primary": false,
+          "display_order": 2
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&h=600",
+          "alt_text": "Kitchen with water views",
+          "is_primary": false,
+          "display_order": 3
+        }
+      ]
+    },
+    {
+      "id": "prop-020",
+      "mls_number": "ML81234586",
+      "address": {
+        "line1": "2345 Balboa Park Dr",
+        "line2": null,
+        "city": "San Diego",
+        "state": "CA",
+        "zip_code": "92101",
+        "county": "San Diego"
+      },
+      "property_type": "Single Family",
+      "bedrooms": 2,
+      "bathrooms": 2,
+      "square_feet": 1100,
+      "lot_size_sqft": 4500,
+      "year_built": 1930,
+      "list_price": 750000,
+      "price_per_sqft": 682,
+      "estimated_monthly_payment": 4200,
+      "property_taxes_annual": 9375,
+      "hoa_fees_monthly": 0,
+      "listing_status": "active",
+      "days_on_market": 13,
+      "listing_date": "2024-01-02",
+      "demo_scenario": "balboa_park",
+      "demo_priority": 20,
+      "description": "Historic Spanish style home across from Balboa Park. Rare opportunity for park-adjacent living in the city.",
+      "features": {
+        "exterior": ["Park views", "Spanish tile", "Courtyard", "Original details"],
+        "interior": ["Arched doorways", "Tile floors", "Built-ins", "Casement windows"],
+        "utilities": ["Updated electrical", "Central heat", "Original charm"]
+      },
+      "images": [
+        {
+          "url": "https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=800&h=600",
+          "alt_text": "Spanish style home near Balboa Park",
+          "is_primary": true,
+          "display_order": 1
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&h=600",
+          "alt_text": "Living room with original details",
+          "is_primary": false,
+          "display_order": 2
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1556909114-5e9b5800d06b?w=800&h=600",
+          "alt_text": "Kitchen with Spanish tile",
+          "is_primary": false,
+          "display_order": 3
+        }
+      ]
+    },
+    {
+      "id": "prop-021",
+      "mls_number": "ML81234587",
+      "address": {
+        "line1": "6789 Windansea Beach Dr",
+        "line2": null,
+        "city": "La Jolla",
+        "state": "CA",
+        "zip_code": "92037",
+        "county": "San Diego"
+      },
+      "property_type": "Single Family",
+      "bedrooms": 3,
+      "bathrooms": 2.5,
+      "square_feet": 1800,
+      "lot_size_sqft": 5500,
+      "year_built": 1965,
+      "list_price": 2850000,
+      "price_per_sqft": 1583,
+      "estimated_monthly_payment": 14200,
+      "property_taxes_annual": 35625,
+      "hoa_fees_monthly": 0,
+      "listing_status": "active",
+      "days_on_market": 35,
+      "listing_date": "2023-12-11",
+      "demo_scenario": "beach_front",
+      "demo_priority": 21,
+      "description": "Rare Windansea beachfront cottage with incredible surf views. One of the few remaining beach cottages in La Jolla.",
+      "features": {
+        "exterior": ["Direct beach access", "Surf views", "Private beach", "Outdoor shower"],
+        "interior": ["Panoramic ocean views", "Vaulted ceilings", "Beach cottage charm", "Skylights"],
+        "utilities": ["Forced air heat", "Beach shower", "Storage"]
+      },
+      "images": [
+        {
+          "url": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=600",
+          "alt_text": "Beachfront cottage with surf views",
+          "is_primary": true,
+          "display_order": 1
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=600",
+          "alt_text": "Living space with panoramic ocean views",
+          "is_primary": false,
+          "display_order": 2
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&h=600",
+          "alt_text": "Kitchen with ocean views",
+          "is_primary": false,
+          "display_order": 3
+        }
+      ]
+    },
+    {
+      "id": "prop-022",
+      "mls_number": "ML81234588",
+      "address": {
+        "line1": "3456 Cherokee Ave",
+        "line2": null,
+        "city": "San Diego",
+        "state": "CA",
+        "zip_code": "92104",
+        "county": "San Diego"
+      },
+      "property_type": "Single Family",
+      "bedrooms": 4,
+      "bathrooms": 2,
+      "square_feet": 1650,
+      "lot_size_sqft": 6200,
+      "year_built": 1920,
+      "list_price": 725000,
+      "price_per_sqft": 439,
+      "estimated_monthly_payment": 4000,
+      "property_taxes_annual": 9063,
+      "hoa_fees_monthly": 0,
+      "listing_status": "active",
+      "days_on_market": 17,
+      "listing_date": "2023-12-29",
+      "demo_scenario": "normal_heights",
+      "demo_priority": 22,
+      "description": "Beautifully restored Craftsman in trendy Normal Heights. Original character with thoughtful modern updates.",
+      "features": {
+        "exterior": ["Craftsman details", "Front porch", "Mature landscaping", "Detached garage"],
+        "interior": ["Original woodwork", "Built-in cabinets", "Restored hardwood", "Period lighting"],
+        "utilities": ["Updated electrical", "Copper plumbing", "Central heat"]
+      },
+      "images": [
+        {
+          "url": "https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=800&h=600",
+          "alt_text": "Restored Craftsman home",
+          "is_primary": true,
+          "display_order": 1
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&h=600",
+          "alt_text": "Living room with original woodwork",
+          "is_primary": false,
+          "display_order": 2
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1556909114-5e9b5800d06b?w=800&h=600",
+          "alt_text": "Updated kitchen with period charm",
+          "is_primary": false,
+          "display_order": 3
+        }
+      ]
+    },
+    {
+      "id": "prop-023",
+      "mls_number": "ML81234589",
+      "address": {
+        "line1": "5432 Lotus St",
+        "line2": null,
+        "city": "San Diego",
+        "state": "CA",
+        "zip_code": "92107",
+        "county": "San Diego"
+      },
+      "property_type": "Single Family",
+      "bedrooms": 3,
+      "bathrooms": 2,
+      "square_feet": 1350,
+      "lot_size_sqft": 5800,
+      "year_built": 1955,
+      "list_price": 850000,
+      "price_per_sqft": 630,
+      "estimated_monthly_payment": 4700,
+      "property_taxes_annual": 10625,
+      "hoa_fees_monthly": 0,
+      "listing_status": "active",
+      "days_on_market": 22,
+      "listing_date": "2023-12-24",
+      "demo_scenario": "point_loma",
+      "demo_priority": 23,
+      "description": "Mid-century Point Loma home with canyon views. Walking distance to Liberty Station and Sunset Cliffs.",
+      "features": {
+        "exterior": ["Canyon views", "Mid-century design", "Carport", "Patio"],
+        "interior": ["Post & beam", "Clerestory windows", "Original details", "Open floor plan"],
+        "utilities": ["Forced air heat", "Updated electrical", "Dual pane windows"]
+      },
+      "images": [
+        {
+          "url": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&h=600",
+          "alt_text": "Mid-century Point Loma home",
+          "is_primary": true,
+          "display_order": 1
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=600",
+          "alt_text": "Open living space with canyon views",
+          "is_primary": false,
+          "display_order": 2
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&h=600",
+          "alt_text": "Mid-century kitchen design",
+          "is_primary": false,
+          "display_order": 3
+        }
+      ]
+    },
+    {
+      "id": "prop-024",
+      "mls_number": "ML81234590",
+      "address": {
+        "line1": "7890 Mount Helix Dr",
+        "line2": null,
+        "city": "La Mesa",
+        "state": "CA",
+        "zip_code": "91941",
+        "county": "San Diego"
+      },
+      "property_type": "Single Family",
+      "bedrooms": 4,
+      "bathrooms": 3,
+      "square_feet": 2100,
+      "lot_size_sqft": 8500,
+      "year_built": 1988,
+      "list_price": 875000,
+      "price_per_sqft": 417,
+      "estimated_monthly_payment": 4850,
+      "property_taxes_annual": 10938,
+      "hoa_fees_monthly": 0,
+      "listing_status": "active",
+      "days_on_market": 26,
+      "listing_date": "2023-12-20",
+      "demo_scenario": "mount_helix",
+      "demo_priority": 24,
+      "description": "Spectacular Mount Helix home with panoramic city and mountain views. Peaceful hilltop setting with easy freeway access.",
+      "features": {
+        "exterior": ["Panoramic views", "Pool/spa", "Large deck", "3-car garage"],
+        "interior": ["Vaulted ceilings", "Fireplace", "Formal dining", "Family room"],
+        "utilities": ["Central air", "Whole house fan", "Water softener"]
+      },
+      "images": [
+        {
+          "url": "https://images.unsplash.com/photo-1613977257592-4871e5fcd7c4?w=800&h=600",
+          "alt_text": "Mount Helix home with panoramic views",
+          "is_primary": true,
+          "display_order": 1
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=800&h=600",
+          "alt_text": "Living room with mountain views",
+          "is_primary": false,
+          "display_order": 2
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1556909114-5dcace1b0fed?w=800&h=600",
+          "alt_text": "Kitchen with view windows",
+          "is_primary": false,
+          "display_order": 3
+        }
+      ]
+    },
+    {
+      "id": "prop-025",
+      "mls_number": "ML81234591",
+      "address": {
+        "line1": "1111 India Street",
+        "line2": "Unit 2001",
+        "city": "San Diego",
+        "state": "CA",
+        "zip_code": "92101",
+        "county": "San Diego"
+      },
+      "property_type": "Condominium",
+      "bedrooms": 2,
+      "bathrooms": 2,
+      "square_feet": 1050,
+      "lot_size_sqft": 0,
+      "year_built": 2016,
+      "list_price": 785000,
+      "price_per_sqft": 748,
+      "estimated_monthly_payment": 4350,
+      "property_taxes_annual": 9813,
+      "hoa_fees_monthly": 485,
+      "listing_status": "active",
+      "days_on_market": 8,
+      "listing_date": "2024-01-07",
+      "demo_scenario": "luxury_downtown",
+      "demo_priority": 25,
+      "description": "Luxury downtown high-rise with spectacular harbor and city views. Premium amenities and sophisticated urban living.",
+      "features": {
+        "exterior": ["Harbor views", "Rooftop pool", "Fitness center", "Concierge"],
+        "interior": ["Floor-to-ceiling windows", "Hardwood floors", "Granite counters", "Balcony"],
+        "utilities": ["Central air", "In-unit laundry", "Smart home ready"]
+      },
+      "images": [
+        {
+          "url": "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&h=600",
+          "alt_text": "Luxury downtown high-rise",
+          "is_primary": true,
+          "display_order": 1
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=800&h=600",
+          "alt_text": "Luxury unit with harbor views",
+          "is_primary": false,
+          "display_order": 2
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&h=600",
+          "alt_text": "Premium kitchen with granite counters",
+          "is_primary": false,
+          "display_order": 3
+        }
+      ]
+    },
+    {
+      "id": "prop-026",
+      "mls_number": "ML81234592",
+      "address": {
+        "line1": "4444 Poway Road",
+        "line2": null,
+        "city": "Poway",
+        "state": "CA",
+        "zip_code": "92064",
+        "county": "San Diego"
+      },
+      "property_type": "Single Family",
+      "bedrooms": 4,
+      "bathrooms": 3,
+      "square_feet": 2350,
+      "lot_size_sqft": 10500,
+      "year_built": 2002,
+      "list_price": 950000,
+      "price_per_sqft": 404,
+      "estimated_monthly_payment": 5250,
+      "property_taxes_annual": 11875,
+      "hoa_fees_monthly": 185,
+      "listing_status": "active",
+      "days_on_market": 12,
+      "listing_date": "2024-01-03",
+      "demo_scenario": "poway_family",
+      "demo_priority": 26,
+      "description": "Beautiful Poway family home in desirable neighborhood with award-winning schools. Perfect for families seeking suburban lifestyle.",
+      "features": {
+        "exterior": ["Cul-de-sac location", "3-car garage", "Pool/spa", "RV parking"],
+        "interior": ["Formal living", "Family room", "Bonus room", "Walk-in pantry"],
+        "utilities": ["Central air", "Whole house fan", "Pre-wired surround"]
+      },
+      "images": [
+        {
+          "url": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&h=600",
+          "alt_text": "Poway family home with pool",
+          "is_primary": true,
+          "display_order": 1
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1560449752-0d6cd69845b4?w=800&h=600",
+          "alt_text": "Spacious family kitchen",
+          "is_primary": false,
+          "display_order": 2
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1560184897-9eb5f8c6eb50?w=800&h=600",
+          "alt_text": "Family room with fireplace",
+          "is_primary": false,
+          "display_order": 3
+        }
+      ]
+    },
+    {
+      "id": "prop-027",
+      "mls_number": "ML81234593",
+      "address": {
+        "line1": "8888 Villa La Jolla Dr",
+        "line2": "Unit 101",
+        "city": "La Jolla",
+        "state": "CA",
+        "zip_code": "92037",
+        "county": "San Diego"
+      },
+      "property_type": "Condominium",
+      "bedrooms": 2,
+      "bathrooms": 2,
+      "square_feet": 1200,
+      "lot_size_sqft": 0,
+      "year_built": 1965,
+      "list_price": 695000,
+      "price_per_sqft": 579,
+      "estimated_monthly_payment": 3850,
+      "property_taxes_annual": 8688,
+      "hoa_fees_monthly": 375,
+      "listing_status": "active",
+      "days_on_market": 29,
+      "listing_date": "2023-12-17",
+      "demo_scenario": "la_jolla_village",
+      "demo_priority": 27,
+      "description": "Well-maintained La Jolla Village condo with easy access to beaches and shopping. Great value in prestigious La Jolla.",
+      "features": {
+        "exterior": ["Pool/spa", "Covered parking", "Storage", "Landscaped grounds"],
+        "interior": ["Upgraded flooring", "Eat-in kitchen", "Master suite", "Patio access"],
+        "utilities": ["Central air", "In-unit laundry", "Updated electrical"]
+      },
+      "images": [
+        {
+          "url": "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&h=600",
+          "alt_text": "La Jolla Village condo complex",
+          "is_primary": true,
+          "display_order": 1
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=800&h=600",
+          "alt_text": "Comfortable living space with patio",
+          "is_primary": false,
+          "display_order": 2
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1556909909-5e9b5800d06b?w=800&h=600",
+          "alt_text": "Updated kitchen with dining area",
+          "is_primary": false,
+          "display_order": 3
+        }
+      ]
+    },
+    {
+      "id": "prop-028",
+      "mls_number": "ML81234594",
+      "address": {
+        "line1": "6666 Friars Road",
+        "line2": null,
+        "city": "San Diego",
+        "state": "CA",
+        "zip_code": "92108",
+        "county": "San Diego"
+      },
+      "property_type": "Townhouse",
+      "bedrooms": 3,
+      "bathrooms": 2.5,
+      "square_feet": 1450,
+      "lot_size_sqft": 0,
+      "year_built": 1995,
+      "list_price": 525000,
+      "price_per_sqft": 362,
+      "estimated_monthly_payment": 2950,
+      "property_taxes_annual": 6563,
+      "hoa_fees_monthly": 295,
+      "listing_status": "active",
+      "days_on_market": 15,
+      "listing_date": "2024-01-01",
+      "demo_scenario": "mission_valley",
+      "demo_priority": 28,
+      "description": "Convenient Mission Valley townhome near trolley and shopping. Great location for commuters and urban lifestyle.",
+      "features": {
+        "exterior": ["Attached garage", "Private patio", "Gated community", "Pool/spa"],
+        "interior": ["Vaulted ceilings", "Fireplace", "Master suite", "Guest powder room"],
+        "utilities": ["Central air", "Washer/dryer hookups", "Ceiling fans"]
+      },
+      "images": [
+        {
+          "url": "https://images.unsplash.com/photo-1449844908441-8829872d2607?w=800&h=600",
+          "alt_text": "Mission Valley townhome community",
+          "is_primary": true,
+          "display_order": 1
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&h=600",
+          "alt_text": "Living room with vaulted ceilings",
+          "is_primary": false,
+          "display_order": 2
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1556909114-5e9b5800d06b?w=800&h=600",
+          "alt_text": "Kitchen with breakfast bar",
+          "is_primary": false,
+          "display_order": 3
+        }
+      ]
+    },
+    {
+      "id": "prop-029",
+      "mls_number": "ML81234595",
+      "address": {
+        "line1": "9999 Camino Real",
+        "line2": null,
+        "city": "Carlsbad",
+        "state": "CA",
+        "zip_code": "92009",
+        "county": "San Diego"
+      },
+      "property_type": "Single Family",
+      "bedrooms": 5,
+      "bathrooms": 4.5,
+      "square_feet": 3600,
+      "lot_size_sqft": 12800,
+      "year_built": 2008,
+      "list_price": 1850000,
+      "price_per_sqft": 514,
+      "estimated_monthly_payment": 9750,
+      "property_taxes_annual": 23125,
+      "hoa_fees_monthly": 245,
+      "listing_status": "active",
+      "days_on_market": 38,
+      "listing_date": "2023-12-08",
+      "demo_scenario": "carlsbad_luxury",
+      "demo_priority": 29,
+      "description": "Stunning Carlsbad estate with resort-style backyard and ocean breezes. Premium location near beaches and top schools.",
+      "features": {
+        "exterior": ["Resort backyard", "Pool/spa/waterfall", "Outdoor kitchen", "4-car garage"],
+        "interior": ["Grand foyer", "Gourmet kitchen", "Wine cellar", "Home theater"],
+        "utilities": ["Smart home system", "Central vacuum", "Water softener"]
+      },
+      "images": [
+        {
+          "url": "https://images.unsplash.com/photo-1613977257592-4871e5fcd7c4?w=800&h=600",
+          "alt_text": "Carlsbad luxury estate",
+          "is_primary": true,
+          "display_order": 1
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=800&h=600",
+          "alt_text": "Grand living spaces",
+          "is_primary": false,
+          "display_order": 2
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1556909114-5dcace1b0fed?w=800&h=600",
+          "alt_text": "Gourmet kitchen with premium finishes",
+          "is_primary": false,
+          "display_order": 3
+        }
+      ]
+    },
+    {
+      "id": "prop-030",
+      "mls_number": "ML81234596",
+      "address": {
+        "line1": "1212 Coronado Beach Dr",
+        "line2": null,
+        "city": "Coronado",
+        "state": "CA",
+        "zip_code": "92118",
+        "county": "San Diego"
+      },
+      "property_type": "Single Family",
+      "bedrooms": 3,
+      "bathrooms": 2.5,
+      "square_feet": 1950,
+      "lot_size_sqft": 6200,
+      "year_built": 1975,
+      "list_price": 2650000,
+      "price_per_sqft": 1359,
+      "estimated_monthly_payment": 13200,
+      "property_taxes_annual": 33125,
+      "hoa_fees_monthly": 0,
+      "listing_status": "active",
+      "days_on_market": 45,
+      "listing_date": "2023-12-01",
+      "demo_scenario": "coronado_beach",
+      "demo_priority": 30,
+      "description": "Rare Coronado beach house just steps from the world-famous Coronado Beach. Island lifestyle with city convenience.",
+      "features": {
+        "exterior": ["Steps to beach", "Ocean breezes", "Private yard", "Outdoor shower"],
+        "interior": ["Beach cottage charm", "Vaulted ceilings", "Skylights", "Hardwood floors"],
+        "utilities": ["Forced air heat", "Ceiling fans", "Beach storage"]
+      },
+      "images": [
+        {
+          "url": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=600",
+          "alt_text": "Coronado beach house",
+          "is_primary": true,
+          "display_order": 1
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=600",
+          "alt_text": "Beach cottage living room",
+          "is_primary": false,
+          "display_order": 2
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&h=600",
+          "alt_text": "Kitchen with beach cottage charm",
+          "is_primary": false,
+          "display_order": 3
+        }
+      ]
+    }
+  ]
+}
+

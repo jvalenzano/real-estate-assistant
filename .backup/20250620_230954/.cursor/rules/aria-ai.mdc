@@ -1,0 +1,25 @@
+---
+description: ARIA AI co-pilot integration patterns
+globs:
+  - "**/aria/**/*.ts"
+  - "**/ai/**/*.ts"
+alwaysApply: false
+---
+
+# ARIA AI Integration Rules
+
+## Gemini Integration
+- Use Google Gemini 2.0 Flash model
+- Max 200 output tokens for cost control
+- Stream responses for better UX
+
+## Function Calling
+- Define tools for property search, document generation, status checks
+- Handle tool responses appropriately
+- Provide fallbacks for failures
+
+## Context Management
+- Always include current screen context
+- Pass user role and permissions
+- Include recent conversation history
+- Limit context to 1000 tokens

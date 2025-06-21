@@ -1,0 +1,39 @@
+---
+description: React Native and Expo best practices for RealeAgent mobile app
+globs:
+  - "mobile-app/**/*.tsx"
+  - "mobile-app/**/*.ts"
+alwaysApply: true
+---
+
+# React Native Development Rules
+
+## Component Structure
+- Use arrow functions: const PropertyCard = ({ property }: Props) => {}
+- Split components and styles: property-card/index.tsx and property-card/styles.ts
+- Max 80 lines per component file
+- Use React.memo() for static prop components
+
+## State Management
+- Use React Context for global state (Auth, Properties, Transactions)
+- Minimize useState and useEffect usage
+- Use React Query for API calls with caching
+
+## TypeScript
+- Interfaces over types
+- No any - use unknown and type guards
+- Explicit return types for functions
+
+## Expo Specific
+- Use expo-image for optimized image loading
+- Use expo-secure-store for sensitive data
+- Use expo-updates for OTA updates
+
+## Performance
+- Implement lazy loading with React.Suspense
+- Use FlatList with getItemLayout for lists
+- Profile with React DevTools regularly
+
+## ARIA Integration
+- Always include ARIAFloatingButton on screens
+- Pass current context to ARIA (property, transaction, etc.)

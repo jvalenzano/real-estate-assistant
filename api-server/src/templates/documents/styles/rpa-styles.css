@@ -1,0 +1,311 @@
+/* California Residential Purchase Agreement Styles */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Times New Roman', serif;
+    font-size: 12px;
+    line-height: 1.4;
+    color: #000;
+    background: white;
+    margin: 0;
+    padding: 20px;
+}
+
+.page {
+    max-width: 8.5in;
+    min-height: 11in;
+    margin: 0 auto;
+    padding: 0.5in;
+    background: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #000;
+    padding-bottom: 15px;
+}
+
+.document-title {
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+.document-subtitle {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.form-info {
+    font-size: 10px;
+    color: #666;
+}
+
+.section {
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    padding: 15px;
+}
+
+.section-title {
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    background: #f5f5f5;
+    padding: 8px;
+    margin: -15px -15px 15px -15px;
+    border-bottom: 1px solid #ccc;
+}
+
+.field-group {
+    margin-bottom: 15px;
+}
+
+.field-row {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 10px;
+    align-items: center;
+}
+
+.field {
+    flex: 1;
+}
+
+.field-label {
+    font-weight: bold;
+    margin-bottom: 3px;
+    display: block;
+}
+
+.field-value {
+    border-bottom: 1px solid #000;
+    min-height: 20px;
+    padding: 2px 5px;
+    display: inline-block;
+    min-width: 100px;
+}
+
+.field-value.full-width {
+    width: 100%;
+}
+
+.field-value.currency::before {
+    content: '$';
+}
+
+.field-value.percentage::after {
+    content: '%';
+}
+
+.checkbox-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 10px 0;
+}
+
+.checkbox-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.checkbox {
+    width: 12px;
+    height: 12px;
+    border: 1px solid #000;
+    display: inline-block;
+    position: relative;
+}
+
+.checkbox.checked::after {
+    content: '✓';
+    position: absolute;
+    top: -2px;
+    left: 1px;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.property-details {
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.property-address {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.property-specs {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.spec-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+    border-bottom: 1px dotted #ccc;
+}
+
+.financial-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 10px 0;
+}
+
+.financial-table th,
+.financial-table td {
+    border: 1px solid #000;
+    padding: 8px;
+    text-align: left;
+}
+
+.financial-table th {
+    background: #f5f5f5;
+    font-weight: bold;
+}
+
+.financial-table .amount {
+    text-align: right;
+    font-family: monospace;
+}
+
+.signature-section {
+    margin-top: 30px;
+    page-break-inside: avoid;
+}
+
+.signature-block {
+    display: flex;
+    justify-content: space-between;
+    margin: 30px 0;
+    gap: 40px;
+}
+
+.signature-line {
+    flex: 1;
+    border-bottom: 1px solid #000;
+    height: 40px;
+    position: relative;
+}
+
+.signature-line::after {
+    content: attr(data-label);
+    position: absolute;
+    bottom: -15px;
+    left: 0;
+    font-size: 10px;
+    color: #666;
+}
+
+.date-line {
+    width: 120px;
+    border-bottom: 1px solid #000;
+    height: 40px;
+    position: relative;
+}
+
+.date-line::after {
+    content: 'Date';
+    position: absolute;
+    bottom: -15px;
+    left: 40px;
+    font-size: 10px;
+    color: #666;
+}
+
+.footer {
+    margin-top: 30px;
+    padding-top: 15px;
+    border-top: 1px solid #ccc;
+    font-size: 10px;
+    color: #666;
+    text-align: center;
+}
+
+.page-number {
+    position: absolute;
+    bottom: 0.5in;
+    right: 0.5in;
+    font-size: 10px;
+    color: #666;
+}
+
+.contingency-list {
+    list-style: none;
+    margin: 10px 0;
+}
+
+.contingency-list li {
+    margin: 8px 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+.terms-text {
+    font-size: 11px;
+    line-height: 1.5;
+    text-align: justify;
+    margin: 10px 0;
+}
+
+.highlighted {
+    background: yellow;
+    padding: 2px;
+}
+
+.required {
+    color: red;
+    font-weight: bold;
+}
+
+@media print {
+    body {
+        margin: 0;
+        padding: 0;
+    }
+    
+    .page {
+        box-shadow: none;
+        margin: 0;
+        max-width: none;
+    }
+    
+    .page-break {
+        page-break-before: always;
+    }
+}
+
+/* Responsive adjustments for smaller screens */
+@media screen and (max-width: 768px) {
+    .field-row {
+        flex-direction: column;
+        gap: 5px;
+    }
+    
+    .property-specs {
+        grid-template-columns: 1fr;
+    }
+    
+    .signature-block {
+        flex-direction: column;
+        gap: 20px;
+    }
+}

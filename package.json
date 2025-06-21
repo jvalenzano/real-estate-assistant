@@ -1,0 +1,31 @@
+{
+  "name": "realeagent-prototype",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "mobile-app",
+    "api-server",
+    "shared"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev:api\" \"npm run dev:mobile\"",
+    "dev:api": "cd api-server && npm run dev",
+    "dev:mobile": "cd mobile-app && expo start",
+    "dev:mobile:android": "cd mobile-app && expo start --android",
+    "dev:mobile:ios": "cd mobile-app && expo start --ios",
+    "build": "npm run build:api && npm run build:mobile",
+    "build:api": "cd api-server && npm run build",
+    "build:mobile": "cd mobile-app && expo build",
+    "test": "npm run test:api",
+    "test:api": "cd api-server && npm test",
+    "install:all": "npm install && cd mobile-app && npm install && cd ../api-server && npm install",
+    "clean": "rm -rf node_modules mobile-app/node_modules api-server/node_modules",
+    "clean:install": "npm run clean && npm run install:all",
+    "demo:reset": "curl -X POST http://localhost:3001/api/v1/auth/demo/reset",
+    "demo:test": "curl http://localhost:3001/api/v1/properties/search?q=ML81234567",
+    "update:dates": "./update-dates.sh"
+  },
+  "devDependencies": {
+    "concurrently": "^7.6.0"
+  }
+}

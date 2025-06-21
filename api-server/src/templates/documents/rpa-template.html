@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>California Residential Purchase Agreement</title>
+    <style>
+        {{{styles}}}
+    </style>
+</head>
+<body>
+    <div class="page">
+        {{> header}}
+
+        <!-- Property Information Section -->
+        <div class="section">
+            <div class="section-title">1. Property Information</div>
+            
+            <div class="property-details">
+                <div class="property-address">
+                    {{property.address.line1}}{{#if property.address.line2}}, {{property.address.line2}}{{/if}}<br>
+                    {{property.address.city}}, {{property.address.state}} {{property.address.zip_code}}
+                </div>
+                
+                <div class="property-specs">
+                    <div class="spec-item">
+                        <span>MLS Number:</span>
+                        <span>{{property.mls_number}}</span>
+                    </div>
+                    <div class="spec-item">
+                        <span>Property Type:</span>
+                        <span>{{property.property_type}}</span>
+                    </div>
+                    <div class="spec-item">
+                        <span>Bedrooms:</span>
+                        <span>{{property.bedrooms}}</span>
+                    </div>
+                    <div class="spec-item">
+                        <span>Bathrooms:</span>
+                        <span>{{property.bathrooms}}</span>
+                    </div>
+                    <div class="spec-item">
+                        <span>Square Feet:</span>
+                        <span>{{formatNumber property.square_feet}}</span>
+                    </div>
+                    <div class="spec-item">
+                        <span>Year Built:</span>
+                        <span>{{property.year_built}}</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="field-group">
+                <div class="field-row">
+                    <div class="field">
+                        <span class="field-label">Assessor's Parcel Number (APN):</span>
+                        <span class="field-value">{{document.fields.apn}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Purchase Price and Terms -->
+        <div class="section">
+            <div class="section-title">2. Purchase Price and Terms</div>
+            
+            <table class="financial-table">
+                <tr>
+                    <th>Description</th>
+                    <th>Amount</th>
+                </tr>
+                <tr>
+                    <td>Purchase Price</td>
+                    <td class="amount">{{formatCurrency document.fields.offerPrice}}</td>
+                </tr>
+                <tr>
+                    <td>Initial Deposit</td>
+                    <td class="amount">{{formatCurrency document.fields.initialDeposit}}</td>
+                </tr>
+                <tr>
+                    <td>Additional Deposit</td>
+                    <td class="amount">{{formatCurrency document.fields.additionalDeposit}}</td>
+                </tr>
+                <tr>
+                    <td>Down Payment</td>
+                    <td class="amount">{{formatCurrency document.fields.downPayment}}</td>
+                </tr>
+                <tr>
+                    <td>Loan Amount</td>
+                    <td class="amount">{{formatCurrency document.fields.loanAmount}}</td>
+                </tr>
+            </table>
+
+            <div class="field-group">
+                <div class="field-row">
+                    <div class="field">
+                        <span class="field-label">Loan Type:</span>
+                        <div class="checkbox-group">
+                            <div class="checkbox-item">
+                                <span class="checkbox {{#if document.fields.loanType.conventional}}checked{{/if}}"></span>
+                                <span>Conventional</span>
+                            </div>
+                            <div class="checkbox-item">
+                                <span class="checkbox {{#if document.fields.loanType.fha}}checked{{/if}}"></span>
+                                <span>FHA</span>
+                            </div>
+                            <div class="checkbox-item">
+                                <span class="checkbox {{#if document.fields.loanType.va}}checked{{/if}}"></span>
+                                <span>VA</span>
+                            </div>
+                            <div class="checkbox-item">
+                                <span class="checkbox {{#if document.fields.loanType.cash}}checked{{/if}}"></span>
+                                <span>Cash</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Buyer Information -->
+        <div class="section">
+            <div class="section-title">3. Buyer Information</div>
+            
+            <div class="field-row">
+                <div class="field">
+                    <span class="field-label">Buyer Name(s):</span>
+                    <span class="field-value full-width">{{document.fields.buyerName}}</span>
+                </div>
+            </div>
+            
+            <div class="field-row">
+                <div class="field">
+                    <span class="field-label">Buyer Address:</span>
+                    <span class="field-value full-width">{{document.fields.buyerAddress}}</span>
+                </div>
+            </div>
+            
+            <div class="field-row">
+                <div class="field">
+                    <span class="field-label">Buyer Phone:</span>
+                    <span class="field-value">{{document.fields.buyerPhone}}</span>
+                </div>
+                <div class="field">
+                    <span class="field-label">Buyer Email:</span>
+                    <span class="field-value">{{document.fields.buyerEmail}}</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Seller Information -->
+        <div class="section">
+            <div class="section-title">4. Seller Information</div>
+            
+            <div class="field-row">
+                <div class="field">
+                    <span class="field-label">Seller Name(s):</span>
+                    <span class="field-value full-width">{{document.fields.sellerName}}</span>
+                </div>
+            </div>
+            
+            <div class="field-row">
+                <div class="field">
+                    <span class="field-label">Seller Address:</span>
+                    <span class="field-value full-width">{{document.fields.sellerAddress}}</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Escrow and Closing -->
+        <div class="section">
+            <div class="section-title">5. Escrow and Closing</div>
+            
+            <div class="field-row">
+                <div class="field">
+                    <span class="field-label">Escrow Company:</span>
+                    <span class="field-value">{{document.fields.escrowCompany}}</span>
+                </div>
+                <div class="field">
+                    <span class="field-label">Escrow Officer:</span>
+                    <span class="field-value">{{document.fields.escrowOfficer}}</span>
+                </div>
+            </div>
+            
+            <div class="field-row">
+                <div class="field">
+                    <span class="field-label">Close of Escrow Date:</span>
+                    <span class="field-value">{{formatDate document.fields.closeDate}}</span>
+                </div>
+                <div class="field">
+                    <span class="field-label">Escrow Period (Days):</span>
+                    <span class="field-value">{{document.fields.escrowDays}}</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contingencies -->
+        <div class="section">
+            <div class="section-title">6. Contingencies</div>
+            
+            <ul class="contingency-list">
+                <li>
+                    <span class="checkbox {{#if document.fields.contingencies.inspection}}checked{{/if}}"></span>
+                    <span>Buyer's Investigation of Property ({{document.fields.contingencyPeriods.inspection}} days)</span>
+                </li>
+                <li>
+                    <span class="checkbox {{#if document.fields.contingencies.loan}}checked{{/if}}"></span>
+                    <span>Loan Contingency ({{document.fields.contingencyPeriods.loan}} days)</span>
+                </li>
+                <li>
+                    <span class="checkbox {{#if document.fields.contingencies.appraisal}}checked{{/if}}"></span>
+                    <span>Appraisal Contingency ({{document.fields.contingencyPeriods.appraisal}} days)</span>
+                </li>
+                <li>
+                    <span class="checkbox {{#if document.fields.contingencies.saleOfProperty}}checked{{/if}}"></span>
+                    <span>Sale of Buyer's Property</span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Included/Excluded Items -->
+        <div class="section">
+            <div class="section-title">7. Items Included/Excluded</div>
+            
+            <div class="field-group">
+                <div class="field-label">Items Included in Sale:</div>
+                <div class="terms-text">
+                    {{#if document.fields.includedItems}}
+                        {{document.fields.includedItems}}
+                    {{else}}
+                        All fixtures and fittings that are attached to the property, including but not limited to: 
+                        built-in appliances, light fixtures, window coverings, planted vegetation, and any other 
+                        items specified in the MLS listing or attached addendum.
+                    {{/if}}
+                </div>
+            </div>
+            
+            {{#if document.fields.excludedItems}}
+            <div class="field-group">
+                <div class="field-label">Items Excluded from Sale:</div>
+                <div class="terms-text">{{document.fields.excludedItems}}</div>
+            </div>
+            {{/if}}
+        </div>
+
+        <!-- Additional Terms -->
+        {{#if document.fields.additionalTerms}}
+        <div class="section">
+            <div class="section-title">8. Additional Terms and Conditions</div>
+            <div class="terms-text">{{document.fields.additionalTerms}}</div>
+        </div>
+        {{/if}}
+
+        <!-- Signatures -->
+        <div class="section signature-section">
+            <div class="section-title">9. Signatures</div>
+            
+            <p class="terms-text">
+                By signing below, all parties acknowledge that they have read, understood, and agree to 
+                the terms and conditions of this Residential Purchase Agreement.
+            </p>
+            
+            <div style="margin-top: 40px;">
+                <strong>BUYER(S):</strong>
+                <div class="signature-block">
+                    <div class="signature-line" data-label="Buyer Signature"></div>
+                    <div class="date-line"></div>
+                </div>
+                
+                {{#if document.fields.secondBuyerName}}
+                <div class="signature-block">
+                    <div class="signature-line" data-label="Co-Buyer Signature"></div>
+                    <div class="date-line"></div>
+                </div>
+                {{/if}}
+            </div>
+            
+            <div style="margin-top: 40px;">
+                <strong>SELLER(S):</strong>
+                <div class="signature-block">
+                    <div class="signature-line" data-label="Seller Signature"></div>
+                    <div class="date-line"></div>
+                </div>
+                
+                {{#if document.fields.secondSellerName}}
+                <div class="signature-block">
+                    <div class="signature-line" data-label="Co-Seller Signature"></div>
+                    <div class="date-line"></div>
+                </div>
+                {{/if}}
+            </div>
+            
+            <div style="margin-top: 40px;">
+                <strong>REAL ESTATE PROFESSIONALS:</strong>
+                <div class="field-row">
+                    <div class="field">
+                        <span class="field-label">Buyer's Agent:</span>
+                        <span class="field-value">{{agent.firstName}} {{agent.lastName}}</span>
+                    </div>
+                    <div class="field">
+                        <span class="field-label">License #:</span>
+                        <span class="field-value">{{agent.licenseNumber}}</span>
+                    </div>
+                </div>
+                
+                <div class="signature-block">
+                    <div class="signature-line" data-label="Buyer's Agent Signature"></div>
+                    <div class="date-line"></div>
+                </div>
+                
+                {{#if document.fields.listingAgent}}
+                <div class="field-row">
+                    <div class="field">
+                        <span class="field-label">Listing Agent:</span>
+                        <span class="field-value">{{document.fields.listingAgent}}</span>
+                    </div>
+                    <div class="field">
+                        <span class="field-label">License #:</span>
+                        <span class="field-value">{{document.fields.listingAgentLicense}}</span>
+                    </div>
+                </div>
+                
+                <div class="signature-block">
+                    <div class="signature-line" data-label="Listing Agent Signature"></div>
+                    <div class="date-line"></div>
+                </div>
+                {{/if}}
+            </div>
+        </div>
+
+        {{> footer}}
+    </div>
+</body>
+</html>

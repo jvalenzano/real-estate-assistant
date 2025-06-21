@@ -1,0 +1,27 @@
+---
+description: Demo and prototype specific guidelines
+globs:
+  - "**/*.demo.ts"
+  - "demo-data/**/*"
+alwaysApply: false
+---
+
+# Demo-First Development
+
+## Priority Features
+1. Happy path must work flawlessly
+2. Impressive animations and transitions
+3. Real-time updates that wow
+4. Smart AI suggestions that feel magical
+
+## Demo Data
+- Use ML81234567 as the golden demo property
+- Pre-populate impressive property details
+- Ensure all images load instantly
+- Mock data should tell a story
+
+## Performance
+- Preload demo scenarios
+- Cache everything for instant responses
+- Smooth 60fps animations
+- No loading spinners in happy path

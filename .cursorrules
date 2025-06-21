@@ -1,0 +1,25 @@
+# Cursor IDE Rules for RealeAgent
+
+## Project Context
+You are working on RealeAgent, a 3-week prototype for AI-powered real estate transactions. Currently in Week 2, building React Native mobile app.
+
+## Always Check First
+1. `.cursor/project-board/command-center.md` - Current tasks and priorities
+2. `.cursor/ai-instructions/cursor-context.md` - Development context and standards
+
+## Current Focus
+- **Directory**: `/mobile-app` - React Native + Expo development
+- **Integration**: Connect with existing `/api-server` APIs
+- **Standards**: TypeScript strict, functional components, React Native Paper UI
+
+## Key Rules
+- Reference existing API patterns in `/api-server/src/routes/`
+- Use demo property ML81234567 for testing
+- Maintain <300ms response time targets
+- Follow mobile-first, touch-optimized design
+- Update command-center.md when completing tasks
+
+## Quick Commands
+- `npm run dev:mobile` - Start Expo dev server
+- `npm run dev:api` - Start backend if needed
+- Check `demo-data/` for test data structure

@@ -1,0 +1,29 @@
+---
+description: Node.js and Express API patterns for RealeAgent backend
+globs:
+  - "api-server/**/*.ts"
+  - "api-server/**/*.js"
+alwaysApply: true
+---
+
+# Node.js API Development Rules
+
+## API Structure
+- RESTful endpoints with consistent naming
+- /api/v1 prefix for all routes
+- Middleware for auth, validation, error handling
+
+## Express Patterns
+- Route structure with proper error handling
+- Consistent response format
+- Request validation middleware
+
+## Supabase Integration
+- Use Supabase client for all DB operations
+- Row Level Security (RLS) policies
+- Transactions for multi-table operations
+
+## Performance
+- Response time target: <300ms
+- Use database indexes
+- Implement caching where appropriate
