@@ -1,0 +1,149 @@
+<!-- 
+  Form: {{formTitle}}
+  Category: {{categoryNumber}} - {{categoryName}}
+  Status: PLACEHOLDER - To be implemented
+  Original File: {{originalFileName}}
+-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{formTitle}}</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            padding: 40px;
+            margin: 0;
+            background: #f5f5f5;
+        }
+        .placeholder-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .placeholder-header {
+            background: #2c3e50;
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        .placeholder-header h1 {
+            margin: 0 0 10px 0;
+            font-size: 28px;
+        }
+        .placeholder-header p {
+            margin: 0;
+            opacity: 0.9;
+            font-size: 14px;
+        }
+        .placeholder-body { 
+            padding: 40px;
+        }
+        .form-info {
+            background: #f8f9fa;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+            border-left: 4px solid #3498db;
+        }
+        .form-info p {
+            margin: 5px 0;
+            color: #333;
+        }
+        .form-info strong {
+            color: #2c3e50;
+            min-width: 150px;
+            display: inline-block;
+        }
+        .implementation-steps {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        .implementation-steps h3 {
+            margin-top: 0;
+            color: #856404;
+        }
+        .implementation-steps ol {
+            margin: 10px 0;
+            padding-left: 25px;
+        }
+        .implementation-steps li {
+            margin: 8px 0;
+            color: #856404;
+        }
+        .status-badge {
+            display: inline-block;
+            padding: 5px 15px;
+            background: #e74c3c;
+            color: white;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-top: 10px;
+        }
+        .coming-soon {
+            text-align: center;
+            padding: 30px;
+            background: #ecf0f1;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        .coming-soon h2 {
+            color: #7f8c8d;
+            margin: 0 0 10px 0;
+        }
+        .coming-soon p {
+            color: #95a5a6;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="placeholder-container">
+        <div class="placeholder-header">
+            <h1>{{formTitle}}</h1>
+            <p>California Real Estate Form</p>
+            <span class="status-badge">Not Yet Implemented</span>
+        </div>
+        
+        <div class="placeholder-body">
+            <div class="form-info">
+                <p><strong>Template ID:</strong> {{templateId}}</p>
+                <p><strong>Category:</strong> {{categoryName}}</p>
+                <p><strong>Category Number:</strong> {{categoryNumber}}</p>
+                <p><strong>Original File:</strong> {{originalFileName}}</p>
+                <p><strong>C.A.R. Form Number:</strong> {{carFormNumber}}</p>
+            </div>
+            
+            <div class="coming-soon">
+                <h2>🚧 Coming Soon</h2>
+                <p>This form is currently being implemented. Please check back later or contact support for more information.</p>
+            </div>
+            
+            <div class="implementation-steps">
+                <h3>📋 Implementation Checklist</h3>
+                <ol>
+                    <li>Obtain the official form PDF from C.A.R.</li>
+                    <li>Convert the form to semantic HTML while maintaining exact layout</li>
+                    <li>Replace this placeholder template with the actual form</li>
+                    <li>Define all form fields in fields.json</li>
+                    <li>Map all signature and initial locations in signature-fields.json</li>
+                    <li>Update metadata.json with form details</li>
+                    <li>Test form generation with sample data</li>
+                    <li>Mark as implemented in the template registry</li>
+                </ol>
+            </div>
+            
+            <div style="text-align: center; margin-top: 40px; color: #7f8c8d;">
+                <p style="font-size: 14px;">For assistance with this form, please contact support.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

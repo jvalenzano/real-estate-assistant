@@ -1,0 +1,22 @@
+{
+  "templateCode": "CONFIRMATION_AGENCY",
+  "pdfFileName": "Confirmation Real Estate Agency Relationships - 12_21.pdf",
+  "description": "Confirmation Real Estate Agency Relationships",
+  "carFormNumber": null,
+  "fields": [
+    {
+      "fieldName": "date",
+      "type": "date",
+      "page": 1,
+      "x": 450,
+      "y": 750,
+      "width": 100,
+      "height": 20,
+      "required": true,
+      "description": "Form date"
+    }
+  ],
+  "needsFieldMapping": true,
+  "mappingStatus": "initial",
+  "notes": "This is an initial field mapping. Field positions need to be adjusted based on the actual PDF layout."
+}

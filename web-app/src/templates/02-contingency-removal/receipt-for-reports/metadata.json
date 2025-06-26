@@ -1,0 +1,24 @@
+{
+  "templateId": "RECEIPT_FOR_REPORTS",
+  "templateName": "Receipt for Reports",
+  "category": "Contingency Removal",
+  "categoryNumber": "02",
+  "originalFileName": "Receipt_for_Reports___12_15.pdf",
+  "version": "1.0.0",
+  "lastUpdated": "2024-01-01",
+  "carFormNumber": "N/A",
+  "formRevisionDate": "12/15",
+  "pageCount": 1,
+  "requiredByLaw": false,
+  "commonlyUsed": false,
+  "dependencies": [],
+  "relatedForms": [],
+  "description": "Placeholder for Receipt for Reports",
+  "usageNotes": "This form is used when...",
+  "implementationStatus": {
+    "template": false,
+    "fields": false,
+    "signatures": false,
+    "testing": false
+  }
+}

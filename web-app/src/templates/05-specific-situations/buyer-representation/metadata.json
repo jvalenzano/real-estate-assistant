@@ -1,0 +1,24 @@
+{
+  "templateId": "BUYER_REPRESENTATION",
+  "templateName": "Buyer Representation Agreement",
+  "category": "Specific Situations",
+  "categoryNumber": "05",
+  "originalFileName": "Buyer_Representation_Agreement___Non_Exclusive___11_24.pdf",
+  "version": "1.0.0",
+  "lastUpdated": "2024-01-01",
+  "carFormNumber": "N/A",
+  "formRevisionDate": "11/24",
+  "pageCount": 1,
+  "requiredByLaw": false,
+  "commonlyUsed": true,
+  "dependencies": [],
+  "relatedForms": [],
+  "description": "Placeholder for Buyer Representation Agreement",
+  "usageNotes": "This form is used when...",
+  "implementationStatus": {
+    "template": false,
+    "fields": false,
+    "signatures": false,
+    "testing": false
+  }
+}

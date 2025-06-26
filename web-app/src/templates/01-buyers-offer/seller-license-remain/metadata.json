@@ -1,0 +1,24 @@
+{
+  "templateId": "SELLER_LICENSE_REMAIN",
+  "templateName": "Seller License to Remain in Possession",
+  "category": "Buyer's Offer",
+  "categoryNumber": "01",
+  "originalFileName": "Seller_License_to_Remain_in_Possession_After_Close_of_Escrow___12_19.pdf",
+  "version": "1.0.0",
+  "lastUpdated": "2024-01-01",
+  "carFormNumber": "N/A",
+  "formRevisionDate": "12/19",
+  "pageCount": 1,
+  "requiredByLaw": false,
+  "commonlyUsed": false,
+  "dependencies": [],
+  "relatedForms": [],
+  "description": "Placeholder for Seller License to Remain in Possession",
+  "usageNotes": "This form is used when...",
+  "implementationStatus": {
+    "template": false,
+    "fields": false,
+    "signatures": false,
+    "testing": false
+  }
+}

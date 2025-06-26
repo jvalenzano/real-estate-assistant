@@ -1,5 +1,10 @@
 import { Request } from 'express';
 
+// Export all type modules
+export * from './document.types';
+export * from './template.types';
+export * from './form-fields.types';
+
 // API Response Types
 export interface ApiResponse<T = any> {
   success: boolean;

@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { Property } from '@/services/property.service';
+import { Heart, Bed, Bath, Ruler, Share2 } from 'lucide-react';
 
 interface PropertyCardProps {
   property: Property;
@@ -31,12 +32,11 @@ export default function PropertyCard({ property }: PropertyCardProps) {
   const isGoldenPath = property.mls_number === 'ML81234567';
 
   return (
-    <Link href={`/properties/${property.id}`} className="block h-full">
-      <div className={`bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 h-full flex flex-col group ${
-        isGoldenPath ? 'ring-2 ring-yellow-400' : ''
-      }`}>
-        {/* Image Container - Fixed Height */}
-        <div className="relative h-56 w-full flex-shrink-0">
+    <div className={`bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100 h-full flex flex-col group ${
+      isGoldenPath ? 'ring-2 ring-amber-500' : ''
+    }`}>
+        {/* Image Container with enhanced styling */}
+        <div className="relative h-64 w-full flex-shrink-0">
           {primaryImage ? (
             <Image
               src={primaryImage.url}
@@ -52,123 +52,105 @@ export default function PropertyCard({ property }: PropertyCardProps) {
             </div>
           )}
           
-          {/* Status Badges */}
-          <div className="absolute top-3 left-3 flex gap-2">
+          {/* Enhanced Status Badges with better positioning */}
+          <div className="absolute top-4 left-4 flex gap-2">
             {isGoldenPath && (
-              <span 
-                className="px-3 py-1.5 rounded-full text-sm font-semibold shadow-md flex items-center gap-1"
-                style={{ 
-                  backgroundColor: '#fbbf24', 
-                  color: colors.text 
-                }}
-              >
+              <span className="bg-amber-500 text-white px-3 py-1 rounded-full text-sm font-medium shadow-lg flex items-center gap-1">
                 <span>⭐</span> Demo Property
               </span>
             )}
-            <span 
-              className="px-3 py-1.5 rounded-full text-sm font-semibold shadow-md"
-              style={{ 
-                backgroundColor: colors.success, 
-                color: colors.white 
-              }}
-            >
+            <span className="bg-green-500 text-white px-3 py-1 rounded-full text-sm font-medium shadow-lg">
               {property.listing_status}
             </span>
             {isPriceReduced && (
-              <span 
-                className="px-3 py-1.5 rounded-full text-sm font-semibold shadow-md"
-                style={{ 
-                  backgroundColor: colors.warning, 
-                  color: colors.white 
-                }}
-              >
+              <span className="bg-orange-500 text-white px-3 py-1 rounded-full text-sm font-medium shadow-lg">
                 Price Reduced
               </span>
             )}
           </div>
 
-          {/* Days on Market */}
-          <div className="absolute top-3 right-3">
-            <span 
-              className="px-3 py-1.5 rounded-full text-sm font-medium backdrop-blur"
-              style={{ 
-                backgroundColor: 'rgba(0, 0, 0, 0.7)', 
-                color: colors.white 
-              }}
-            >
+          {/* Days on Market - enhanced styling */}
+          <div className="absolute top-4 right-4">
+            <span className="bg-black bg-opacity-70 text-white px-3 py-1 rounded-full text-sm">
               {property.days_on_market} days
             </span>
           </div>
         </div>
 
-        {/* Property Details - Flex Grow */}
-        <div className="p-5 flex-grow flex flex-col">
-          {/* Price - Bold and Large */}
-          <h3 className="text-2xl font-bold mb-2" style={{ color: colors.text }}>
-            {formattedPrice}
-          </h3>
-
-          {/* Address - Clear and Readable */}
-          <div className="mb-3">
-            <p className="font-semibold" style={{ color: colors.text }}>
-              {property.address.line1}
-            </p>
-            <p className="text-sm" style={{ color: colors.gray }}>
-              {property.address.city}, {property.address.state} {property.address.zip_code}
-            </p>
+        {/* Enhanced content area */}
+        <div className="p-6 flex-grow flex flex-col">
+          {/* Price with heart icon */}
+          <div className="flex justify-between items-start mb-3">
+            <h3 className="text-2xl font-bold text-gray-900">
+              {formattedPrice}
+            </h3>
+            <button 
+              onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+              }}
+              className="text-gray-400 hover:text-red-500 transition-colors"
+            >
+              <Heart className="w-6 h-6" />
+            </button>
           </div>
 
-          {/* Property Stats - Clear Icons and Text */}
-          <div className="flex items-center gap-4 mb-3">
-            <div className="flex items-center gap-1">
-              <svg className="w-5 h-5" fill="none" stroke={colors.gray} viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-              </svg>
-              <span className="font-semibold" style={{ color: colors.text }}>
-                {property.bedrooms}
-              </span>
-              <span style={{ color: colors.gray }}>beds</span>
-            </div>
-            
-            <div className="flex items-center gap-1">
-              <svg className="w-5 h-5" fill="none" stroke={colors.gray} viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
-              </svg>
-              <span className="font-semibold" style={{ color: colors.text }}>
-                {property.bathrooms}
-              </span>
-              <span style={{ color: colors.gray }}>baths</span>
-            </div>
-            
-            <div className="flex items-center gap-1">
-              <svg className="w-5 h-5" fill="none" stroke={colors.gray} viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8V4m0 0h4M4 4l5 5m11-5h-4m4 0v4m0-4l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
-              </svg>
-              <span className="font-semibold" style={{ color: colors.text }}>
-                {property.square_feet.toLocaleString()}
-              </span>
-              <span style={{ color: colors.gray }}>sqft</span>
-            </div>
+          {/* Address with better typography */}
+          <p className="text-lg text-gray-700 font-medium mb-2">
+            {property.address.line1}
+          </p>
+          <p className="text-gray-500 mb-4">
+            {property.address.city}, {property.address.state} {property.address.zip_code}
+          </p>
+
+          {/* Property details with icons */}
+          <div className="flex items-center gap-4 text-sm text-gray-600 mb-4">
+            <span className="flex items-center gap-1">
+              <Bed className="w-4 h-4" />
+              {property.bedrooms} bed
+            </span>
+            <span className="flex items-center gap-1">
+              <Bath className="w-4 h-4" />
+              {property.bathrooms} bath
+            </span>
+            <span className="flex items-center gap-1">
+              <Ruler className="w-4 h-4" />
+              {property.square_feet.toLocaleString()} sqft
+            </span>
           </div>
 
-          {/* Bottom Info - Spacer and MLS */}
-          <div className="mt-auto pt-3 border-t flex justify-between items-center">
-            <span className="text-sm font-medium" style={{ color: colors.gray }}>
-              {property.property_type}
-            </span>
-            <span className="text-sm font-semibold" style={{ color: colors.primary }}>
-              MLS# {property.mls_number}
-            </span>
+          {/* Spacer to push buttons to bottom */}
+          <div className="flex-grow" />
+          
+          {/* Action buttons */}
+          <div className="flex gap-3 mt-4">
+            <Link 
+              href={`/properties/${property.id}`}
+              className="flex-1 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-lg font-medium transition-colors text-center"
+            >
+              View Details
+            </Link>
+            <button 
+              onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+              }}
+              className="px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors"
+            >
+              <Share2 className="w-5 h-5" />
+            </button>
           </div>
           
-          {/* Price per sqft */}
-          <div className="mt-2">
-            <span className="text-sm" style={{ color: colors.gray }}>
-              ${property.price_per_sqft}/sqft
+          {/* Bottom info */}
+          <div className="mt-4 pt-4 border-t flex justify-between items-center text-sm">
+            <span className="text-gray-500">
+              {property.property_type} • ${property.price_per_sqft}/sqft
+            </span>
+            <span className="font-medium text-blue-600">
+              MLS# {property.mls_number}
             </span>
           </div>
         </div>
       </div>
-    </Link>
   );
 }

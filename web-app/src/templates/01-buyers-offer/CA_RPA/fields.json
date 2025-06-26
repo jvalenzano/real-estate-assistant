@@ -1,0 +1,485 @@
+{
+  "templateId": "CA_RPA",
+  "templateName": "California Residential Purchase Agreement",
+  "fields": [
+    {
+      "name": "buyerName",
+      "type": "string",
+      "label": "Buyer Name",
+      "required": true,
+      "placeholder": "Enter buyer's full legal name",
+      "section": "buyer_info",
+      "implemented": true
+    },
+    {
+      "name": "buyerName2",
+      "type": "string",
+      "label": "Co-Buyer Name",
+      "required": false,
+      "placeholder": "Enter co-buyer's full legal name",
+      "section": "buyer_info",
+      "implemented": true
+    },
+    {
+      "name": "buyerEmail",
+      "type": "email",
+      "label": "Buyer Email",
+      "required": true,
+      "placeholder": "buyer@email.com",
+      "section": "buyer_info",
+      "implemented": true
+    },
+    {
+      "name": "buyerPhone",
+      "type": "phone",
+      "label": "Buyer Phone",
+      "required": true,
+      "placeholder": "(555) 123-4567",
+      "section": "buyer_info",
+      "implemented": true
+    },
+    {
+      "name": "propertyAddress",
+      "type": "string",
+      "label": "Property Address",
+      "required": true,
+      "placeholder": "123 Main Street",
+      "section": "property_info",
+      "implemented": true
+    },
+    {
+      "name": "propertyCity",
+      "type": "string",
+      "label": "City",
+      "required": true,
+      "placeholder": "Los Angeles",
+      "section": "property_info",
+      "implemented": true
+    },
+    {
+      "name": "propertyCounty",
+      "type": "string",
+      "label": "County",
+      "required": true,
+      "placeholder": "Los Angeles County",
+      "section": "property_info",
+      "implemented": true
+    },
+    {
+      "name": "propertyZip",
+      "type": "string",
+      "label": "ZIP Code",
+      "required": true,
+      "placeholder": "90001",
+      "section": "property_info",
+      "validation": {
+        "pattern": "^\\d{5}(-\\d{4})?$"
+      },
+      "implemented": true
+    },
+    {
+      "name": "assessorParcelNumber",
+      "type": "string",
+      "label": "Assessor's Parcel Number",
+      "required": false,
+      "placeholder": "1234-567-89",
+      "section": "property_info",
+      "implemented": true
+    },
+    {
+      "name": "purchasePrice",
+      "type": "currency",
+      "label": "Purchase Price",
+      "required": true,
+      "placeholder": "750000",
+      "section": "financial_terms",
+      "validation": {
+        "min": 0,
+        "max": 999999999
+      },
+      "implemented": true
+    },
+    {
+      "name": "initialDeposit",
+      "type": "currency",
+      "label": "Initial Deposit",
+      "required": true,
+      "placeholder": "10000",
+      "section": "financial_terms",
+      "defaultValue": 10000,
+      "implemented": true
+    },
+    {
+      "name": "depositDays",
+      "type": "number",
+      "label": "Deposit Days",
+      "required": true,
+      "placeholder": "3",
+      "section": "financial_terms",
+      "defaultValue": 3,
+      "validation": {
+        "min": 1,
+        "max": 10
+      },
+      "implemented": true
+    },
+    {
+      "name": "increasedDeposit",
+      "type": "currency",
+      "label": "Increased Deposit",
+      "required": false,
+      "placeholder": "0",
+      "section": "financial_terms",
+      "defaultValue": 0,
+      "implemented": true
+    },
+    {
+      "name": "increasedDepositDays",
+      "type": "number",
+      "label": "Increased Deposit Days",
+      "required": false,
+      "placeholder": "17",
+      "section": "financial_terms",
+      "defaultValue": 17,
+      "implemented": true
+    },
+    {
+      "name": "downPayment",
+      "type": "currency",
+      "label": "Down Payment",
+      "required": true,
+      "placeholder": "150000",
+      "section": "financial_terms",
+      "implemented": true
+    },
+    {
+      "name": "downPaymentPercent",
+      "type": "percentage",
+      "label": "Down Payment Percentage",
+      "required": true,
+      "placeholder": "20",
+      "section": "financial_terms",
+      "validation": {
+        "min": 0,
+        "max": 100
+      },
+      "implemented": true
+    },
+    {
+      "name": "loanAmount",
+      "type": "currency",
+      "label": "Loan Amount",
+      "required": true,
+      "placeholder": "600000",
+      "section": "financial_terms",
+      "implemented": true
+    },
+    {
+      "name": "loanType",
+      "type": "select",
+      "label": "Loan Type",
+      "required": true,
+      "section": "financial_terms",
+      "options": [
+        { "value": "conventional", "label": "Conventional" },
+        { "value": "fha", "label": "FHA" },
+        { "value": "va", "label": "VA" },
+        { "value": "other", "label": "Other" }
+      ],
+      "defaultValue": "conventional",
+      "implemented": true
+    },
+    {
+      "name": "loanOther",
+      "type": "string",
+      "label": "Other Loan Type",
+      "required": false,
+      "placeholder": "Specify loan type",
+      "section": "financial_terms",
+      "dependsOn": {
+        "field": "loanType",
+        "condition": "equals",
+        "value": "other"
+      },
+      "implemented": true
+    },
+    {
+      "name": "closingDate",
+      "type": "date",
+      "label": "Closing Date",
+      "required": true,
+      "section": "closing_terms",
+      "implemented": true
+    },
+    {
+      "name": "closingDaysAfterAcceptance",
+      "type": "number",
+      "label": "Days After Acceptance",
+      "required": false,
+      "placeholder": "30",
+      "section": "closing_terms",
+      "defaultValue": 30,
+      "implemented": true
+    },
+    {
+      "name": "occupancy",
+      "type": "radio",
+      "label": "Buyer Occupancy",
+      "required": true,
+      "section": "closing_terms",
+      "options": [
+        { "value": "at_close", "label": "At Close of Escrow" },
+        { "value": "after_close", "label": "After Close of Escrow" },
+        { "value": "tbd", "label": "To Be Determined" }
+      ],
+      "defaultValue": "at_close",
+      "implemented": true
+    },
+    {
+      "name": "occupancyDays",
+      "type": "number",
+      "label": "Days After Close",
+      "required": false,
+      "section": "closing_terms",
+      "dependsOn": {
+        "field": "occupancy",
+        "condition": "equals",
+        "value": "after_close"
+      },
+      "implemented": true
+    },
+    {
+      "name": "sellerName",
+      "type": "string",
+      "label": "Seller Name",
+      "required": true,
+      "placeholder": "Enter seller's full legal name",
+      "section": "seller_info",
+      "implemented": true
+    },
+    {
+      "name": "sellerName2",
+      "type": "string",
+      "label": "Co-Seller Name",
+      "required": false,
+      "placeholder": "Enter co-seller's full legal name",
+      "section": "seller_info",
+      "implemented": true
+    },
+    {
+      "name": "sellerEmail",
+      "type": "email",
+      "label": "Seller Email",
+      "required": true,
+      "placeholder": "seller@email.com",
+      "section": "seller_info",
+      "implemented": true
+    },
+    {
+      "name": "sellerPhone",
+      "type": "phone",
+      "label": "Seller Phone",
+      "required": true,
+      "placeholder": "(555) 123-4567",
+      "section": "seller_info",
+      "implemented": true
+    },
+    {
+      "name": "listingAgentName",
+      "type": "string",
+      "label": "Listing Agent Name",
+      "required": true,
+      "section": "agency_info",
+      "implemented": true
+    },
+    {
+      "name": "listingAgentLicense",
+      "type": "string",
+      "label": "Listing Agent DRE License",
+      "required": true,
+      "placeholder": "01234567",
+      "section": "agency_info",
+      "implemented": true
+    },
+    {
+      "name": "sellingAgentName",
+      "type": "string",
+      "label": "Selling Agent Name",
+      "required": true,
+      "section": "agency_info",
+      "implemented": true
+    },
+    {
+      "name": "sellingAgentLicense",
+      "type": "string",
+      "label": "Selling Agent DRE License",
+      "required": true,
+      "placeholder": "01234567",
+      "section": "agency_info",
+      "implemented": true
+    },
+    {
+      "name": "listingBrokerName",
+      "type": "string",
+      "label": "Listing Brokerage",
+      "required": true,
+      "section": "agency_info",
+      "implemented": true
+    },
+    {
+      "name": "listingBrokerLicense",
+      "type": "string",
+      "label": "Listing Broker License",
+      "required": true,
+      "section": "agency_info",
+      "implemented": true
+    },
+    {
+      "name": "sellingBrokerName",
+      "type": "string",
+      "label": "Selling Brokerage",
+      "required": true,
+      "section": "agency_info",
+      "implemented": true
+    },
+    {
+      "name": "sellingBrokerLicense",
+      "type": "string",
+      "label": "Selling Broker License",
+      "required": true,
+      "section": "agency_info",
+      "implemented": true
+    },
+    {
+      "name": "inspectionDays",
+      "type": "number",
+      "label": "Inspection Period (Days)",
+      "required": true,
+      "placeholder": "17",
+      "section": "contingencies",
+      "defaultValue": 17,
+      "validation": {
+        "min": 0,
+        "max": 30
+      },
+      "implemented": true
+    },
+    {
+      "name": "contingencyDays",
+      "type": "number",
+      "label": "Contingency Period (Days)",
+      "required": true,
+      "placeholder": "17",
+      "section": "contingencies",
+      "defaultValue": 17,
+      "implemented": true
+    },
+    {
+      "name": "loanContingencyDays",
+      "type": "number",
+      "label": "Loan Contingency (Days)",
+      "required": true,
+      "placeholder": "21",
+      "section": "contingencies",
+      "defaultValue": 21,
+      "implemented": true
+    },
+    {
+      "name": "appraisalContingencyDays",
+      "type": "number",
+      "label": "Appraisal Contingency (Days)",
+      "required": true,
+      "placeholder": "17",
+      "section": "contingencies",
+      "defaultValue": 17,
+      "implemented": true
+    },
+    {
+      "name": "disclosureDays",
+      "type": "number",
+      "label": "Disclosure Period (Days)",
+      "required": true,
+      "placeholder": "7",
+      "section": "contingencies",
+      "defaultValue": 7,
+      "implemented": true
+    },
+    {
+      "name": "finalWalkDays",
+      "type": "number",
+      "label": "Final Walk-Through (Days Before Close)",
+      "required": true,
+      "placeholder": "5",
+      "section": "contingencies",
+      "defaultValue": 5,
+      "implemented": true
+    },
+    {
+      "name": "vestingName",
+      "type": "string",
+      "label": "Title to Vest In",
+      "required": true,
+      "placeholder": "John Doe and Jane Doe",
+      "section": "title_vesting",
+      "implemented": true
+    },
+    {
+      "name": "vestingType",
+      "type": "select",
+      "label": "Manner of Taking Title",
+      "required": true,
+      "section": "title_vesting",
+      "options": [
+        { "value": "joint_tenancy", "label": "Joint Tenancy" },
+        { "value": "community_property", "label": "Community Property" },
+        { "value": "community_property_right_survivorship", "label": "Community Property with Right of Survivorship" },
+        { "value": "tenants_common", "label": "Tenants in Common" },
+        { "value": "trust", "label": "Trust" },
+        { "value": "other", "label": "Other" }
+      ],
+      "implemented": true
+    }
+  ],
+  "sections": [
+    {
+      "id": "buyer_info",
+      "name": "Buyer Information",
+      "order": 1
+    },
+    {
+      "id": "property_info",
+      "name": "Property Information",
+      "order": 2
+    },
+    {
+      "id": "financial_terms",
+      "name": "Financial Terms",
+      "order": 3
+    },
+    {
+      "id": "closing_terms",
+      "name": "Closing Terms",
+      "order": 4
+    },
+    {
+      "id": "seller_info",
+      "name": "Seller Information",
+      "order": 5
+    },
+    {
+      "id": "agency_info",
+      "name": "Agency Information",
+      "order": 6
+    },
+    {
+      "id": "contingencies",
+      "name": "Contingencies",
+      "order": 7
+    },
+    {
+      "id": "title_vesting",
+      "name": "Title and Vesting",
+      "order": 8
+    }
+  ]
+}

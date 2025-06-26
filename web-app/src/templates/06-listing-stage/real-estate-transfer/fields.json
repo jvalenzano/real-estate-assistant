@@ -1,0 +1,25 @@
+{
+  "templateId": "REAL_ESTATE_TRANSFER",
+  "templateName": "Real Estate Transfer Disclosure",
+  "originalFileName": "Real_Estate_Transfer_Disclosure___1_22.pdf",
+  "fields": [
+    {
+      "name": "placeholder_field_1",
+      "type": "string",
+      "label": "Placeholder Field 1",
+      "required": false,
+      "placeholder": "This field needs to be implemented",
+      "section": "placeholder",
+      "implemented": false
+    }
+  ],
+  "sections": [
+    {
+      "id": "placeholder",
+      "name": "Placeholder Section",
+      "description": "Fields will be organized by section when implemented"
+    }
+  ],
+  "implemented": false,
+  "implementationNotes": "This form needs to be converted from the official PDF"
+}

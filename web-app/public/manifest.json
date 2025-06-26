@@ -1,7 +1,7 @@
 {
-  "name": "RealeAgent - AI-Powered Real Estate",
+  "name": "RealeAgent - AI Real Estate Assistant",
   "short_name": "RealeAgent",
-  "description": "Streamline your real estate transactions with AI-powered document generation",
+  "description": "AI-powered real estate transaction assistant for property professionals",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
@@ -9,13 +9,13 @@
   "orientation": "portrait",
   "icons": [
     {
-      "src": "/icon-192.png",
+      "src": "/icon-192x192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "/icon-512.png",
+      "src": "/icon-512x512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
@@ -25,15 +25,41 @@
   "screenshots": [
     {
       "src": "/screenshot-1.png",
-      "sizes": "390x844",
+      "sizes": "1080x1920",
       "type": "image/png",
-      "label": "Property Search"
+      "label": "Property search interface"
     },
     {
       "src": "/screenshot-2.png",
-      "sizes": "390x844",
+      "sizes": "1080x1920",
       "type": "image/png",
-      "label": "Property Details"
+      "label": "Document generation"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "New Document",
+      "description": "Create a new real estate document",
+      "url": "/documents/new",
+      "icons": [
+        {
+          "src": "/icon-96x96.png",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Properties",
+      "description": "Browse property listings",
+      "url": "/properties",
+      "icons": [
+        {
+          "src": "/icon-96x96.png",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
     }
   ]
 }

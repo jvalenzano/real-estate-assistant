@@ -1,0 +1,24 @@
+{
+  "templateId": "BUYER_PRE_OCCUPANCY",
+  "templateName": "Buyer Pre-Occupancy Storage Addendum",
+  "category": "Specific Situations",
+  "categoryNumber": "05",
+  "originalFileName": "Buyer Pre-Occupancy Storage Addendum - 12_21.pdf",
+  "version": "1.0.0",
+  "lastUpdated": "2024-01-01",
+  "carFormNumber": "N/A",
+  "formRevisionDate": "N/A",
+  "pageCount": 1,
+  "requiredByLaw": false,
+  "commonlyUsed": false,
+  "dependencies": [],
+  "relatedForms": [],
+  "description": "Placeholder for Buyer Pre-Occupancy Storage Addendum",
+  "usageNotes": "This form is used when...",
+  "implementationStatus": {
+    "template": false,
+    "fields": false,
+    "signatures": false,
+    "testing": false
+  }
+}

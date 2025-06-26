@@ -1,0 +1,25 @@
+{
+  "templateId": "LEAD_PAINT_DISCLOSURE",
+  "templateName": "Lead Based Paint Hazards Disclosure",
+  "originalFileName": "Lead_Based_Paint_Hazards_Disclosure__Acknowledgement__and_Addendum___12_21.pdf",
+  "fields": [
+    {
+      "name": "placeholder_field_1",
+      "type": "string",
+      "label": "Placeholder Field 1",
+      "required": false,
+      "placeholder": "This field needs to be implemented",
+      "section": "placeholder",
+      "implemented": false
+    }
+  ],
+  "sections": [
+    {
+      "id": "placeholder",
+      "name": "Placeholder Section",
+      "description": "Fields will be organized by section when implemented"
+    }
+  ],
+  "implemented": false,
+  "implementationNotes": "This form needs to be converted from the official PDF"
+}

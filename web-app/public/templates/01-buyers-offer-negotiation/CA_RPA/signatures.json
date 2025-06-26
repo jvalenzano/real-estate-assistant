@@ -1,0 +1,193 @@
+{
+  "templateId": "CA_RPA",
+  "signatures": [
+    {
+      "id": "buyer_signature_1",
+      "page": 2,
+      "x": 100,
+      "y": 600,
+      "width": 200,
+      "height": 50,
+      "role": "buyer",
+      "type": "signature",
+      "required": true,
+      "label": "Buyer Signature",
+      "group": "buyer_signatures",
+      "implemented": true
+    },
+    {
+      "id": "buyer_date_1",
+      "page": 2,
+      "x": 350,
+      "y": 600,
+      "width": 100,
+      "height": 30,
+      "role": "buyer",
+      "type": "date",
+      "required": true,
+      "label": "Date",
+      "group": "buyer_signatures",
+      "implemented": true
+    },
+    {
+      "id": "buyer_signature_2",
+      "page": 2,
+      "x": 100,
+      "y": 700,
+      "width": 200,
+      "height": 50,
+      "role": "buyer",
+      "type": "signature",
+      "required": false,
+      "label": "Co-Buyer Signature",
+      "group": "buyer_signatures",
+      "implemented": true
+    },
+    {
+      "id": "buyer_date_2",
+      "page": 2,
+      "x": 350,
+      "y": 700,
+      "width": 100,
+      "height": 30,
+      "role": "buyer",
+      "type": "date",
+      "required": false,
+      "label": "Date",
+      "group": "buyer_signatures",
+      "implemented": true
+    },
+    {
+      "id": "seller_signature_1",
+      "page": 3,
+      "x": 100,
+      "y": 200,
+      "width": 200,
+      "height": 50,
+      "role": "seller",
+      "type": "signature",
+      "required": true,
+      "label": "Seller Signature",
+      "group": "seller_signatures",
+      "implemented": true
+    },
+    {
+      "id": "seller_date_1",
+      "page": 3,
+      "x": 350,
+      "y": 200,
+      "width": 100,
+      "height": 30,
+      "role": "seller",
+      "type": "date",
+      "required": true,
+      "label": "Date",
+      "group": "seller_signatures",
+      "implemented": true
+    },
+    {
+      "id": "seller_signature_2",
+      "page": 3,
+      "x": 100,
+      "y": 300,
+      "width": 200,
+      "height": 50,
+      "role": "seller",
+      "type": "signature",
+      "required": false,
+      "label": "Co-Seller Signature",
+      "group": "seller_signatures",
+      "implemented": true
+    },
+    {
+      "id": "seller_date_2",
+      "page": 3,
+      "x": 350,
+      "y": 300,
+      "width": 100,
+      "height": 30,
+      "role": "seller",
+      "type": "date",
+      "required": false,
+      "label": "Date",
+      "group": "seller_signatures",
+      "implemented": true
+    },
+    {
+      "id": "listing_agent_signature",
+      "page": 3,
+      "x": 100,
+      "y": 450,
+      "width": 200,
+      "height": 50,
+      "role": "agent",
+      "type": "signature",
+      "required": true,
+      "label": "Listing Agent",
+      "group": "agent_signatures",
+      "implemented": true
+    },
+    {
+      "id": "listing_agent_date",
+      "page": 3,
+      "x": 350,
+      "y": 450,
+      "width": 100,
+      "height": 30,
+      "role": "agent",
+      "type": "date",
+      "required": true,
+      "label": "Date",
+      "group": "agent_signatures",
+      "implemented": true
+    },
+    {
+      "id": "selling_agent_signature",
+      "page": 3,
+      "x": 100,
+      "y": 550,
+      "width": 200,
+      "height": 50,
+      "role": "agent",
+      "type": "signature",
+      "required": true,
+      "label": "Selling Agent",
+      "group": "agent_signatures",
+      "implemented": true
+    },
+    {
+      "id": "selling_agent_date",
+      "page": 3,
+      "x": 350,
+      "y": 550,
+      "width": 100,
+      "height": 30,
+      "role": "agent",
+      "type": "date",
+      "required": true,
+      "label": "Date",
+      "group": "agent_signatures",
+      "implemented": true
+    }
+  ],
+  "signatureGroups": [
+    {
+      "id": "buyer_signatures",
+      "name": "Buyer Signatures",
+      "description": "All buyers must sign the agreement",
+      "order": 1
+    },
+    {
+      "id": "seller_signatures",
+      "name": "Seller Acceptance",
+      "description": "All sellers must sign to accept the offer",
+      "order": 2
+    },
+    {
+      "id": "agent_signatures",
+      "name": "Agent Acknowledgment",
+      "description": "Both listing and selling agents must sign",
+      "order": 3
+    }
+  ]
+}

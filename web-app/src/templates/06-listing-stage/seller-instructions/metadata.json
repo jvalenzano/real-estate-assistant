@@ -1,0 +1,24 @@
+{
+  "templateId": "SELLER_INSTRUCTIONS",
+  "templateName": "Seller Instructions to Exclude",
+  "category": "Listing Stage",
+  "categoryNumber": "06",
+  "originalFileName": "Seller_s_Instructions_to_Exclude_Listing_from_MLS___12_20.pdf",
+  "version": "1.0.0",
+  "lastUpdated": "2024-01-01",
+  "carFormNumber": "N/A",
+  "formRevisionDate": "12/20",
+  "pageCount": 1,
+  "requiredByLaw": false,
+  "commonlyUsed": false,
+  "dependencies": [],
+  "relatedForms": [],
+  "description": "Placeholder for Seller Instructions to Exclude",
+  "usageNotes": "This form is used when...",
+  "implementationStatus": {
+    "template": false,
+    "fields": false,
+    "signatures": false,
+    "testing": false
+  }
+}

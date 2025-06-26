@@ -1,0 +1,35 @@
+{
+  "templateId": "DEMAND_TO_CLOSE",
+  "templateName": "Demand to Close Escrow",
+  "signatureFields": [
+    {
+      "id": "placeholder_signature_1",
+      "page": 1,
+      "x": 0,
+      "y": 0,
+      "width": 200,
+      "height": 50,
+      "role": "buyer",
+      "type": "signature",
+      "required": true,
+      "label": "Buyer Signature",
+      "implemented": false
+    },
+    {
+      "id": "placeholder_date_1",
+      "page": 1,
+      "x": 250,
+      "y": 0,
+      "width": 100,
+      "height": 30,
+      "role": "buyer",
+      "type": "date",
+      "required": true,
+      "label": "Date",
+      "implemented": false
+    }
+  ],
+  "implemented": false,
+  "totalPages": 1,
+  "notes": "Signature locations need to be mapped from the official form"
+}

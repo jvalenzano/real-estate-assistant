@@ -1,4 +1,4 @@
-// localStorage wrapper to replace AsyncStorage
+// localStorage wrapper for client-side storage
 const storage = {
   getItem: (key: string): Promise<string | null> => {
     if (typeof window === 'undefined') return Promise.resolve(null);

@@ -1,0 +1,24 @@
+{
+  "templateId": "LEAD_BASED_PAINT",
+  "templateName": "Lead Based Paint Disclosure",
+  "category": "Buyer's Offer",
+  "categoryNumber": "01",
+  "originalFileName": "Lead_Based_Paint_Disclosure___12_22.pdf",
+  "version": "1.0.0",
+  "lastUpdated": "2024-01-01",
+  "carFormNumber": "N/A",
+  "formRevisionDate": "12/22",
+  "pageCount": 1,
+  "requiredByLaw": false,
+  "commonlyUsed": true,
+  "dependencies": [],
+  "relatedForms": [],
+  "description": "Placeholder for Lead Based Paint Disclosure",
+  "usageNotes": "This form is used when...",
+  "implementationStatus": {
+    "template": false,
+    "fields": false,
+    "signatures": false,
+    "testing": false
+  }
+}

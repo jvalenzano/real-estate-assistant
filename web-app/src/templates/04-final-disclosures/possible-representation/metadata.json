@@ -1,0 +1,24 @@
+{
+  "templateId": "POSSIBLE_REPRESENTATION",
+  "templateName": "Possible Representation Disclosure",
+  "category": "Final Disclosures",
+  "categoryNumber": "04",
+  "originalFileName": "Possible_Representation_of_More_Than_One_Buyer_or_Seller___12_23.pdf",
+  "version": "1.0.0",
+  "lastUpdated": "2024-01-01",
+  "carFormNumber": "N/A",
+  "formRevisionDate": "12/23",
+  "pageCount": 1,
+  "requiredByLaw": false,
+  "commonlyUsed": false,
+  "dependencies": [],
+  "relatedForms": [],
+  "description": "Placeholder for Possible Representation Disclosure",
+  "usageNotes": "This form is used when...",
+  "implementationStatus": {
+    "template": false,
+    "fields": false,
+    "signatures": false,
+    "testing": false
+  }
+}

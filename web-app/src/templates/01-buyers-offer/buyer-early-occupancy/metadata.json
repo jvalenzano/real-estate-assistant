@@ -1,0 +1,24 @@
+{
+  "templateId": "BUYER_EARLY_OCCUPANCY",
+  "templateName": "Buyer Early Occupancy Addendum",
+  "category": "Buyer's Offer",
+  "categoryNumber": "01",
+  "originalFileName": "Buyer_Early_Occupancy_Addendum___12_21.pdf",
+  "version": "1.0.0",
+  "lastUpdated": "2024-01-01",
+  "carFormNumber": "N/A",
+  "formRevisionDate": "12/21",
+  "pageCount": 1,
+  "requiredByLaw": false,
+  "commonlyUsed": false,
+  "dependencies": [],
+  "relatedForms": [],
+  "description": "Placeholder for Buyer Early Occupancy Addendum",
+  "usageNotes": "This form is used when...",
+  "implementationStatus": {
+    "template": false,
+    "fields": false,
+    "signatures": false,
+    "testing": false
+  }
+}

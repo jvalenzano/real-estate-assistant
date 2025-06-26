@@ -1,0 +1,24 @@
+{
+  "templateId": "DISCLOSURE_INFO_ADVISORY",
+  "templateName": "Disclosure Information Advisory",
+  "category": "Escrow & Contingency",
+  "categoryNumber": "03",
+  "originalFileName": "Disclosure_Information_Advisory___6_18.pdf",
+  "version": "1.0.0",
+  "lastUpdated": "2024-01-01",
+  "carFormNumber": "N/A",
+  "formRevisionDate": "6/18",
+  "pageCount": 1,
+  "requiredByLaw": false,
+  "commonlyUsed": true,
+  "dependencies": [],
+  "relatedForms": [],
+  "description": "Placeholder for Disclosure Information Advisory",
+  "usageNotes": "This form is used when...",
+  "implementationStatus": {
+    "template": false,
+    "fields": false,
+    "signatures": false,
+    "testing": false
+  }
+}

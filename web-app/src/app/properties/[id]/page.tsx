@@ -332,6 +332,348 @@ const DEMO_PROPERTIES: Property[] = [
         display_order: 3
       }
     ]
+  },
+  {
+    id: 'prop-007',
+    mls_number: 'ML81234573',
+    address: {
+      line1: '888 Beach Walk',
+      line2: null,
+      city: 'Malibu',
+      state: 'CA',
+      zip_code: '90265',
+      county: 'Los Angeles'
+    },
+    property_type: 'Single Family',
+    bedrooms: 6,
+    bathrooms: 5,
+    square_feet: 4200,
+    lot_size_sqft: 12000,
+    year_built: 2020,
+    list_price: 4500000,
+    price_per_sqft: 1071,
+    estimated_monthly_payment: 24750,
+    property_taxes_annual: 54000,
+    hoa_fees_monthly: 0,
+    listing_status: 'Active',
+    days_on_market: 5,
+    listing_date: '2024-01-09',
+    description: 'Beachfront estate with private beach access and stunning ocean views. This modern Mediterranean-style home features expansive outdoor living spaces, infinity pool, and direct beach access.',
+    features: {
+      exterior: ['Beach Access', 'Infinity Pool', 'Guest House', 'Fire Pit', 'Outdoor Kitchen'],
+      interior: ['Ocean Views', 'Wine Room', 'Gym', 'Home Theater', 'Elevator'],
+      utilities: ['Solar', 'Smart Home', 'Security', 'Backup Generator']
+    },
+    images: [
+      { 
+        url: 'https://images.unsplash.com/photo-1527030280862-64139fba04ca?w=800',
+        alt_text: 'Beachfront estate exterior',
+        is_primary: true,
+        display_order: 1
+      },
+      {
+        url: 'https://images.unsplash.com/photo-1559767949-0faa5c7e9992?w=800',
+        alt_text: 'Infinity pool overlooking ocean',
+        is_primary: false,
+        display_order: 2
+      },
+      {
+        url: 'https://images.unsplash.com/photo-1600607687655-b3f7f8c8e3f8?w=800',
+        alt_text: 'Luxury master suite',
+        is_primary: false,
+        display_order: 3
+      },
+      {
+        url: 'https://images.unsplash.com/photo-1556912173-3bb406ef7e77?w=800',
+        alt_text: 'Guest house',
+        is_primary: false,
+        display_order: 4
+      }
+    ]
+  },
+  {
+    id: 'prop-008',
+    mls_number: 'ML81234574',
+    address: {
+      line1: '222 City Heights',
+      line2: 'Penthouse A',
+      city: 'San Francisco',
+      state: 'CA',
+      zip_code: '94105',
+      county: 'San Francisco'
+    },
+    property_type: 'Condominium',
+    bedrooms: 4,
+    bathrooms: 4.5,
+    square_feet: 3200,
+    lot_size_sqft: 0,
+    year_built: 2023,
+    list_price: 5800000,
+    price_per_sqft: 1812,
+    estimated_monthly_payment: 31900,
+    property_taxes_annual: 69600,
+    hoa_fees_monthly: 1200,
+    listing_status: 'Active',
+    days_on_market: 1,
+    listing_date: '2024-01-13',
+    description: 'Brand new penthouse with Golden Gate views. This ultra-luxury residence features floor-to-ceiling windows, private elevator access, and a wraparound terrace with panoramic views of the city and bay.',
+    features: {
+      exterior: ['Private Terrace', 'City Views', 'Bridge Views', 'Rooftop Access'],
+      interior: ['Chef Kitchen', 'Smart Home', 'Private Elevator', 'Wine Cellar', 'Home Office'],
+      utilities: ['Concierge', 'Valet', 'Wine Storage', 'EV Charging']
+    },
+    images: [
+      { 
+        url: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800',
+        alt_text: 'Luxury penthouse exterior',
+        is_primary: true,
+        display_order: 1
+      },
+      {
+        url: 'https://images.unsplash.com/photo-1600607687654-7f194d376ce7?w=800',
+        alt_text: 'Penthouse terrace with Golden Gate view',
+        is_primary: false,
+        display_order: 2
+      },
+      {
+        url: 'https://images.unsplash.com/photo-1556911261-6bd341186b2f?w=800',
+        alt_text: 'Chef kitchen',
+        is_primary: false,
+        display_order: 3
+      },
+      {
+        url: 'https://images.unsplash.com/photo-1600585152220-90363fe7e115?w=800',
+        alt_text: 'Living room with city views',
+        is_primary: false,
+        display_order: 4
+      }
+    ]
+  },
+  {
+    id: 'prop-009',
+    mls_number: 'ML81234575',
+    address: {
+      line1: '999 Hillside Ave',
+      line2: null,
+      city: 'Beverly Hills',
+      state: 'CA',
+      zip_code: '90210',
+      county: 'Los Angeles'
+    },
+    property_type: 'Single Family',
+    bedrooms: 5,
+    bathrooms: 6,
+    square_feet: 5500,
+    lot_size_sqft: 15000,
+    year_built: 2019,
+    list_price: 6750000,
+    price_per_sqft: 1227,
+    estimated_monthly_payment: 37125,
+    property_taxes_annual: 81000,
+    hoa_fees_monthly: 0,
+    listing_status: 'Active',
+    days_on_market: 12,
+    listing_date: '2024-01-02',
+    description: 'Modern architectural masterpiece in the heart of Beverly Hills. This stunning contemporary home features walls of glass, an infinity pool with city views, and the finest materials throughout. Perfect for entertaining with multiple indoor/outdoor living spaces.',
+    features: {
+      exterior: ['City Views', 'Infinity Pool', 'Motor Court', 'Outdoor Kitchen', 'Fire Lounge'],
+      interior: ['Theater', 'Gym', 'Spa', 'Wine Room', 'Gallery Spaces'],
+      utilities: ['Smart Home', 'Solar', 'Security', 'Elevator', 'Radiant Heating']
+    },
+    images: [
+      { 
+        url: 'https://images.unsplash.com/photo-1613977257363-707ba9348227?w=800',
+        alt_text: 'Modern mansion exterior',
+        is_primary: true,
+        display_order: 1
+      },
+      {
+        url: 'https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=800',
+        alt_text: 'Infinity pool with city views',
+        is_primary: false,
+        display_order: 2
+      },
+      {
+        url: 'https://images.unsplash.com/photo-1629236714758-50cca95dcfea?w=800',
+        alt_text: 'Home theater',
+        is_primary: false,
+        display_order: 3
+      },
+      {
+        url: 'https://images.unsplash.com/photo-1595427600924-e26fccb8dc87?w=800',
+        alt_text: 'Wine cellar',
+        is_primary: false,
+        display_order: 4
+      }
+    ]
+  },
+  {
+    id: 'prop-010',
+    mls_number: 'ML81234576',
+    address: {
+      line1: '444 Vineyard Road',
+      line2: null,
+      city: 'Napa',
+      state: 'CA',
+      zip_code: '94558',
+      county: 'Napa'
+    },
+    property_type: 'Single Family',
+    bedrooms: 4,
+    bathrooms: 3.5,
+    square_feet: 3800,
+    lot_size_sqft: 43560,
+    year_built: 2015,
+    list_price: 2950000,
+    price_per_sqft: 776,
+    estimated_monthly_payment: 16225,
+    property_taxes_annual: 35400,
+    hoa_fees_monthly: 0,
+    listing_status: 'Active',
+    days_on_market: 30,
+    listing_date: '2023-12-15',
+    description: 'Wine country estate with vineyard views. This elegant home sits on an acre of land with mature landscaping and panoramic views of the surrounding vineyards. Features include a gourmet kitchen, wine cellar, and resort-style outdoor living.',
+    features: {
+      exterior: ['Vineyard Views', 'Pool', 'Outdoor Kitchen', 'Bocce Court', 'Garden'],
+      interior: ['Wine Cellar', 'Gourmet Kitchen', 'Great Room', 'Master Suite', 'Library'],
+      utilities: ['Well Water', 'Solar', 'Generator', 'Smart Irrigation']
+    },
+    images: [
+      { 
+        url: 'https://images.unsplash.com/photo-1504615755583-2916b52192a3?w=800',
+        alt_text: 'Wine country home exterior',
+        is_primary: true,
+        display_order: 1
+      },
+      {
+        url: 'https://images.unsplash.com/photo-1560185007-c5ca9d2c014d?w=800',
+        alt_text: 'Vineyard views',
+        is_primary: false,
+        display_order: 2
+      },
+      {
+        url: 'https://images.unsplash.com/photo-1600585152915-d208bec867a1?w=800',
+        alt_text: 'Wine tasting room',
+        is_primary: false,
+        display_order: 3
+      },
+      {
+        url: 'https://images.unsplash.com/photo-1556911261-6bd341186b2f?w=800',
+        alt_text: 'Outdoor kitchen',
+        is_primary: false,
+        display_order: 4
+      }
+    ]
+  },
+  {
+    id: 'prop-011',
+    mls_number: 'ML81234577',
+    address: {
+      line1: '777 Marina Way',
+      line2: null,
+      city: 'Sausalito',
+      state: 'CA',
+      zip_code: '94965',
+      county: 'Marin'
+    },
+    property_type: 'Townhouse',
+    bedrooms: 3,
+    bathrooms: 2.5,
+    square_feet: 2400,
+    lot_size_sqft: 3000,
+    year_built: 2008,
+    list_price: 1875000,
+    price_per_sqft: 781,
+    estimated_monthly_payment: 10312,
+    property_taxes_annual: 22500,
+    hoa_fees_monthly: 350,
+    listing_status: 'Active',
+    days_on_market: 18,
+    listing_date: '2023-12-27',
+    description: 'Waterfront townhouse with Golden Gate views. This modern townhouse features an open floor plan, private deck, and direct access to the marina. Walk to downtown Sausalito shops and restaurants.',
+    features: {
+      exterior: ['Water Views', 'Deck', 'Private Dock', 'Marina Access'],
+      interior: ['Updated Kitchen', 'Fireplace', 'Home Office', 'Master Suite'],
+      utilities: ['Radiant Heat', 'Central AC', 'EV Charging', 'Storage']
+    },
+    images: [
+      { 
+        url: 'https://images.unsplash.com/photo-1599809275671-b5942cabc7a2?w=800',
+        alt_text: 'Waterfront townhouse exterior',
+        is_primary: true,
+        display_order: 1
+      },
+      {
+        url: 'https://images.unsplash.com/photo-1556909172-8c2f041fca1e?w=800',
+        alt_text: 'Marina views from deck',
+        is_primary: false,
+        display_order: 2
+      },
+      {
+        url: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800',
+        alt_text: 'Living room with water views',
+        is_primary: false,
+        display_order: 3
+      }
+    ]
+  },
+  {
+    id: 'prop-012',
+    mls_number: 'ML81234578',
+    address: {
+      line1: '333 Tech Campus Dr',
+      line2: null,
+      city: 'Cupertino',
+      state: 'CA',
+      zip_code: '95014',
+      county: 'Santa Clara'
+    },
+    property_type: 'Single Family',
+    bedrooms: 5,
+    bathrooms: 4,
+    square_feet: 3200,
+    lot_size_sqft: 8000,
+    year_built: 2012,
+    list_price: 3850000,
+    price_per_sqft: 1203,
+    estimated_monthly_payment: 21175,
+    property_taxes_annual: 46200,
+    hoa_fees_monthly: 0,
+    listing_status: 'Active',
+    days_on_market: 8,
+    listing_date: '2024-01-06',
+    description: 'Tech executive home near Apple Park. This modern home features smart home technology throughout, dual home offices, and a Japanese-inspired garden. Energy-efficient design with solar panels and Tesla Powerwall.',
+    features: {
+      exterior: ['Japanese Garden', 'Koi Pond', 'Solar', 'EV Charging Station'],
+      interior: ['Smart Home', 'Theater', 'Dual Office', 'Chef Kitchen', 'Wine Room'],
+      utilities: ['Fiber Internet', 'Tesla Powerwall', 'EV Charging', 'Security System']
+    },
+    images: [
+      { 
+        url: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=800',
+        alt_text: 'Modern tech home exterior',
+        is_primary: true,
+        display_order: 1
+      },
+      {
+        url: 'https://images.unsplash.com/photo-1565538810643-b5bdb714032a?w=800',
+        alt_text: 'Japanese garden',
+        is_primary: false,
+        display_order: 2
+      },
+      {
+        url: 'https://images.unsplash.com/photo-1600607687651-6b5c60e44c91?w=800',
+        alt_text: 'Smart home control center',
+        is_primary: false,
+        display_order: 3
+      },
+      {
+        url: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800',
+        alt_text: 'Dual home offices',
+        is_primary: false,
+        display_order: 4
+      }
+    ]
   }
 ];
 
@@ -474,6 +816,13 @@ export default function PropertyDetailPage() {
               </div>
             )}
             
+            {/* Image counter */}
+            {property.images.length > 1 && (
+              <div className="absolute top-4 right-4 bg-black/60 text-white px-3 py-1 rounded-full text-sm font-medium">
+                {currentImageIndex + 1} of {property.images.length}
+              </div>
+            )}
+            
             {/* Image indicators */}
             {property.images.length > 1 && (
               <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-2">
@@ -534,7 +883,7 @@ export default function PropertyDetailPage() {
           </div>
 
           {/* Key Stats */}
-          <div className="flex flex-wrap gap-4 mb-6 text-lg">
+          <div className="flex flex-wrap gap-4 mb-4 text-lg">
             <span className="font-semibold" style={{ color: colors.text }}>
               {property.bedrooms} Beds
             </span>
@@ -546,6 +895,22 @@ export default function PropertyDetailPage() {
             <span className="font-semibold" style={{ color: colors.text }}>
               {property.square_feet.toLocaleString()} Sq Ft
             </span>
+          </div>
+          
+          {/* Additional Quick Stats */}
+          <div className="flex flex-wrap gap-4 mb-6">
+            <div className="flex items-center gap-2">
+              <span className="text-sm" style={{ color: colors.gray }}>Listed:</span>
+              <span className="text-sm font-semibold" style={{ color: colors.text }}>
+                {property.days_on_market} days ago
+              </span>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="text-sm" style={{ color: colors.gray }}>Price/sqft:</span>
+              <span className="text-sm font-semibold" style={{ color: colors.text }}>
+                ${property.price_per_sqft}
+              </span>
+            </div>
           </div>
 
           {/* Additional Details Bar */}
@@ -596,8 +961,9 @@ export default function PropertyDetailPage() {
                   {property.features.exterior.map((feature, index) => (
                     <span 
                       key={index} 
-                      className="bg-blue-100 text-blue-800 px-4 py-2 rounded-lg text-sm font-semibold border border-blue-200"
+                      className="bg-blue-100 text-blue-800 px-4 py-2 rounded-lg text-sm font-semibold border border-blue-200 flex items-center gap-2"
                     >
+                      <span className="text-blue-600">✓</span>
                       {feature}
                     </span>
                   ))}
@@ -615,8 +981,9 @@ export default function PropertyDetailPage() {
                   {property.features.interior.map((feature, index) => (
                     <span 
                       key={index} 
-                      className="bg-green-100 text-green-800 px-4 py-2 rounded-lg text-sm font-semibold border border-green-200"
+                      className="bg-green-100 text-green-800 px-4 py-2 rounded-lg text-sm font-semibold border border-green-200 flex items-center gap-2"
                     >
+                      <span className="text-green-600">✓</span>
                       {feature}
                     </span>
                   ))}
@@ -634,8 +1001,9 @@ export default function PropertyDetailPage() {
                   {property.features.utilities.map((feature, index) => (
                     <span 
                       key={index} 
-                      className="bg-purple-100 text-purple-800 px-4 py-2 rounded-lg text-sm font-semibold border border-purple-200"
+                      className="bg-purple-100 text-purple-800 px-4 py-2 rounded-lg text-sm font-semibold border border-purple-200 flex items-center gap-2"
                     >
+                      <span className="text-purple-600">✓</span>
                       {feature}
                     </span>
                   ))}
@@ -644,6 +1012,35 @@ export default function PropertyDetailPage() {
             )}
           </div>
 
+          {/* Listing Agent */}
+          <div className="bg-blue-50 rounded-xl p-6 mb-8">
+            <h2 className="text-xl font-bold mb-4" style={{ color: colors.text }}>
+              Listing Agent
+            </h2>
+            <div className="flex items-center gap-4">
+              <Image
+                src="https://i.pravatar.cc/100?u=agent@demo.com"
+                alt="Sarah Johnson"
+                width={60}
+                height={60}
+                className="rounded-full"
+              />
+              <div>
+                <h3 className="font-semibold text-lg" style={{ color: colors.text }}>Sarah Johnson</h3>
+                <p className="text-sm" style={{ color: colors.gray }}>RealeAgent Properties</p>
+                <div className="flex items-center gap-3 mt-2">
+                  <a href="tel:+1-555-0123" className="text-sm font-medium" style={{ color: colors.primary }}>
+                    (555) 012-3456
+                  </a>
+                  <span style={{ color: colors.gray }}>•</span>
+                  <a href="mailto:sarah@realeagent.com" className="text-sm font-medium" style={{ color: colors.primary }}>
+                    Contact Agent
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          
           {/* Financial Details */}
           <div className="bg-gray-50 rounded-xl p-6 mb-8">
             <h2 className="text-xl font-bold mb-4" style={{ color: colors.text }}>

@@ -1,0 +1,22 @@
+{
+  "templateCode": "LEAD_PAINT_DISCLOSURE",
+  "pdfFileName": "Lead_Based_Paint_Hazards_Disclosure__Acknowledgement__and_Addendum___12_21.pdf",
+  "description": "Lead Based Paint Hazards Disclosure",
+  "carFormNumber": null,
+  "fields": [
+    {
+      "fieldName": "date",
+      "type": "date",
+      "page": 1,
+      "x": 450,
+      "y": 750,
+      "width": 100,
+      "height": 20,
+      "required": true,
+      "description": "Form date"
+    }
+  ],
+  "needsFieldMapping": true,
+  "mappingStatus": "initial",
+  "notes": "This is an initial field mapping. Field positions need to be adjusted based on the actual PDF layout."
+}

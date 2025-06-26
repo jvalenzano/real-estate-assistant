@@ -1,0 +1,24 @@
+{
+  "templateId": "ESTIMATED_BUYER_COSTS",
+  "templateName": "Estimated Buyer Costs",
+  "category": "Final Disclosures",
+  "categoryNumber": "04",
+  "originalFileName": "Estimated_Buyer_Costs___6_21.pdf",
+  "version": "1.0.0",
+  "lastUpdated": "2024-01-01",
+  "carFormNumber": "N/A",
+  "formRevisionDate": "6/21",
+  "pageCount": 1,
+  "requiredByLaw": false,
+  "commonlyUsed": true,
+  "dependencies": [],
+  "relatedForms": [],
+  "description": "Placeholder for Estimated Buyer Costs",
+  "usageNotes": "This form is used when...",
+  "implementationStatus": {
+    "template": false,
+    "fields": false,
+    "signatures": false,
+    "testing": false
+  }
+}

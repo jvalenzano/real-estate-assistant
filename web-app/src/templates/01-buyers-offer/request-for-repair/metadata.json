@@ -1,0 +1,24 @@
+{
+  "templateId": "REQUEST_FOR_REPAIR",
+  "templateName": "Request for Repair",
+  "category": "Buyer's Offer",
+  "categoryNumber": "01",
+  "originalFileName": "Request_for_Repair___6_24.pdf",
+  "version": "1.0.0",
+  "lastUpdated": "2024-01-01",
+  "carFormNumber": "N/A",
+  "formRevisionDate": "6/24",
+  "pageCount": 1,
+  "requiredByLaw": false,
+  "commonlyUsed": true,
+  "dependencies": [],
+  "relatedForms": [],
+  "description": "Placeholder for Request for Repair",
+  "usageNotes": "This form is used when...",
+  "implementationStatus": {
+    "template": false,
+    "fields": false,
+    "signatures": false,
+    "testing": false
+  }
+}

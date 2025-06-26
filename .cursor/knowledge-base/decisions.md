@@ -49,5 +49,15 @@
 **Alternatives Considered**: expo-secure-store (overkill for demo)  
 **Impact**: Tokens persist across app restarts, seamless auth experience  
 
+## DR-008: Pivot to Next.js Web App (2025-06-22)
+**Status**: Approved ✅  
+**Decision**: Build mobile-first web app instead of React Native  
+**Rationale**: 
+- Expo SDK 53 has breaking compatibility issues
+- Founder demo needs working app, not native features
+- Web app can be deployed instantly, updated live
+- 90% of code (API, auth, logic) remains unchanged
+**Impact**: 2-3 hour path to demo vs unknown Expo debugging time
+
 ---
 *Add new decisions as development progresses*

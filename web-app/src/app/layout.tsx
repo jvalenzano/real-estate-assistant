@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { Navigation } from "@/components/Navigation";
 // Removed providers for simplicity
 import "./globals.css";
 
@@ -21,6 +22,20 @@ export const metadata: Metadata = {
     capable: true,
     statusBarStyle: "default",
     title: "RealeAgent",
+  },
+  openGraph: {
+    title: "RealeAgent - AI-Powered Real Estate",
+    description: "Streamline your real estate transactions with AI-powered document generation",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "RealeAgent",
+    description: "AI-powered real estate transaction assistant",
+  },
+  icons: {
+    icon: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
   },
 };
 
@@ -44,6 +59,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased h-full flex flex-col`}
         suppressHydrationWarning
       >
+        {/* Navigation will be added per-page to avoid conflicts with existing headers */}
         {children}
       </body>
     </html>

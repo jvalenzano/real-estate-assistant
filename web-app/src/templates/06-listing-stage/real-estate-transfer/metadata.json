@@ -1,0 +1,24 @@
+{
+  "templateId": "REAL_ESTATE_TRANSFER",
+  "templateName": "Real Estate Transfer Disclosure",
+  "category": "Listing Stage",
+  "categoryNumber": "06",
+  "originalFileName": "Real_Estate_Transfer_Disclosure___1_22.pdf",
+  "version": "1.0.0",
+  "lastUpdated": "2024-01-01",
+  "carFormNumber": "N/A",
+  "formRevisionDate": "1/22",
+  "pageCount": 1,
+  "requiredByLaw": false,
+  "commonlyUsed": true,
+  "dependencies": [],
+  "relatedForms": [],
+  "description": "Placeholder for Real Estate Transfer Disclosure",
+  "usageNotes": "This form is used when...",
+  "implementationStatus": {
+    "template": false,
+    "fields": false,
+    "signatures": false,
+    "testing": false
+  }
+}

@@ -7,6 +7,7 @@ import Image from 'next/image';
 import PropertyCard from '@/components/property/PropertyCard';
 import PropertyCardSkeleton from '@/components/property/PropertyCardSkeleton';
 import propertyService, { Property, PropertySearchParams } from '@/services/property.service';
+import { Plus, FileText, FileCheck } from 'lucide-react';
 
 // Design System Colors
 const colors = {
@@ -483,25 +484,25 @@ const DEMO_PROPERTIES: Property[] = [
     },
     images: [
       { 
-        url: 'https://images.unsplash.com/photo-1600607687644-c7171b42498b?w=800',
+        url: 'https://images.unsplash.com/photo-1613977257363-707ba9348227?w=800',
         alt_text: 'Modern mansion exterior',
         is_primary: true,
         display_order: 1
       },
       {
-        url: 'https://images.unsplash.com/photo-1600607687640-fdf0b5ce3b44?w=800',
+        url: 'https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=800',
         alt_text: 'Infinity pool with city views',
         is_primary: false,
         display_order: 2
       },
       {
-        url: 'https://images.unsplash.com/photo-1600210492493-0946911123ea?w=800',
+        url: 'https://images.unsplash.com/photo-1629236714758-50cca95dcfea?w=800',
         alt_text: 'Home theater',
         is_primary: false,
         display_order: 3
       },
       {
-        url: 'https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=800',
+        url: 'https://images.unsplash.com/photo-1595427600924-e26fccb8dc87?w=800',
         alt_text: 'Wine cellar',
         is_primary: false,
         display_order: 4
@@ -687,6 +688,14 @@ export default function PropertiesPage() {
   const [searchValue, setSearchValue] = useState('');
   const [showSearchSuggestions, setShowSearchSuggestions] = useState(false);
   const [isFiltersOpen, setIsFiltersOpen] = useState(false);
+  
+  // Filter states
+  const [filters, setFilters] = useState({
+    minPrice: '',
+    maxPrice: '',
+    propertyTypes: [] as string[],
+    minBedrooms: 0
+  });
 
   useEffect(() => {
     // Check auth
@@ -727,24 +736,62 @@ export default function PropertiesPage() {
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
     setShowSearchSuggestions(false);
-    
-    if (!searchValue.trim()) {
-      setProperties(allProperties);
-      return;
-    }
-    
-    // Simple search filter
-    const filtered = allProperties.filter(p => 
-      p.mls_number.toLowerCase().includes(searchValue.toLowerCase()) ||
-      p.address.line1.toLowerCase().includes(searchValue.toLowerCase()) ||
-      p.address.city.toLowerCase().includes(searchValue.toLowerCase())
-    );
-    
-    setProperties(filtered);
+    applyFilters();
   };
 
   const handleLogout = () => {
     router.push('/logout');
+  };
+  
+  // Apply filters function
+  const applyFilters = () => {
+    let filtered = [...allProperties];
+    
+    // Apply search filter
+    if (searchValue.trim()) {
+      filtered = filtered.filter(p => 
+        p.mls_number.toLowerCase().includes(searchValue.toLowerCase()) ||
+        p.address.line1.toLowerCase().includes(searchValue.toLowerCase()) ||
+        p.address.city.toLowerCase().includes(searchValue.toLowerCase())
+      );
+    }
+    
+    // Apply price filters
+    if (filters.minPrice) {
+      filtered = filtered.filter(p => p.list_price >= parseInt(filters.minPrice));
+    }
+    if (filters.maxPrice) {
+      filtered = filtered.filter(p => p.list_price <= parseInt(filters.maxPrice));
+    }
+    
+    // Apply property type filters
+    if (filters.propertyTypes.length > 0) {
+      filtered = filtered.filter(p => filters.propertyTypes.includes(p.property_type));
+    }
+    
+    // Apply bedroom filter
+    if (filters.minBedrooms > 0) {
+      filtered = filtered.filter(p => p.bedrooms >= filters.minBedrooms);
+    }
+    
+    setProperties(filtered);
+  };
+  
+  // Toggle property type
+  const togglePropertyType = (type: string) => {
+    setFilters(prev => ({
+      ...prev,
+      propertyTypes: prev.propertyTypes.includes(type)
+        ? prev.propertyTypes.filter(t => t !== type)
+        : [...prev.propertyTypes, type]
+    }));
+  };
+  
+  // Clear all filters
+  const clearFilters = () => {
+    setFilters({ minPrice: '', maxPrice: '', propertyTypes: [], minBedrooms: 0 });
+    setSearchValue('');
+    setProperties(allProperties);
   };
 
   const SEARCH_SUGGESTIONS = [
@@ -829,6 +876,44 @@ export default function PropertiesPage() {
         </div>
       </div>
 
+      {/* Enhanced Document Management Section */}
+      <div className="flex-shrink-0 bg-white border-b px-4 py-4">
+        <div className="max-w-7xl mx-auto">
+          <div className="bg-gradient-to-r from-blue-600 to-blue-700 rounded-2xl p-8 text-white shadow-xl">
+            <div className="flex items-start justify-between">
+              <div>
+                <h2 className="text-2xl md:text-3xl font-bold mb-3">Document Management</h2>
+                <p className="text-blue-100 text-lg mb-6 max-w-2xl">
+                  Create and manage California real estate documents with our comprehensive form library.
+                </p>
+                
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <Link 
+                    href="/documents/new"
+                    className="bg-white text-blue-600 hover:bg-blue-50 px-6 py-3 rounded-xl font-semibold transition-colors shadow-lg flex items-center justify-center gap-2 transform hover:scale-105"
+                  >
+                    <Plus className="w-5 h-5" />
+                    Create New Document
+                  </Link>
+                  <Link 
+                    href="/documents"
+                    className="border-2 border-blue-200 text-white hover:bg-blue-600 px-6 py-3 rounded-xl font-semibold transition-colors flex items-center justify-center gap-2"
+                  >
+                    <FileText className="w-5 h-5" />
+                    View All Documents
+                  </Link>
+                </div>
+              </div>
+              
+              {/* Optional: Add illustration or icon */}
+              <div className="hidden lg:block">
+                <FileCheck className="w-24 h-24 text-blue-200 opacity-50" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Search Bar */}
       <div className="flex-shrink-0 bg-white border-b px-4 py-4">
         <div className="max-w-7xl mx-auto">
@@ -841,9 +926,25 @@ export default function PropertiesPage() {
                 onFocus={() => setShowSearchSuggestions(true)}
                 onBlur={() => setTimeout(() => setShowSearchSuggestions(false), 200)}
                 placeholder="Search by MLS#, address, or city..."
-                className="w-full px-4 py-3 text-base border-2 border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                className="w-full px-4 py-3 text-base border-2 border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all pr-12"
                 style={{ color: colors.text }}
               />
+              
+              {/* Clear search button */}
+              {searchValue && (
+                <button
+                  type="button"
+                  onClick={() => {
+                    setSearchValue('');
+                    clearFilters();
+                  }}
+                  className="absolute right-3 top-1/2 -translate-y-1/2 p-2 hover:bg-gray-100 rounded-full transition-colors"
+                >
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+              )}
               
               {/* Search Suggestions */}
               {showSearchSuggestions && (
@@ -896,7 +997,8 @@ export default function PropertiesPage() {
             <button
               onClick={() => {
                 setSearchValue('Ocean');
-                handleSearch({ preventDefault: () => {} } as any);
+                setFilters({ minPrice: '', maxPrice: '', propertyTypes: [], minBedrooms: 0 });
+                setTimeout(() => applyFilters(), 0);
               }}
               className="px-4 py-2 bg-blue-50 text-blue-700 rounded-lg hover:bg-blue-100 transition-colors text-sm font-medium"
             >
@@ -904,9 +1006,9 @@ export default function PropertiesPage() {
             </button>
             <button
               onClick={() => {
-                const under1M = allProperties.filter(p => p.list_price < 1000000);
-                setProperties(under1M);
                 setSearchValue('');
+                setFilters({ minPrice: '', maxPrice: '999999', propertyTypes: [], minBedrooms: 0 });
+                setTimeout(() => applyFilters(), 0);
               }}
               className="px-4 py-2 bg-green-50 text-green-700 rounded-lg hover:bg-green-100 transition-colors text-sm font-medium"
             >
@@ -917,6 +1019,7 @@ export default function PropertiesPage() {
                 const newListings = allProperties.filter(p => p.days_on_market <= 7);
                 setProperties(newListings);
                 setSearchValue('');
+                setFilters({ minPrice: '', maxPrice: '', propertyTypes: [], minBedrooms: 0 });
               }}
               className="px-4 py-2 bg-purple-50 text-purple-700 rounded-lg hover:bg-purple-100 transition-colors text-sm font-medium"
             >
@@ -925,7 +1028,8 @@ export default function PropertiesPage() {
             <button
               onClick={() => {
                 setSearchValue('ML81234567');
-                handleSearch({ preventDefault: () => {} } as any);
+                setFilters({ minPrice: '', maxPrice: '', propertyTypes: [], minBedrooms: 0 });
+                setTimeout(() => applyFilters(), 0);
               }}
               className="px-4 py-2 bg-yellow-50 text-yellow-700 rounded-lg hover:bg-yellow-100 transition-colors text-sm font-medium flex items-center gap-1"
             >
@@ -935,6 +1039,7 @@ export default function PropertiesPage() {
               onClick={() => {
                 setProperties(allProperties);
                 setSearchValue('');
+                setFilters({ minPrice: '', maxPrice: '', propertyTypes: [], minBedrooms: 0 });
               }}
               className="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors text-sm font-medium"
             >
@@ -947,6 +1052,25 @@ export default function PropertiesPage() {
       {/* Main Content */}
       <main className="flex-1 overflow-y-auto">
         <div className="max-w-7xl mx-auto px-4 py-6">
+          {/* Search Results Header */}
+          {searchValue && properties.length > 0 && (
+            <div className="mb-4 flex items-center justify-between">
+              <p className="text-sm" style={{ color: colors.gray }}>
+                Showing {properties.length} results for "{searchValue}"
+              </p>
+              <button
+                onClick={() => {
+                  setSearchValue('');
+                  clearFilters();
+                }}
+                className="text-sm font-medium hover:underline"
+                style={{ color: colors.primary }}
+              >
+                Clear search
+              </button>
+            </div>
+          )}
+          
           {/* Properties Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {properties.map((property) => (
@@ -957,18 +1081,24 @@ export default function PropertiesPage() {
           {/* Empty State */}
           {properties.length === 0 && searchValue && (
             <div className="text-center py-12">
+              <svg className="w-16 h-16 mx-auto mb-4 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+              </svg>
               <p className="text-lg font-semibold mb-2" style={{ color: colors.text }}>
                 No properties found for "{searchValue}"
+              </p>
+              <p className="text-sm mb-4" style={{ color: colors.gray }}>
+                Try adjusting your search or filters
               </p>
               <button
                 onClick={() => {
                   setSearchValue('');
-                  setProperties(allProperties);
+                  clearFilters();
                 }}
-                className="text-sm font-medium"
-                style={{ color: colors.primary }}
+                className="px-6 py-3 font-semibold rounded-lg transition-all hover:opacity-90"
+                style={{ backgroundColor: colors.primary, color: colors.white }}
               >
-                Clear search
+                Clear Search & Show All Properties
               </button>
             </div>
           )}
@@ -1004,12 +1134,16 @@ export default function PropertiesPage() {
                   <input
                     type="number"
                     placeholder="Min Price"
+                    value={filters.minPrice}
+                    onChange={(e) => setFilters(prev => ({ ...prev, minPrice: e.target.value }))}
                     className="w-full px-4 py-2 border rounded-lg"
                     style={{ color: colors.text }}
                   />
                   <input
                     type="number"
                     placeholder="Max Price"
+                    value={filters.maxPrice}
+                    onChange={(e) => setFilters(prev => ({ ...prev, maxPrice: e.target.value }))}
                     className="w-full px-4 py-2 border rounded-lg"
                     style={{ color: colors.text }}
                   />
@@ -1022,7 +1156,12 @@ export default function PropertiesPage() {
                 <div className="space-y-2">
                   {['Single Family', 'Condominium', 'Townhouse'].map((type) => (
                     <label key={type} className="flex items-center">
-                      <input type="checkbox" className="mr-3" />
+                      <input 
+                        type="checkbox" 
+                        className="mr-3"
+                        checked={filters.propertyTypes.includes(type)}
+                        onChange={() => togglePropertyType(type)}
+                      />
                       <span style={{ color: colors.text }}>{type}</span>
                     </label>
                   ))}
@@ -1031,15 +1170,43 @@ export default function PropertiesPage() {
               
               {/* Bedrooms */}
               <div>
-                <h3 className="font-semibold mb-3" style={{ color: colors.text }}>Bedrooms</h3>
+                <h3 className="font-semibold mb-3" style={{ color: colors.text }}>
+                  Bedrooms {filters.minBedrooms > 0 && <span className="text-sm font-normal">({filters.minBedrooms}+ bedrooms)</span>}
+                </h3>
                 <div className="flex gap-2">
-                  {['1+', '2+', '3+', '4+', '5+'].map((beds) => (
+                  {[1, 2, 3, 4, 5].map((beds) => (
                     <button
                       key={beds}
-                      className="px-4 py-2 border rounded-lg hover:bg-gray-50"
-                      style={{ color: colors.text }}
+                      onClick={() => {
+                        const newBeds = filters.minBedrooms === beds ? 0 : beds;
+                        setFilters(prev => ({ ...prev, minBedrooms: newBeds }));
+                        // Apply filter immediately
+                        setTimeout(() => {
+                          let filtered = [...allProperties];
+                          if (searchValue.trim()) {
+                            filtered = filtered.filter(p => 
+                              p.mls_number.toLowerCase().includes(searchValue.toLowerCase()) ||
+                              p.address.line1.toLowerCase().includes(searchValue.toLowerCase()) ||
+                              p.address.city.toLowerCase().includes(searchValue.toLowerCase())
+                            );
+                          }
+                          if (newBeds > 0) {
+                            filtered = filtered.filter(p => p.bedrooms >= newBeds);
+                          }
+                          setProperties(filtered);
+                        }, 0);
+                      }}
+                      className={`px-4 py-2 border rounded-lg transition-all ${
+                        filters.minBedrooms === beds 
+                          ? 'border-blue-500 bg-blue-50' 
+                          : 'hover:bg-gray-50'
+                      }`}
+                      style={{ 
+                        color: filters.minBedrooms === beds ? colors.primary : colors.text,
+                        borderColor: filters.minBedrooms === beds ? colors.primary : undefined
+                      }}
                     >
-                      {beds}
+                      {beds}+
                     </button>
                   ))}
                 </div>
@@ -1048,11 +1215,21 @@ export default function PropertiesPage() {
               {/* Apply Filters Button */}
               <div className="pt-4">
                 <button
-                  onClick={() => setIsFiltersOpen(false)}
+                  onClick={applyFilters}
                   className="w-full px-6 py-3 text-white font-semibold rounded-lg"
                   style={{ backgroundColor: colors.primary }}
                 >
                   Apply Filters
+                </button>
+                <button
+                  onClick={() => {
+                    clearFilters();
+                    setIsFiltersOpen(false);
+                  }}
+                  className="w-full px-6 py-3 font-semibold rounded-lg border-2 mt-2"
+                  style={{ borderColor: colors.gray, color: colors.gray }}
+                >
+                  Clear Filters
                 </button>
               </div>
             </div>

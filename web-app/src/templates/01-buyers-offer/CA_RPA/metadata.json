@@ -1,0 +1,47 @@
+{
+  "templateId": "CA_RPA",
+  "templateName": "California Residential Purchase Agreement and Joint Escrow Instructions",
+  "originalFileName": "RPA-CA.pdf",
+  "carFormNumber": "RPA-CA",
+  "formRevisionDate": "12/23",
+  "requiredByLaw": false,
+  "commonlyUsed": true,
+  "dependencies": [
+    "CONFIRMATION_AGENCY",
+    "STATEWIDE_ADVISORY"
+  ],
+  "relatedForms": [
+    "BUYER_COUNTER_OFFER",
+    "SELLER_COUNTER_OFFER",
+    "ADDENDUM_1",
+    "REQUEST_FOR_REPAIR",
+    "BUYER_CONTINGENCY_REMOVAL"
+  ],
+  "requiredDisclosures": [
+    "REAL_ESTATE_TRANSFER",
+    "NATURAL_HAZARD",
+    "LEAD_BASED_PAINT",
+    "EARTHQUAKE_GUIDES",
+    "ENVIRONMENTAL_HAZARDS",
+    "DATABASE_DISCLOSURE"
+  ],
+  "legalNotes": "This form has been approved by the California Association of REALTORS® (C.A.R.). No representation is made as to the legal validity or accuracy of any provision in any specific transaction.",
+  "usageNotes": "This is the primary contract used for residential real estate purchases in California. It includes all essential terms and conditions for the sale, including price, financing, contingencies, and closing details.",
+  "keywords": [
+    "purchase agreement",
+    "residential",
+    "california",
+    "rpa",
+    "offer",
+    "contract",
+    "escrow instructions",
+    "buyer offer",
+    "real estate contract"
+  ],
+  "implementationStatus": {
+    "template": true,
+    "fields": true,
+    "signatures": true,
+    "testing": false
+  }
+}

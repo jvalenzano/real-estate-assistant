@@ -1,0 +1,24 @@
+{
+  "templateId": "NOTICE_TO_BUYER",
+  "templateName": "Notice to Buyer to Perform",
+  "category": "Contingency Removal",
+  "categoryNumber": "02",
+  "originalFileName": "Notice_to_Buyer_to_Perform___12_21.pdf",
+  "version": "1.0.0",
+  "lastUpdated": "2024-01-01",
+  "carFormNumber": "N/A",
+  "formRevisionDate": "12/21",
+  "pageCount": 1,
+  "requiredByLaw": false,
+  "commonlyUsed": true,
+  "dependencies": [],
+  "relatedForms": [],
+  "description": "Placeholder for Notice to Buyer to Perform",
+  "usageNotes": "This form is used when...",
+  "implementationStatus": {
+    "template": false,
+    "fields": false,
+    "signatures": false,
+    "testing": false
+  }
+}

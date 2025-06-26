@@ -1,0 +1,24 @@
+{
+  "templateId": "TENANCY_IN_COMMON",
+  "templateName": "Tenancy In Common Advisory",
+  "category": "Escrow & Contingency",
+  "categoryNumber": "03",
+  "originalFileName": "Tenancy_In_Common_Advisory___12_20.pdf",
+  "version": "1.0.0",
+  "lastUpdated": "2024-01-01",
+  "carFormNumber": "N/A",
+  "formRevisionDate": "12/20",
+  "pageCount": 1,
+  "requiredByLaw": false,
+  "commonlyUsed": false,
+  "dependencies": [],
+  "relatedForms": [],
+  "description": "Placeholder for Tenancy In Common Advisory",
+  "usageNotes": "This form is used when...",
+  "implementationStatus": {
+    "template": false,
+    "fields": false,
+    "signatures": false,
+    "testing": false
+  }
+}

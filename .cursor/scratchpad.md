@@ -1,152 +1,151 @@
-# RealeAgent Development Scratchpad
+# RealeAgent Development Scratchpad (Updated)
 
 ## Background and Motivation
-Building a 3-week prototype for RealeAgent - an AI-powered real estate transaction assistant that reduces transaction time from 2-3 hours to under 5 minutes. Core features include property search, automated RPA generation, digital signatures, and ARIA AI co-pilot.
+Building a prototype for RealeAgent - an AI-powered real estate transaction assistant that streamlines the real estate documentation process. Core features include property search, automated document generation for 50+ California real estate forms, digital signatures, and comprehensive transaction management.
 
-## Key Challenges and Analysis
-1. **Time Constraint**: 3-week timeline requires focus on demo impact over completeness
-2. **AI Integration**: ARIA must be seamlessly integrated throughout the workflow
-3. **Real Integrations**: DocuSign sandbox integration (not mocks) for authenticity
-4. **Performance**: <300ms response times for smooth demo experience
-5. **Mobile-First**: Touch-optimized UI that feels native
+## Current Implementation Status (June 2025)
+### ✅ Completed
+- **Web Application**: Next.js 15 with App Router
+- **Database**: Supabase PostgreSQL with complete schema
+- **Authentication**: Supabase Auth integration
+- **Property Management**: 12 demo properties loaded
+- **Document Infrastructure**: 
+  - All 50+ California real estate PDFs imported
+  - Template selection UI with category filtering
+  - PDF form filling architecture (using pdf-lib)
+  - Navigation between properties and documents
+- **API Endpoints**: Template retrieval working
 
-## High-level Task Breakdown
-[x] Phase 1: API Server Foundation ✅
-[x] Phase 2: Authentication System ✅
-[x] Phase 3: Property Search Implementation ✅
-[x] Phase 4: Document Generation System ✅
-[ ] Phase 5: React Native App Initialization
-[ ] Phase 6: ARIA AI Integration
-[ ] Phase 7: DocuSign Integration
-[ ] Phase 8: Transaction Management
-[ ] Phase 9: Demo Polish & Optimization
+### 🚧 In Progress
+- **CA_RPA Form**: Click handler fix implemented
+- **Document Generation API**: Creating endpoint
+- **PDF Form Filling**: Handling encrypted CAR forms
+- **UI Polish**: Removing dark mode issues
 
-## Project Status Board
-### Done ✅
-- [x] Initialize Express server with TypeScript
-- [x] Environment configuration (.env) with validation
-- [x] Health check endpoint with uptime monitoring
-- [x] Comprehensive middleware (logging, CORS, error handling)
-- [x] Supabase client setup (ready for connection)
-- [x] JWT authentication system
-- [x] Demo user accounts (agent & broker)
-- [x] Protected route middleware
-- [x] Session management
-- [x] Demo reset functionality
-- [x] Property search with 30 demo properties
-- [x] Advanced filtering and sorting
-- [x] Fuzzy address matching
-- [x] Featured properties endpoint
-- [x] RPA document generation
-- [x] HTML to PDF conversion with Puppeteer
-- [x] Professional document templates
-- [x] Field customization and editing
+### 📋 Todo Next
+- Complete PDF generation with encrypted file handling
+- Implement e-signature workflow (HelloSign/mock)
+- Add remaining high-priority forms
+- Create document history/list view
+- Mobile app development
 
-### In Progress
-- [ ] React Native App Setup (Phase 5)
+## Architecture Evolution
+### Original Plan (January 2025)
+- Express.js API server
+- HTML to PDF with Puppeteer
+- Handlebars templates
+- React Native mobile app
 
-### Todo
-- [ ] Mobile app screens (search, details, documents)
-- [ ] ARIA chat integration
-- [ ] DocuSign sandbox setup
-- [ ] Transaction tracking
-- [ ] Push notifications
-- [ ] Demo polish and animations
+### Current Implementation (June 2025)
+- **Single Next.js Application**: Unified frontend + API
+- **PDF Form Filling**: Direct manipulation of official CAR PDFs
+- **Supabase Integration**: Auth, database, and storage
+- **Web-First Approach**: Mobile app deferred
 
-## Current Status / Progress Tracking
-- **Backend Complete**: All API endpoints operational
-- **Search Performance**: <3ms response times (10x better than target)
-- **Document Generation**: 2-3 second PDF generation
-- **Authentication**: JWT tokens with 24h expiry
-- **Demo Data**: 30 properties loaded, ML81234567 prioritized
-- **Next Step**: Build React Native mobile app
+## Key Technical Decisions
+1. **PDF Approach**: Using actual CAR PDFs with form filling instead of HTML generation
+2. **Encrypted PDFs**: Handling with `{ ignoreEncryption: true }` flag
+3. **Template Organization**: 6 categories matching California real estate stages
+4. **Storage Strategy**: Blank PDFs in repo, generated PDFs in Supabase
+5. **API Architecture**: Next.js API routes instead of separate Express server
 
-## Technical Decisions & Rationale
-1. **In-memory storage**: Perfect for demo, instant resets
-2. **Mock users first**: No database dependency, faster development
-3. **JWT authentication**: Production-ready from start
-4. **Puppeteer for PDFs**: High-quality document output
-5. **Handlebars templates**: Flexible document generation
-6. **TypeScript strict mode**: Catch errors early
+## Current API Endpoints
+### Working ✅
+- GET `/api/v1/document-templates` - List all templates
+- GET `/api/v1/document-templates/:code` - Get specific template
+- GET `/api/v1/properties` - Property listings
 
-## API Endpoints Summary
-### Authentication
-- POST /api/v1/auth/login
-- POST /api/v1/auth/logout
-- GET /api/v1/auth/me
-- POST /api/v1/auth/demo/reset
+### In Development 🚧
+- POST `/api/v1/documents/generate` - Generate document
+- GET `/api/v1/documents/:id` - Retrieve document
+- POST `/api/v1/documents/:id/send-signature` - E-signature flow
 
-### Properties
-- GET /api/v1/properties/search?q={query}
-- GET /api/v1/properties/featured
-- GET /api/v1/properties/{id}
-- POST /api/v1/properties/{id}/favorite
-
-### Documents
-- POST /api/v1/documents/generate
-- GET /api/v1/documents/{id}
-- GET /api/v1/documents/{id}/preview
-- GET /api/v1/documents/{id}/pdf
-- PATCH /api/v1/documents/{id}/fields
-- POST /api/v1/documents/{id}/finalize
-
-## Demo Flow (Backend Ready)
-1. **Login**: agent@demo.com / demo123
-2. **Search**: "ML81234567" returns ocean view property
-3. **Generate**: Create RPA with custom offer price
-4. **Preview**: View HTML document with all details
-5. **Download**: Get professional PDF ready for signing
+## Document Categories (50+ Forms)
+1. **Buyer's Offer and Negotiation** (8 forms) - CA_RPA primary
+2. **Contingency Removal and Closing** (5 forms)
+3. **Escrow and Contingency Stage** (6 forms)
+4. **Final Disclosures & Delivery** (4 forms)
+5. **Forms Used in Specific Situations** (5 forms)
+6. **Listing Stage** (8 forms)
 
 ## Performance Metrics
-- Property search: **2.8ms** average (target: <300ms) ✅
-- Document generation: **2-3 seconds** (target: <3s) ✅
-- PDF rendering: **1-2 seconds** (target: <2s) ✅
-- API response times: **<50ms** for most endpoints ✅
+- **Template API Response**: ~250ms ✅
+- **PDF Generation Target**: <3 seconds (pending)
+- **Form Selection UI**: Instant (<100ms) ✅
+- **Category Filtering**: Real-time ✅
+
+## Development Workflow
+### Testing Setup
+- **Terminal 1 (Left)**: `npm run dev` - Next.js server
+- **Terminal 2 (Right)**: Commands and testing
+- **Browser**: http://localhost:3000
+
+### Current Test Flow
+1. Navigate to `/properties`
+2. Click "Create New Document"
+3. Select CA_RPA template
+4. Fill form data
+5. Generate PDF (in progress)
+
+## Key Challenges Solved
+1. **PDF Import**: Automated script handles 50+ forms with smart matching
+2. **Category Organization**: Clean folder structure matching CAR categories
+3. **Dark Mode Issues**: Fixed with comprehensive CSS updates
+4. **Navigation**: Clear flow from properties to documents
+
+## Remaining Challenges
+1. **Encrypted PDF Handling**: CAR forms require special handling
+2. **Form Field Mapping**: Each PDF needs field position mapping
+3. **E-Signature Integration**: HelloSign API with fallback
+4. **Multi-Form Workflows**: Transaction packages with multiple documents
+
+## Next Sprint Goals
+### Week 1 (Current)
+- ✅ Fix CA_RPA selection
+- 🚧 Complete document generation API
+- 📅 Test end-to-end PDF creation
+- 📅 Implement document storage
+
+### Week 2
+- Add 5 most-used forms
+- Implement e-signature mock
+- Create document list view
+- Add form validation
+
+### Week 3
+- Production e-signature integration
+- Batch document operations
+- Transaction management
+- Performance optimization
+
+## Technical Stack
+- **Frontend**: Next.js 15, React, TypeScript, Tailwind CSS
+- **Backend**: Next.js API Routes
+- **Database**: Supabase (PostgreSQL)
+- **Storage**: Supabase Storage
+- **PDF Processing**: pdf-lib
+- **Authentication**: Supabase Auth
+- **E-Signatures**: HelloSign (planned)
 
 ## Lessons Learned
-- Environment validation catches config issues early
-- Mock data first approach speeds development significantly
-- Handlebars helpers need explicit TypeScript types
-- Route order matters (specific routes before parameterized)
-- Puppeteer requires careful memory management
-- Professional document formatting takes iteration
-- Demo property prioritization improves presentation flow
+- CAR PDFs are encrypted - require special handling
+- PDF form filling > HTML generation for legal compliance
+- Supabase provides excellent all-in-one solution
+- Category-based organization improves UX
+- Mock-first approach speeds development
 
-## Next Phase: React Native Mobile App
-### Goals
-- Visual interface for investor demos
-- Touch-optimized property browsing
-- Seamless document generation flow
-- Foundation for ARIA integration
-
-### Key Screens
-1. **Login Screen**: Quick demo account access
-2. **Property Search**: Beautiful property cards
-3. **Property Details**: Images, features, generate RPA button
-4. **Document Preview**: In-app document viewer
-5. **Profile/Settings**: User info and preferences
-
-### Technical Approach
-- Expo for quick development
-- React Navigation for routing
-- Context API for state management
-- Fetch API with JWT tokens
-- React Native Paper for UI components
-
-## Resources and References
-- Supabase Docs: https://supabase.com/docs
-- DocuSign Sandbox: https://developers.docusign.com/
-- Expo Docs: https://docs.expo.dev/
-- Gemini API: https://ai.google.dev/
-- JWT.io: https://jwt.io/
-- Puppeteer Docs: https://pptr.dev/
+## Resources
+- **Supabase Dashboard**: app.supabase.com
+- **pdf-lib Documentation**: pdf-lib.js.org
+- **CAR Forms**: California Association of Realtors
+- **HelloSign API**: developers.hellosign.com
 
 ## Time Tracking
-- **Week 1**: ✅ Backend foundation (Phases 1-4)
-- **Week 2**: 🚧 Mobile app + ARIA integration (Phases 5-6)
-- **Week 3**: 📅 DocuSign + Polish (Phases 7-9)
+- **Phase 1**: ✅ Infrastructure setup (Week 1)
+- **Phase 2**: 🚧 Document generation (Current)
+- **Phase 3**: 📅 E-signatures & Polish (Upcoming)
 
 ---
-Last Updated: January 15, 2025
-Backend Development: COMPLETE ✅
-Current Focus: React Native Mobile App
+**Last Updated**: June 25, 2025  
+**Current Focus**: Document Generation API & PDF Form Filling  
+**Next Milestone**: Working CA_RPA generation

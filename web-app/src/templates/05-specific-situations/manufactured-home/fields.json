@@ -1,0 +1,25 @@
+{
+  "templateId": "MANUFACTURED_HOME",
+  "templateName": "Manufactured Home Purchase Addendum",
+  "originalFileName": "Manufactured_Home_Purchase_Addendum___12_21.pdf",
+  "fields": [
+    {
+      "name": "placeholder_field_1",
+      "type": "string",
+      "label": "Placeholder Field 1",
+      "required": false,
+      "placeholder": "This field needs to be implemented",
+      "section": "placeholder",
+      "implemented": false
+    }
+  ],
+  "sections": [
+    {
+      "id": "placeholder",
+      "name": "Placeholder Section",
+      "description": "Fields will be organized by section when implemented"
+    }
+  ],
+  "implemented": false,
+  "implementationNotes": "This form needs to be converted from the official PDF"
+}

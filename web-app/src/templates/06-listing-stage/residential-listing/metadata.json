@@ -1,0 +1,24 @@
+{
+  "templateId": "RESIDENTIAL_LISTING",
+  "templateName": "Residential Listing Agreement - Exclusive",
+  "category": "Listing Stage",
+  "categoryNumber": "06",
+  "originalFileName": "_Residential_Listing_Agreement___Exclusive___12_24 (4).pdf",
+  "version": "1.0.0",
+  "lastUpdated": "2024-01-01",
+  "carFormNumber": "N/A",
+  "formRevisionDate": "12/24",
+  "pageCount": 1,
+  "requiredByLaw": false,
+  "commonlyUsed": true,
+  "dependencies": [],
+  "relatedForms": [],
+  "description": "Placeholder for Residential Listing Agreement - Exclusive",
+  "usageNotes": "This form is used when...",
+  "implementationStatus": {
+    "template": false,
+    "fields": false,
+    "signatures": false,
+    "testing": false
+  }
+}

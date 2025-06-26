@@ -1,0 +1,22 @@
+{
+  "templateCode": "SELLER_INSTRUCTIONS",
+  "pdfFileName": "Seller_s_Instructions_to_Exclude_Listing_from_MLS___12_20.pdf",
+  "description": "Seller Instructions to Exclude",
+  "carFormNumber": null,
+  "fields": [
+    {
+      "fieldName": "date",
+      "type": "date",
+      "page": 1,
+      "x": 450,
+      "y": 750,
+      "width": 100,
+      "height": 20,
+      "required": true,
+      "description": "Form date"
+    }
+  ],
+  "needsFieldMapping": true,
+  "mappingStatus": "initial",
+  "notes": "This is an initial field mapping. Field positions need to be adjusted based on the actual PDF layout."
+}

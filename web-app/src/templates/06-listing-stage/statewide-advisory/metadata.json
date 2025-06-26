@@ -1,0 +1,24 @@
+{
+  "templateId": "STATEWIDE_ADVISORY_LISTING",
+  "templateName": "Statewide Advisory",
+  "category": "Listing Stage",
+  "categoryNumber": "06",
+  "originalFileName": "Statewide_Buyer_and_Seller_Advisory___7_24 (1).pdf",
+  "version": "1.0.0",
+  "lastUpdated": "2024-01-01",
+  "carFormNumber": "N/A",
+  "formRevisionDate": "7/24",
+  "pageCount": 1,
+  "requiredByLaw": false,
+  "commonlyUsed": true,
+  "dependencies": [],
+  "relatedForms": [],
+  "description": "Placeholder for Statewide Advisory",
+  "usageNotes": "This form is used when...",
+  "implementationStatus": {
+    "template": false,
+    "fields": false,
+    "signatures": false,
+    "testing": false
+  }
+}

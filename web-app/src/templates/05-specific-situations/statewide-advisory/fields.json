@@ -1,0 +1,25 @@
+{
+  "templateId": "STATEWIDE_ADVISORY",
+  "templateName": "Statewide Buyer and Seller Advisory",
+  "originalFileName": "Statewide_Buyer_and_Seller_Advisory___7_24.pdf",
+  "fields": [
+    {
+      "name": "placeholder_field_1",
+      "type": "string",
+      "label": "Placeholder Field 1",
+      "required": false,
+      "placeholder": "This field needs to be implemented",
+      "section": "placeholder",
+      "implemented": false
+    }
+  ],
+  "sections": [
+    {
+      "id": "placeholder",
+      "name": "Placeholder Section",
+      "description": "Fields will be organized by section when implemented"
+    }
+  ],
+  "implemented": false,
+  "implementationNotes": "This form needs to be converted from the official PDF"
+}

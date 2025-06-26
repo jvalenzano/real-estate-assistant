@@ -1,8 +1,10 @@
 @import "tailwindcss";
 
+/* Force light theme globally */
 :root {
+  color-scheme: light;
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #111827;
   --primary: #1976D2;
   --primary-hover: #1565C0;
 }
@@ -14,10 +16,17 @@
   --font-mono: var(--font-geist-mono);
 }
 
+/* Remove dark mode completely */
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    color-scheme: light;
+    --background: #ffffff !important;
+    --foreground: #111827 !important;
+  }
+  
+  html, body {
+    background-color: #ffffff !important;
+    color: #111827 !important;
   }
 }
 
@@ -43,10 +52,21 @@ input, textarea, select {
   height: 100dvh; /* Dynamic viewport height */
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
+html, body {
+  background-color: #ffffff !important;
+  color: #111827 !important;
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Ensure all elements have light backgrounds */
+* {
+  background-color: transparent;
+}
+
+/* Ensure all inputs are readable */
+input, textarea, select {
+  background-color: #ffffff !important;
+  color: #111827 !important;
 }
 
 /* Global text color fixes for better contrast */

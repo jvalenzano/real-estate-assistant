@@ -1,0 +1,25 @@
+{
+  "templateId": "SELLER_LICENSE_REMAIN",
+  "templateName": "Seller License to Remain in Possession",
+  "originalFileName": "Seller_License_to_Remain_in_Possession_After_Close_of_Escrow___12_19.pdf",
+  "fields": [
+    {
+      "name": "placeholder_field_1",
+      "type": "string",
+      "label": "Placeholder Field 1",
+      "required": false,
+      "placeholder": "This field needs to be implemented",
+      "section": "placeholder",
+      "implemented": false
+    }
+  ],
+  "sections": [
+    {
+      "id": "placeholder",
+      "name": "Placeholder Section",
+      "description": "Fields will be organized by section when implemented"
+    }
+  ],
+  "implemented": false,
+  "implementationNotes": "This form needs to be converted from the official PDF"
+}

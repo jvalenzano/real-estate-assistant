@@ -1,0 +1,24 @@
+{
+  "templateId": "WATER_CONSERVING",
+  "templateName": "Water-Conserving Plumbing Notice",
+  "category": "Escrow & Contingency",
+  "categoryNumber": "03",
+  "originalFileName": "Water_Conserving_Plumbing_Fixtures_and_Carbon_Monoxide_Detector_Notice___12_22.pdf",
+  "version": "1.0.0",
+  "lastUpdated": "2024-01-01",
+  "carFormNumber": "N/A",
+  "formRevisionDate": "12/22",
+  "pageCount": 1,
+  "requiredByLaw": false,
+  "commonlyUsed": false,
+  "dependencies": [],
+  "relatedForms": [],
+  "description": "Placeholder for Water-Conserving Plumbing Notice",
+  "usageNotes": "This form is used when...",
+  "implementationStatus": {
+    "template": false,
+    "fields": false,
+    "signatures": false,
+    "testing": false
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "templateId": "SELLER_RESPONSE_BUYER",
+  "templateName": "Seller Response and Buyer Reply",
+  "category": "Escrow & Contingency",
+  "categoryNumber": "03",
+  "originalFileName": "Seller_Response_and_Buyer_Reply___12_21.pdf",
+  "version": "1.0.0",
+  "lastUpdated": "2024-01-01",
+  "carFormNumber": "N/A",
+  "formRevisionDate": "12/21",
+  "pageCount": 1,
+  "requiredByLaw": false,
+  "commonlyUsed": false,
+  "dependencies": [],
+  "relatedForms": [],
+  "description": "Placeholder for Seller Response and Buyer Reply",
+  "usageNotes": "This form is used when...",
+  "implementationStatus": {
+    "template": false,
+    "fields": false,
+    "signatures": false,
+    "testing": false
+  }
+}

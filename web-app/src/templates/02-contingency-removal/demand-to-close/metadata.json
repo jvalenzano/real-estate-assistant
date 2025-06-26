@@ -1,0 +1,24 @@
+{
+  "templateId": "DEMAND_TO_CLOSE",
+  "templateName": "Demand to Close Escrow",
+  "category": "Contingency Removal",
+  "categoryNumber": "02",
+  "originalFileName": "Demand_to_Close_Escrow___12_21.pdf",
+  "version": "1.0.0",
+  "lastUpdated": "2024-01-01",
+  "carFormNumber": "N/A",
+  "formRevisionDate": "12/21",
+  "pageCount": 1,
+  "requiredByLaw": false,
+  "commonlyUsed": false,
+  "dependencies": [],
+  "relatedForms": [],
+  "description": "Placeholder for Demand to Close Escrow",
+  "usageNotes": "This form is used when...",
+  "implementationStatus": {
+    "template": false,
+    "fields": false,
+    "signatures": false,
+    "testing": false
+  }
+}

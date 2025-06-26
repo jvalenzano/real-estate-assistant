@@ -1,0 +1,24 @@
+{
+  "templateId": "VERIFICATION_PROPERTY",
+  "templateName": "Verification of Property Condition",
+  "category": "Contingency Removal",
+  "categoryNumber": "02",
+  "originalFileName": "Verification_of_Property_Condition___12_21.pdf",
+  "version": "1.0.0",
+  "lastUpdated": "2024-01-01",
+  "carFormNumber": "N/A",
+  "formRevisionDate": "12/21",
+  "pageCount": 1,
+  "requiredByLaw": false,
+  "commonlyUsed": false,
+  "dependencies": [],
+  "relatedForms": [],
+  "description": "Placeholder for Verification of Property Condition",
+  "usageNotes": "This form is used when...",
+  "implementationStatus": {
+    "template": false,
+    "fields": false,
+    "signatures": false,
+    "testing": false
+  }
+}
