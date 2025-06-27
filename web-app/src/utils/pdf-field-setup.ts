@@ -6,7 +6,7 @@
 import { PDFDocument, PDFForm, PDFTextField, PDFCheckBox, rgb } from 'pdf-lib';
 import fs from 'fs/promises';
 import path from 'path';
-import { FormFieldMapping } from '@/services/pdf-form.service';
+import { FormFieldMapping } from '@/lib/server/pdf-form.server';
 
 export interface SetupOptions {
   showFieldBorders?: boolean;

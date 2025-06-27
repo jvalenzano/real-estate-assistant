@@ -7,14 +7,15 @@ import { NextRequest, NextResponse } from 'next/server';
 import { templateService } from '@/services/template.service';
 import { TEMPLATE_REGISTRY } from '@/templates';
 
-interface Params {
-  params: {
+interface RouteParams {
+  params: Promise<{
     templateCode: string;
-  };
+  }>;
 }
 
 // Sample data for previews
 const SAMPLE_DATA = {
+  propertyId: 'ML81234567',
   property: {
     address: '123 Main Street',
     city: 'San Francisco',
@@ -88,9 +89,9 @@ const SAMPLE_DATA = {
   }
 };
 
-export async function GET(request: NextRequest, { params }: Params) {
+export async function GET(request: NextRequest, { params }: RouteParams) {
   try {
-    const { templateCode } = params;
+    const { templateCode } = await params;
     
     // Check if template exists
     const template = TEMPLATE_REGISTRY[templateCode];
@@ -193,7 +194,8 @@ export async function GET(request: NextRequest, { params }: Params) {
     }
 
     // Render the template with sample data
-    const html = await templateService.renderTemplate(templateCode, SAMPLE_DATA);
+    // TODO: Fix type mismatch between SAMPLE_DATA and TemplateData interface
+    const html = await templateService.renderTemplate(templateCode, SAMPLE_DATA as any);
     
     return new NextResponse(html, {
       status: 200,

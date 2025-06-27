@@ -5,20 +5,35 @@
   "categoryNumber": "01",
   "originalFileName": "Request_for_Repair___6_24.pdf",
   "version": "1.0.0",
-  "lastUpdated": "2024-01-01",
-  "carFormNumber": "N/A",
+  "lastUpdated": "2025-06-27",
+  "carFormNumber": "RR",
   "formRevisionDate": "6/24",
   "pageCount": 1,
   "requiredByLaw": false,
   "commonlyUsed": true,
-  "dependencies": [],
-  "relatedForms": [],
-  "description": "Placeholder for Request for Repair",
-  "usageNotes": "This form is used when...",
+  "dependencies": [
+    "CA_RPA"
+  ],
+  "relatedForms": [
+    "CA_RPA",
+    "BUYER_INVESTIGATION",
+    "SELLER_RESPONSE_BUYER"
+  ],
+  "description": "Standard form used by buyers to request repairs based on property inspections",
+  "usageNotes": "This form is used after property inspections when the buyer wants to request repairs or credits from the seller. It must be submitted within the inspection contingency period specified in the purchase agreement.",
+  "legalNotes": "This form has been approved by the California Association of REALTORS® (C.A.R.). Time is of the essence. All repair requests must be reasonable and based on legitimate inspection findings.",
+  "keywords": [
+    "repairs",
+    "inspection",
+    "buyer request",
+    "property condition",
+    "credits",
+    "contingency"
+  ],
   "implementationStatus": {
-    "template": false,
-    "fields": false,
-    "signatures": false,
+    "template": true,
+    "fields": true,
+    "signatures": true,
     "testing": false
   }
 }

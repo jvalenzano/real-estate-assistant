@@ -1,25 +1,128 @@
 {
   "templateId": "BUYER_CONTINGENCY_REMOVAL",
   "templateName": "Buyer Contingency Removal #1",
-  "originalFileName": "Buyer Contingency Removal #1 - 6_24.pdf",
   "fields": [
     {
-      "name": "placeholder_field_1",
+      "name": "propertyAddress",
       "type": "string",
-      "label": "Placeholder Field 1",
+      "label": "Property Address",
+      "required": true,
+      "placeholder": "123 Main Street",
+      "section": "property_info",
+      "implemented": true
+    },
+    {
+      "name": "buyerName",
+      "type": "string",
+      "label": "Buyer Name",
+      "required": true,
+      "placeholder": "Enter buyer's full legal name",
+      "section": "buyer_info",
+      "implemented": true
+    },
+    {
+      "name": "sellerName",
+      "type": "string",
+      "label": "Seller Name",
+      "required": true,
+      "placeholder": "Enter seller's full legal name",
+      "section": "seller_info",
+      "implemented": true
+    },
+    {
+      "name": "escrowNumber",
+      "type": "string",
+      "label": "Escrow Number",
       "required": false,
-      "placeholder": "This field needs to be implemented",
-      "section": "placeholder",
-      "implemented": false
+      "placeholder": "12345",
+      "section": "transaction_info",
+      "implemented": true
+    },
+    {
+      "name": "inspectionContingency",
+      "type": "checkbox",
+      "label": "Remove Inspection Contingency",
+      "required": false,
+      "section": "contingencies",
+      "implemented": true
+    },
+    {
+      "name": "loanContingency",
+      "type": "checkbox",
+      "label": "Remove Loan Contingency",
+      "required": false,
+      "section": "contingencies",
+      "implemented": true
+    },
+    {
+      "name": "appraisalContingency",
+      "type": "checkbox",
+      "label": "Remove Appraisal Contingency",
+      "required": false,
+      "section": "contingencies",
+      "implemented": true
+    },
+    {
+      "name": "otherContingency",
+      "type": "checkbox",
+      "label": "Remove Other Contingency",
+      "required": false,
+      "section": "contingencies",
+      "implemented": true
+    },
+    {
+      "name": "otherContingencyDescription",
+      "type": "string",
+      "label": "Other Contingency Description",
+      "required": false,
+      "placeholder": "Describe other contingency",
+      "section": "contingencies",
+      "dependsOn": {
+        "field": "otherContingency",
+        "condition": "equals",
+        "value": true
+      },
+      "implemented": true
+    },
+    {
+      "name": "removalDate",
+      "type": "date",
+      "label": "Contingency Removal Date",
+      "required": true,
+      "section": "dates",
+      "implemented": true
     }
   ],
   "sections": [
     {
-      "id": "placeholder",
-      "name": "Placeholder Section",
-      "description": "Fields will be organized by section when implemented"
+      "id": "property_info",
+      "name": "Property Information",
+      "order": 1
+    },
+    {
+      "id": "buyer_info",
+      "name": "Buyer Information",
+      "order": 2
+    },
+    {
+      "id": "seller_info",
+      "name": "Seller Information",
+      "order": 3
+    },
+    {
+      "id": "transaction_info",
+      "name": "Transaction Information",
+      "order": 4
+    },
+    {
+      "id": "contingencies",
+      "name": "Contingencies to Remove",
+      "order": 5
+    },
+    {
+      "id": "dates",
+      "name": "Important Dates",
+      "order": 6
     }
-  ],
-  "implemented": false,
-  "implementationNotes": "This form needs to be converted from the official PDF"
+  ]
 }

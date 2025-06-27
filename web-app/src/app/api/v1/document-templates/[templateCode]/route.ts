@@ -7,15 +7,15 @@ import { NextRequest, NextResponse } from 'next/server';
 import { TEMPLATE_REGISTRY } from '@/templates';
 import { templateService } from '@/services/template.service';
 
-interface Params {
-  params: {
+interface RouteParams {
+  params: Promise<{
     templateCode: string;
-  };
+  }>;
 }
 
-export async function GET(request: NextRequest, { params }: Params) {
+export async function GET(request: NextRequest, { params }: RouteParams) {
   try {
-    const { templateCode } = params;
+    const { templateCode } = await params;
     
     // Get template from registry
     const template = TEMPLATE_REGISTRY[templateCode];

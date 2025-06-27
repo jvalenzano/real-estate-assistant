@@ -1,25 +1,140 @@
 {
   "templateId": "LEAD_BASED_PAINT",
   "templateName": "Lead Based Paint Disclosure",
-  "originalFileName": "Lead_Based_Paint_Disclosure___12_22.pdf",
   "fields": [
     {
-      "name": "placeholder_field_1",
+      "name": "propertyAddress",
       "type": "string",
-      "label": "Placeholder Field 1",
+      "label": "Property Address",
+      "required": true,
+      "placeholder": "123 Main Street",
+      "section": "property_info",
+      "implemented": true
+    },
+    {
+      "name": "propertyBuiltYear",
+      "type": "number",
+      "label": "Year Property Built",
+      "required": true,
+      "placeholder": "1975",
+      "section": "property_info",
+      "validation": {
+        "min": 1900,
+        "max": 2025
+      },
+      "implemented": true
+    },
+    {
+      "name": "sellerName",
+      "type": "string",
+      "label": "Seller Name",
+      "required": true,
+      "placeholder": "Enter seller's full legal name",
+      "section": "seller_info",
+      "implemented": true
+    },
+    {
+      "name": "buyerName",
+      "type": "string",
+      "label": "Buyer Name",
+      "required": true,
+      "placeholder": "Enter buyer's full legal name",
+      "section": "buyer_info",
+      "implemented": true
+    },
+    {
+      "name": "knownLeadPaint",
+      "type": "radio",
+      "label": "Presence of lead-based paint and/or lead-based paint hazards",
+      "required": true,
+      "section": "disclosure",
+      "options": [
+        {"value": "known", "label": "Known lead-based paint and/or lead-based paint hazards are present"},
+        {"value": "no_knowledge", "label": "Seller has no knowledge of lead-based paint and/or lead-based paint hazards"},
+        {"value": "no_reports", "label": "Seller has no reports or records pertaining to lead-based paint"}
+      ],
+      "implemented": true
+    },
+    {
+      "name": "recordsProvided",
+      "type": "checkbox",
+      "label": "Seller has provided available records and reports",
       "required": false,
-      "placeholder": "This field needs to be implemented",
-      "section": "placeholder",
-      "implemented": false
+      "section": "disclosure",
+      "implemented": true
+    },
+    {
+      "name": "buyerAcknowledgment",
+      "type": "checkbox",
+      "label": "Buyer acknowledges receipt of disclosure",
+      "required": true,
+      "section": "acknowledgment",
+      "implemented": true
+    },
+    {
+      "name": "pamphletReceived",
+      "type": "checkbox",
+      "label": "Buyer has received the EPA pamphlet",
+      "required": true,
+      "section": "acknowledgment",
+      "implemented": true
+    },
+    {
+      "name": "inspectionPeriod",
+      "type": "radio",
+      "label": "Lead-based paint inspection",
+      "required": true,
+      "section": "inspection",
+      "options": [
+        {"value": "waived", "label": "Buyer waives the opportunity to conduct inspection"},
+        {"value": "requested", "label": "Buyer will receive 10 days to conduct inspection"}
+      ],
+      "implemented": true
+    },
+    {
+      "name": "disclosureDate",
+      "type": "date",
+      "label": "Date of Disclosure",
+      "required": true,
+      "section": "dates",
+      "implemented": true
     }
   ],
   "sections": [
     {
-      "id": "placeholder",
-      "name": "Placeholder Section",
-      "description": "Fields will be organized by section when implemented"
+      "id": "property_info",
+      "name": "Property Information",
+      "order": 1
+    },
+    {
+      "id": "seller_info",
+      "name": "Seller Information",
+      "order": 2
+    },
+    {
+      "id": "buyer_info",
+      "name": "Buyer Information",
+      "order": 3
+    },
+    {
+      "id": "disclosure",
+      "name": "Lead Paint Disclosure",
+      "order": 4
+    },
+    {
+      "id": "acknowledgment",
+      "name": "Buyer Acknowledgment",
+      "order": 5
+    },
+    {
+      "id": "inspection",
+      "name": "Inspection Rights",
+      "order": 6
+    },
+    {
+      "id": "dates",
+      "name": "Important Dates",
+      "order": 7
     }
-  ],
-  "implemented": false,
-  "implementationNotes": "This form needs to be converted from the official PDF"
+  ]
 }

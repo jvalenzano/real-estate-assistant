@@ -1,22 +1,69 @@
 {
-  "templateCode": "BUYER_CONTINGENCY_REMOVAL",
-  "pdfFileName": "Buyer Contingency Removal #1 - 6_24.pdf",
-  "description": "Buyer Contingency Removal #1",
-  "carFormNumber": null,
-  "fields": [
-    {
-      "fieldName": "date",
-      "type": "date",
-      "page": 1,
-      "x": 450,
-      "y": 750,
-      "width": 100,
-      "height": 20,
-      "required": true,
-      "description": "Form date"
+  "templateId": "BUYER_CONTINGENCY_REMOVAL",
+  "fields": {
+    "propertyAddress": {
+      "x": 150,
+      "y": 680,
+      "fontSize": 10,
+      "maxWidth": 300
+    },
+    "buyerName": {
+      "x": 150,
+      "y": 650,
+      "fontSize": 10,
+      "maxWidth": 250
+    },
+    "sellerName": {
+      "x": 150,
+      "y": 620,
+      "fontSize": 10,
+      "maxWidth": 250
+    },
+    "escrowNumber": {
+      "x": 400,
+      "y": 680,
+      "fontSize": 10,
+      "maxWidth": 100
+    },
+    "inspectionContingency": {
+      "x": 100,
+      "y": 500,
+      "fontSize": 12,
+      "type": "checkbox",
+      "checkmark": "X"
+    },
+    "loanContingency": {
+      "x": 100,
+      "y": 480,
+      "fontSize": 12,
+      "type": "checkbox",
+      "checkmark": "X"
+    },
+    "appraisalContingency": {
+      "x": 100,
+      "y": 460,
+      "fontSize": 12,
+      "type": "checkbox",
+      "checkmark": "X"
+    },
+    "otherContingency": {
+      "x": 100,
+      "y": 440,
+      "fontSize": 12,
+      "type": "checkbox",
+      "checkmark": "X"
+    },
+    "otherContingencyDescription": {
+      "x": 150,
+      "y": 420,
+      "fontSize": 10,
+      "maxWidth": 300
+    },
+    "removalDate": {
+      "x": 150,
+      "y": 300,
+      "fontSize": 10,
+      "maxWidth": 100
     }
-  ],
-  "needsFieldMapping": true,
-  "mappingStatus": "initial",
-  "notes": "This is an initial field mapping. Field positions need to be adjusted based on the actual PDF layout."
+  }
 }

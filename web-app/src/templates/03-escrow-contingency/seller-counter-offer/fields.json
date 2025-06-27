@@ -4,22 +4,236 @@
   "originalFileName": "Seller Counter Offer #1 - 12_24.pdf",
   "fields": [
     {
-      "name": "placeholder_field_1",
+      "name": "counterOfferDate",
+      "type": "date",
+      "label": "Counter Offer Date",
+      "required": true,
+      "section": "header",
+      "description": "Date this counter offer is made"
+    },
+    {
+      "name": "propertyAddress",
       "type": "string",
-      "label": "Placeholder Field 1",
+      "label": "Property Address",
+      "required": true,
+      "section": "property",
+      "maxLength": 100
+    },
+    {
+      "name": "propertyCity",
+      "type": "string",
+      "label": "City",
+      "required": true,
+      "section": "property",
+      "maxLength": 50
+    },
+    {
+      "name": "propertyCounty",
+      "type": "string",
+      "label": "County",
+      "required": true,
+      "section": "property",
+      "maxLength": 30
+    },
+    {
+      "name": "propertyZip",
+      "type": "string",
+      "label": "ZIP Code",
+      "required": true,
+      "section": "property",
+      "pattern": "^[0-9]{5}(-[0-9]{4})?$"
+    },
+    {
+      "name": "sellerName",
+      "type": "string",
+      "label": "Seller Name(s)",
+      "required": true,
+      "section": "parties",
+      "maxLength": 100
+    },
+    {
+      "name": "buyerName",
+      "type": "string",
+      "label": "Buyer Name(s)",
+      "required": true,
+      "section": "parties",
+      "maxLength": 100
+    },
+    {
+      "name": "originalOfferDate",
+      "type": "date",
+      "label": "Date of Original Offer",
+      "required": true,
+      "section": "reference",
+      "description": "Date of the offer being countered"
+    },
+    {
+      "name": "purchasePrice",
+      "type": "currency",
+      "label": "Purchase Price",
+      "required": true,
+      "section": "terms",
+      "min": 0,
+      "description": "Counter offer purchase price"
+    },
+    {
+      "name": "initialDeposit",
+      "type": "currency",
+      "label": "Initial Deposit",
+      "required": true,
+      "section": "terms",
+      "min": 0
+    },
+    {
+      "name": "escrowPeriod",
+      "type": "number",
+      "label": "Escrow Period (Days)",
+      "required": true,
+      "section": "terms",
+      "min": 1,
+      "max": 180,
+      "default": 30
+    },
+    {
+      "name": "closingDate",
+      "type": "date",
+      "label": "Close of Escrow Date",
+      "required": true,
+      "section": "terms"
+    },
+    {
+      "name": "contingencyPeriod",
+      "type": "number",
+      "label": "Contingency Period (Days)",
       "required": false,
-      "placeholder": "This field needs to be implemented",
-      "section": "placeholder",
-      "implemented": false
+      "section": "contingencies",
+      "min": 0,
+      "max": 30,
+      "default": 17
+    },
+    {
+      "name": "loanContingency",
+      "type": "boolean",
+      "label": "Loan Contingency",
+      "required": false,
+      "section": "contingencies",
+      "default": true
+    },
+    {
+      "name": "appraisalContingency",
+      "type": "boolean",
+      "label": "Appraisal Contingency",
+      "required": false,
+      "section": "contingencies",
+      "default": true
+    },
+    {
+      "name": "inspectionContingency",
+      "type": "boolean",
+      "label": "Inspection Contingency",
+      "required": false,
+      "section": "contingencies",
+      "default": true
+    },
+    {
+      "name": "sellerConcessions",
+      "type": "currency",
+      "label": "Seller Concessions",
+      "required": false,
+      "section": "terms",
+      "min": 0,
+      "default": 0,
+      "description": "Amount seller will contribute to buyer's closing costs"
+    },
+    {
+      "name": "personalPropertyIncluded",
+      "type": "text",
+      "label": "Personal Property Included",
+      "required": false,
+      "section": "additional",
+      "maxLength": 300,
+      "description": "List of personal property items included in sale"
+    },
+    {
+      "name": "personalPropertyExcluded",
+      "type": "text",
+      "label": "Personal Property Excluded",
+      "required": false,
+      "section": "additional",
+      "maxLength": 300,
+      "description": "List of personal property items excluded from sale"
+    },
+    {
+      "name": "additionalTerms",
+      "type": "text",
+      "label": "Additional Terms and Conditions",
+      "required": false,
+      "section": "additional",
+      "maxLength": 500,
+      "rows": 4
+    },
+    {
+      "name": "counterOfferExpiration",
+      "type": "datetime",
+      "label": "This Counter Offer Expires At",
+      "required": true,
+      "section": "expiration",
+      "description": "Date and time when this counter offer expires"
+    },
+    {
+      "name": "sellerPossessionAfterClose",
+      "type": "number",
+      "label": "Seller Possession After Close (Days)",
+      "required": false,
+      "section": "terms",
+      "min": 0,
+      "max": 30,
+      "default": 0,
+      "description": "Number of days seller will remain in possession after close"
     }
   ],
   "sections": [
     {
-      "id": "placeholder",
-      "name": "Placeholder Section",
-      "description": "Fields will be organized by section when implemented"
+      "id": "header",
+      "name": "Counter Offer Information",
+      "description": "Basic counter offer details"
+    },
+    {
+      "id": "property",
+      "name": "Property Information",
+      "description": "Property address and location"
+    },
+    {
+      "id": "parties",
+      "name": "Parties",
+      "description": "Seller and buyer information"
+    },
+    {
+      "id": "reference",
+      "name": "Reference Information",
+      "description": "Original offer details"
+    },
+    {
+      "id": "terms",
+      "name": "Counter Offer Terms",
+      "description": "Modified purchase terms"
+    },
+    {
+      "id": "contingencies",
+      "name": "Contingencies",
+      "description": "Modified contingency terms"
+    },
+    {
+      "id": "additional",
+      "name": "Additional Terms",
+      "description": "Other modifications or conditions"
+    },
+    {
+      "id": "expiration",
+      "name": "Expiration",
+      "description": "Counter offer expiration details"
     }
   ],
-  "implemented": false,
-  "implementationNotes": "This form needs to be converted from the official PDF"
+  "implemented": true,
+  "implementationNotes": "Form fields mapped for seller counter offer negotiations"
 }

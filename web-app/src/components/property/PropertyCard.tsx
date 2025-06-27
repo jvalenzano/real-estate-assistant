@@ -19,7 +19,14 @@ const colors = {
 };
 
 export default function PropertyCard({ property }: PropertyCardProps) {
-  const primaryImage = property.images.find(img => img.is_primary) || property.images[0];
+  // Handle both image formats for compatibility
+  const primaryImage = property.images?.find?.(img => img.is_primary) || 
+                      property.images?.[0] || 
+                      (property as any).photos?.[0] || 
+                      'https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=800';
+  
+  const imageUrl = typeof primaryImage === 'string' ? primaryImage : primaryImage?.url || primaryImage;
+  
   const formattedPrice = new Intl.NumberFormat('en-US', {
     style: 'currency',
     currency: 'USD',
@@ -37,10 +44,10 @@ export default function PropertyCard({ property }: PropertyCardProps) {
     }`}>
         {/* Image Container with enhanced styling */}
         <div className="relative h-64 w-full flex-shrink-0">
-          {primaryImage ? (
+          {imageUrl ? (
             <Image
-              src={primaryImage.url}
-              alt={primaryImage.alt_text}
+              src={imageUrl}
+              alt={property.address.line1 || 'Property image'}
               fill
               className="object-cover group-hover:scale-105 transition-transform duration-300"
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -60,7 +67,7 @@ export default function PropertyCard({ property }: PropertyCardProps) {
               </span>
             )}
             <span className="bg-green-500 text-white px-3 py-1 rounded-full text-sm font-medium shadow-lg">
-              {property.listing_status}
+              {property.listing_status || (property as any).status || 'Active'}
             </span>
             {isPriceReduced && (
               <span className="bg-orange-500 text-white px-3 py-1 rounded-full text-sm font-medium shadow-lg">

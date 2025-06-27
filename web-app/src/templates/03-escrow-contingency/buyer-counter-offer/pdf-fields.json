@@ -2,10 +2,11 @@
   "templateCode": "BUYER_COUNTER_OFFER",
   "pdfFileName": "Buyer Counter Offer #1 - 12_24.pdf",
   "description": "Buyer Counter Offer #1",
-  "carFormNumber": null,
+  "carFormNumber": "BCO",
+  "totalPages": 1,
   "fields": [
     {
-      "fieldName": "date",
+      "fieldName": "counterOfferDate",
       "type": "date",
       "page": 1,
       "x": 450,
@@ -13,10 +14,209 @@
       "width": 100,
       "height": 20,
       "required": true,
-      "description": "Form date"
+      "description": "Counter offer date"
+    },
+    {
+      "fieldName": "propertyAddress",
+      "type": "text",
+      "page": 1,
+      "x": 150,
+      "y": 680,
+      "width": 400,
+      "height": 20,
+      "required": true,
+      "description": "Property street address"
+    },
+    {
+      "fieldName": "propertyCity",
+      "type": "text",
+      "page": 1,
+      "x": 150,
+      "y": 660,
+      "width": 150,
+      "height": 20,
+      "required": true,
+      "description": "Property city"
+    },
+    {
+      "fieldName": "propertyCounty",
+      "type": "text",
+      "page": 1,
+      "x": 310,
+      "y": 660,
+      "width": 120,
+      "height": 20,
+      "required": true,
+      "description": "Property county"
+    },
+    {
+      "fieldName": "propertyZip",
+      "type": "text",
+      "page": 1,
+      "x": 440,
+      "y": 660,
+      "width": 80,
+      "height": 20,
+      "required": true,
+      "description": "Property ZIP code"
+    },
+    {
+      "fieldName": "buyerName",
+      "type": "text",
+      "page": 1,
+      "x": 150,
+      "y": 620,
+      "width": 400,
+      "height": 20,
+      "required": true,
+      "description": "Buyer name(s)"
+    },
+    {
+      "fieldName": "sellerName",
+      "type": "text",
+      "page": 1,
+      "x": 150,
+      "y": 600,
+      "width": 400,
+      "height": 20,
+      "required": true,
+      "description": "Seller name(s)"
+    },
+    {
+      "fieldName": "originalOfferDate",
+      "type": "date",
+      "page": 1,
+      "x": 200,
+      "y": 560,
+      "width": 100,
+      "height": 20,
+      "required": true,
+      "description": "Date of original offer"
+    },
+    {
+      "fieldName": "purchasePrice",
+      "type": "text",
+      "page": 1,
+      "x": 200,
+      "y": 520,
+      "width": 150,
+      "height": 20,
+      "required": true,
+      "description": "Purchase price amount"
+    },
+    {
+      "fieldName": "initialDeposit",
+      "type": "text",
+      "page": 1,
+      "x": 200,
+      "y": 500,
+      "width": 150,
+      "height": 20,
+      "required": true,
+      "description": "Initial deposit amount"
+    },
+    {
+      "fieldName": "escrowPeriod",
+      "type": "text",
+      "page": 1,
+      "x": 200,
+      "y": 480,
+      "width": 60,
+      "height": 20,
+      "required": true,
+      "description": "Escrow period in days"
+    },
+    {
+      "fieldName": "closingDate",
+      "type": "date",
+      "page": 1,
+      "x": 200,
+      "y": 460,
+      "width": 100,
+      "height": 20,
+      "required": true,
+      "description": "Close of escrow date"
+    },
+    {
+      "fieldName": "contingencyPeriod",
+      "type": "text",
+      "page": 1,
+      "x": 200,
+      "y": 440,
+      "width": 60,
+      "height": 20,
+      "required": false,
+      "description": "Contingency period in days"
+    },
+    {
+      "fieldName": "loanContingency",
+      "type": "checkbox",
+      "page": 1,
+      "x": 100,
+      "y": 420,
+      "width": 15,
+      "height": 15,
+      "required": false,
+      "description": "Loan contingency checkbox"
+    },
+    {
+      "fieldName": "appraisalContingency",
+      "type": "checkbox",
+      "page": 1,
+      "x": 100,
+      "y": 400,
+      "width": 15,
+      "height": 15,
+      "required": false,
+      "description": "Appraisal contingency checkbox"
+    },
+    {
+      "fieldName": "inspectionContingency",
+      "type": "checkbox",
+      "page": 1,
+      "x": 100,
+      "y": 380,
+      "width": 15,
+      "height": 15,
+      "required": false,
+      "description": "Inspection contingency checkbox"
+    },
+    {
+      "fieldName": "sellerPaidClosingCosts",
+      "type": "text",
+      "page": 1,
+      "x": 200,
+      "y": 360,
+      "width": 150,
+      "height": 20,
+      "required": false,
+      "description": "Seller paid closing costs"
+    },
+    {
+      "fieldName": "additionalTerms",
+      "type": "text",
+      "page": 1,
+      "x": 100,
+      "y": 250,
+      "width": 450,
+      "height": 80,
+      "required": false,
+      "description": "Additional terms and conditions",
+      "multiline": true
+    },
+    {
+      "fieldName": "counterOfferExpiration",
+      "type": "text",
+      "page": 1,
+      "x": 200,
+      "y": 150,
+      "width": 200,
+      "height": 20,
+      "required": true,
+      "description": "Counter offer expiration date and time"
     }
   ],
-  "needsFieldMapping": true,
-  "mappingStatus": "initial",
-  "notes": "This is an initial field mapping. Field positions need to be adjusted based on the actual PDF layout."
+  "needsFieldMapping": false,
+  "mappingStatus": "complete",
+  "notes": "Field coordinates configured for standard buyer counter offer form layout"
 }

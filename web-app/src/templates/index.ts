@@ -81,7 +81,8 @@ export const TEMPLATE_REGISTRY: Record<string, TemplateRegistryEntry> = {
     category: 'buyers-offer',
     categoryNumber: '01',
     path: '01-buyers-offer/lead-based-paint',
-    implemented: false,
+    carFormNumber: 'FLD',
+    implemented: true,
     commonlyUsed: true,
     sortOrder: 106
   },
@@ -92,9 +93,10 @@ export const TEMPLATE_REGISTRY: Record<string, TemplateRegistryEntry> = {
     category: 'buyers-offer',
     categoryNumber: '01',
     path: '01-buyers-offer/request-for-repair',
-    implemented: false,
+    implemented: true,
     commonlyUsed: true,
-    sortOrder: 107
+    sortOrder: 107,
+    carFormNumber: 'RR 6/24'
   },
   'SELLER_LICENSE_REMAIN': {
     id: 'SELLER_LICENSE_REMAIN',
@@ -116,7 +118,8 @@ export const TEMPLATE_REGISTRY: Record<string, TemplateRegistryEntry> = {
     category: 'contingency-removal',
     categoryNumber: '02',
     path: '02-contingency-removal/buyer-contingency-removal',
-    implemented: false,
+    carFormNumber: 'CR',
+    implemented: true,
     commonlyUsed: true,
     sortOrder: 201
   },
@@ -173,9 +176,10 @@ export const TEMPLATE_REGISTRY: Record<string, TemplateRegistryEntry> = {
     category: 'escrow-contingency',
     categoryNumber: '03',
     path: '03-escrow-contingency/buyer-counter-offer',
-    implemented: false,
+    implemented: true,
     commonlyUsed: true,
-    sortOrder: 301
+    sortOrder: 301,
+    carFormNumber: 'BCO 12/24'
   },
   'DISCLOSURE_INFO_ADVISORY': {
     id: 'DISCLOSURE_INFO_ADVISORY',
@@ -195,9 +199,10 @@ export const TEMPLATE_REGISTRY: Record<string, TemplateRegistryEntry> = {
     category: 'escrow-contingency',
     categoryNumber: '03',
     path: '03-escrow-contingency/seller-counter-offer',
-    implemented: false,
+    implemented: true,
     commonlyUsed: true,
-    sortOrder: 303
+    sortOrder: 303,
+    carFormNumber: 'SCO 12/24'
   },
   'SELLER_RESPONSE_BUYER': {
     id: 'SELLER_RESPONSE_BUYER',

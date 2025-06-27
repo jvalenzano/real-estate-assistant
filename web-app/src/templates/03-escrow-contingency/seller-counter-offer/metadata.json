@@ -5,20 +5,34 @@
   "categoryNumber": "03",
   "originalFileName": "Seller Counter Offer #1 - 12_24.pdf",
   "version": "1.0.0",
-  "lastUpdated": "2024-01-01",
-  "carFormNumber": "N/A",
-  "formRevisionDate": "N/A",
+  "lastUpdated": "2025-06-27",
+  "carFormNumber": "SCO",
+  "formRevisionDate": "12/24",
   "pageCount": 1,
   "requiredByLaw": false,
   "commonlyUsed": true,
-  "dependencies": [],
-  "relatedForms": [],
-  "description": "Placeholder for Seller Counter Offer #1",
-  "usageNotes": "This form is used when...",
+  "dependencies": [
+    "CA_RPA"
+  ],
+  "relatedForms": [
+    "CA_RPA",
+    "BUYER_COUNTER_OFFER",
+    "SELLER_RESPONSE_BUYER"
+  ],
+  "description": "Standard form used by sellers to make counter offers to buyers' offers or counter offers",
+  "usageNotes": "This form is used when a seller wants to counter an offer from the buyer. It modifies specific terms of the original offer while accepting others. Multiple counter offers may be exchanged during negotiations.",
+  "legalNotes": "This form has been approved by the California Association of REALTORS® (C.A.R.). Time is of the essence. All counter offers expire by law after a reasonable time if no expiration is specified.",
+  "keywords": [
+    "counter offer",
+    "seller counter",
+    "negotiation",
+    "offer modification",
+    "purchase terms"
+  ],
   "implementationStatus": {
-    "template": false,
-    "fields": false,
-    "signatures": false,
+    "template": true,
+    "fields": true,
+    "signatures": true,
     "testing": false
   }
 }

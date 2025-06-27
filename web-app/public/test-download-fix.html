@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Download Fix Test</title>
+</head>
+<body>
+    <h1>Document Download Fix Test</h1>
+    <button onclick="testDownload()">Test Download Fix</button>
+    <div id="results"></div>
+
+    <script>
+        async function testDownload() {
+            const results = document.getElementById('results');
+            results.innerHTML = '<p>Testing download fix...</p>';
+            
+            try {
+                // 1. Generate a document
+                results.innerHTML += '<p>1. Generating document...</p>';
+                const generateResponse = await fetch('/api/v1/documents/generate', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        templateCode: 'CA_RPA',
+                        formData: { buyerName: 'Browser Test', propertyAddress: '123 Browser St' },
+                        transactionId: crypto.randomUUID()
+                    })
+                });
+                
+                const generateData = await generateResponse.json();
+                if (!generateData.success) {
+                    throw new Error('Generation failed: ' + generateData.error);
+                }
+                
+                const documentId = generateData.data.documentId;
+                results.innerHTML += `<p>✅ Document generated: ${documentId}</p>`;
+                
+                // 2. Test metadata API
+                results.innerHTML += '<p>2. Testing metadata API...</p>';
+                const metadataResponse = await fetch(`/api/v1/documents/${documentId}`);
+                const metadataData = await metadataResponse.json();
+                
+                if (!metadataData.success) {
+                    throw new Error('Metadata failed: ' + metadataData.error);
+                }
+                
+                results.innerHTML += `<p>✅ Metadata retrieved</p>`;
+                
+                // 3. Test download
+                results.innerHTML += '<p>3. Testing download...</p>';
+                const downloadResponse = await fetch(`/api/v1/documents/${documentId}/download`);
+                
+                if (!downloadResponse.ok) {
+                    throw new Error(`Download failed: ${downloadResponse.status}`);
+                }
+                
+                const blob = await downloadResponse.blob();
+                results.innerHTML += `<p>✅ Download successful: ${blob.size} bytes</p>`;
+                
+                // 4. Create download link
+                const url = URL.createObjectURL(blob);
+                const link = document.createElement('a');
+                link.href = url;
+                link.download = `test-document-${documentId}.pdf`;
+                link.textContent = 'Download Test PDF';
+                results.appendChild(link);
+                
+                results.innerHTML += '<p>🎉 ALL TESTS PASSED - DOWNLOAD FIX WORKING!</p>';
+                
+            } catch (error) {
+                results.innerHTML += `<p>❌ Error: ${error.message}</p>`;
+            }
+        }
+    </script>
+</body>
+</html>

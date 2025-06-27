@@ -1,22 +1,95 @@
 {
-  "templateCode": "LEAD_BASED_PAINT",
-  "pdfFileName": "Lead_Based_Paint_Disclosure___12_22.pdf",
-  "description": "Lead Based Paint Disclosure",
-  "carFormNumber": null,
-  "fields": [
-    {
-      "fieldName": "date",
-      "type": "date",
-      "page": 1,
+  "templateId": "LEAD_BASED_PAINT",
+  "fields": {
+    "propertyAddress": {
+      "x": 150,
+      "y": 700,
+      "fontSize": 10,
+      "maxWidth": 300
+    },
+    "propertyBuiltYear": {
       "x": 450,
-      "y": 750,
-      "width": 100,
-      "height": 20,
-      "required": true,
-      "description": "Form date"
+      "y": 700,
+      "fontSize": 10,
+      "maxWidth": 50
+    },
+    "sellerName": {
+      "x": 150,
+      "y": 650,
+      "fontSize": 10,
+      "maxWidth": 250
+    },
+    "buyerName": {
+      "x": 150,
+      "y": 620,
+      "fontSize": 10,
+      "maxWidth": 250
+    },
+    "knownLeadPaint": {
+      "known": {
+        "x": 100,
+        "y": 500,
+        "fontSize": 12,
+        "type": "checkbox",
+        "checkmark": "X"
+      },
+      "no_knowledge": {
+        "x": 100,
+        "y": 480,
+        "fontSize": 12,
+        "type": "checkbox",
+        "checkmark": "X"
+      },
+      "no_reports": {
+        "x": 100,
+        "y": 460,
+        "fontSize": 12,
+        "type": "checkbox",
+        "checkmark": "X"
+      }
+    },
+    "recordsProvided": {
+      "x": 100,
+      "y": 420,
+      "fontSize": 12,
+      "type": "checkbox",
+      "checkmark": "X"
+    },
+    "buyerAcknowledgment": {
+      "x": 100,
+      "y": 350,
+      "fontSize": 12,
+      "type": "checkbox",
+      "checkmark": "X"
+    },
+    "pamphletReceived": {
+      "x": 100,
+      "y": 330,
+      "fontSize": 12,
+      "type": "checkbox",
+      "checkmark": "X"
+    },
+    "inspectionPeriod": {
+      "waived": {
+        "x": 100,
+        "y": 280,
+        "fontSize": 12,
+        "type": "checkbox",
+        "checkmark": "X"
+      },
+      "requested": {
+        "x": 100,
+        "y": 260,
+        "fontSize": 12,
+        "type": "checkbox",
+        "checkmark": "X"
+      }
+    },
+    "disclosureDate": {
+      "x": 150,
+      "y": 200,
+      "fontSize": 10,
+      "maxWidth": 100
     }
-  ],
-  "needsFieldMapping": true,
-  "mappingStatus": "initial",
-  "notes": "This is an initial field mapping. Field positions need to be adjusted based on the actual PDF layout."
+  }
 }

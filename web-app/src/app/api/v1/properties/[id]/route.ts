@@ -1,12 +1,12 @@
 import { NextRequest, NextResponse } from 'next/server';
-import demoProperties from '@/../../demo-data/properties.json';
+import { demoProperties } from '@/data/demo-properties';
 
 export async function GET(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
-    const { id } = params;
+    const { id } = await params;
 
     // Find property by ID or MLS number
     const property = demoProperties.find(p => 

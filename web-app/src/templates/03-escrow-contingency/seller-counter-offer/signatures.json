@@ -1,0 +1,101 @@
+{
+  "templateId": "SELLER_COUNTER_OFFER",
+  "signatures": [
+    {
+      "id": "seller_signature_1",
+      "page": 1,
+      "x": 100,
+      "y": 100,
+      "width": 200,
+      "height": 50,
+      "role": "seller",
+      "type": "signature",
+      "required": true,
+      "label": "Seller Signature",
+      "group": "seller_signatures",
+      "implemented": true
+    },
+    {
+      "id": "seller_date_1",
+      "page": 1,
+      "x": 350,
+      "y": 100,
+      "width": 100,
+      "height": 30,
+      "role": "seller",
+      "type": "date",
+      "required": true,
+      "label": "Date",
+      "group": "seller_signatures",
+      "implemented": true
+    },
+    {
+      "id": "seller_time_1",
+      "page": 1,
+      "x": 470,
+      "y": 100,
+      "width": 80,
+      "height": 30,
+      "role": "seller",
+      "type": "time",
+      "required": true,
+      "label": "Time",
+      "group": "seller_signatures",
+      "implemented": true
+    },
+    {
+      "id": "seller_signature_2",
+      "page": 1,
+      "x": 100,
+      "y": 50,
+      "width": 200,
+      "height": 50,
+      "role": "seller",
+      "type": "signature",
+      "required": false,
+      "label": "Seller Signature (if multiple)",
+      "group": "seller_signatures",
+      "implemented": true
+    },
+    {
+      "id": "seller_date_2",
+      "page": 1,
+      "x": 350,
+      "y": 50,
+      "width": 100,
+      "height": 30,
+      "role": "seller",
+      "type": "date",
+      "required": false,
+      "label": "Date",
+      "group": "seller_signatures",
+      "implemented": true
+    },
+    {
+      "id": "seller_time_2",
+      "page": 1,
+      "x": 470,
+      "y": 50,
+      "width": 80,
+      "height": 30,
+      "role": "seller",
+      "type": "time",
+      "required": false,
+      "label": "Time",
+      "group": "seller_signatures",
+      "implemented": true
+    }
+  ],
+  "signatureGroups": [
+    {
+      "id": "seller_signatures",
+      "name": "Seller Signatures",
+      "description": "Seller(s) must sign and date the counter offer"
+    }
+  ],
+  "totalPages": 1,
+  "signingOrder": [
+    "seller_signatures"
+  ],
+  "notes": "Counter offers require seller signatures with date and time to be legally binding"
+}

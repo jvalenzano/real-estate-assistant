@@ -265,6 +265,104 @@ export class PDFFormService {
   }
 
   /**
+   * Simple method to fill a PDF using template code
+   */
+  async fillPDF(
+    templateCode: string,
+    pdfDoc: PDFDocument,
+    formData: Record<string, any>
+  ): Promise<PDFDocument> {
+    try {
+      const form = pdfDoc.getForm();
+      const font = await pdfDoc.embedFont(StandardFonts.Helvetica);
+
+      // Try to fill existing form fields
+      const formFields = form.getFields();
+      
+      for (const field of formFields) {
+        const fieldName = field.getName();
+        const value = formData[fieldName];
+
+        if (value !== undefined && value !== null) {
+          if (field instanceof PDFTextField) {
+            field.setText(String(value));
+            field.updateAppearances(font);
+          } else if (field instanceof PDFCheckBox) {
+            if (value === true || value === 'true' || value === 1) {
+              field.check();
+            } else {
+              field.uncheck();
+            }
+          }
+        }
+      }
+
+      // If no form fields, use coordinate-based placement for CA_RPA
+      if (formFields.length === 0 && templateCode === 'CA_RPA') {
+        console.log('No form fields found, using coordinate-based placement for CA_RPA');
+        
+        // Get first page for basic info
+        const firstPage = pdfDoc.getPages()[0];
+        const { height } = firstPage.getSize();
+        
+        // Add basic property info on first page
+        if (formData.propertyAddress) {
+          firstPage.drawText(formData.propertyAddress, {
+            x: 120,
+            y: height - 145,
+            size: 10,
+            font,
+            color: rgb(0, 0, 0),
+          });
+        }
+        
+        if (formData.propertyCity) {
+          firstPage.drawText(formData.propertyCity, {
+            x: 120,
+            y: height - 165,
+            size: 10,
+            font,
+            color: rgb(0, 0, 0),
+          });
+        }
+        
+        if (formData.purchasePrice) {
+          const price = new Intl.NumberFormat('en-US', {
+            style: 'currency',
+            currency: 'USD',
+            minimumFractionDigits: 0,
+            maximumFractionDigits: 0
+          }).format(formData.purchasePrice);
+          
+          firstPage.drawText(price, {
+            x: 175,
+            y: height - 250,
+            size: 10,
+            font,
+            color: rgb(0, 0, 0),
+          });
+        }
+        
+        // Add buyer name
+        if (formData.buyerName) {
+          firstPage.drawText(formData.buyerName, {
+            x: 120,
+            y: height - 520,
+            size: 10,
+            font,
+            color: rgb(0, 0, 0),
+          });
+        }
+      }
+
+      return pdfDoc;
+    } catch (error) {
+      console.error('Error filling PDF:', error);
+      throw error;
+    }
+  }
+
+  /**
    * Format number as currency
    */
   private formatCurrency(value: number | string): string {

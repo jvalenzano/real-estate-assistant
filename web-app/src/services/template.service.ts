@@ -169,7 +169,7 @@ export class TemplateService {
           const fs = require('fs').promises;
           const path = require('path');
           
-          const templateDir = path.join(process.cwd(), 'public/templates/01-buyers-offer-negotiation/CA_RPA');
+          const templateDir = path.join(process.cwd(), 'src/templates/01-buyers-offer/CA_RPA');
           
           // Load template HTML directly
           const templateHtml = await fs.readFile(path.join(templateDir, 'template.hbs'), 'utf-8');
@@ -297,6 +297,33 @@ export class TemplateService {
   getSignatureFields(templateId: string): SignatureField[] {
     const loaded = this.loadedTemplates.get(templateId);
     return loaded?.signatures?.signatures || [];
+  }
+
+  /**
+   * Get complete template details
+   */
+  async getTemplate(templateId: string): Promise<any> {
+    // Check if template exists in registry
+    const entry = TEMPLATE_REGISTRY[templateId];
+    if (!entry) {
+      return null;
+    }
+
+    // Load template if not already loaded
+    if (!this.loadedTemplates.has(templateId)) {
+      await this.loadTemplate(templateId, entry);
+    }
+
+    const loaded = this.loadedTemplates.get(templateId);
+    if (!loaded) {
+      return null;
+    }
+
+    return {
+      fields: loaded.fields,
+      signatures: loaded.signatures,
+      metadata: loaded.metadata
+    };
   }
 
   /**

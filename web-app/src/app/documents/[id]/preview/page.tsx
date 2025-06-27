@@ -61,9 +61,9 @@ export default function DocumentPreviewPage() {
         }
         
         // If PDF fails, try to fetch HTML preview
-        if (data.htmlPreviewUrl) {
+        if ((data as any).htmlPreviewUrl) {
           try {
-            const htmlResponse = await api.get(data.htmlPreviewUrl.replace('/api/v1', ''), {
+            const htmlResponse = await api.get((data as any).htmlPreviewUrl.replace('/api/v1', ''), {
               responseType: 'text'
             });
             setHtmlContent(htmlResponse.data);

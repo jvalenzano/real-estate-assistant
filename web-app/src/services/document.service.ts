@@ -1,7 +1,7 @@
 import api from './nextjs-api';
-import { PDFFormService } from './pdf-form.service';
-import { TemplateService } from './template.service';
-import { StorageService } from './storage.service';
+// PDF processing is now handled server-side only
+// import { TemplateService } from './template.service';
+// import { StorageService } from './storage.service';
 
 export interface RPAFormData {
   propertyId: string;
@@ -38,14 +38,11 @@ export interface DocumentGenerationResult {
 }
 
 export class DocumentService {
-  private pdfFormService: PDFFormService;
-  private templateService: TemplateService;
-  private storageService: StorageService;
+  // PDF processing is now handled server-side through API calls only
+  // No direct PDF service instances needed on client side
 
   constructor() {
-    this.pdfFormService = new PDFFormService();
-    this.templateService = new TemplateService();
-    this.storageService = new StorageService();
+    // Client-side service only makes API calls
   }
 
   /**
@@ -98,12 +95,45 @@ export class DocumentService {
    */
   async getDocument(documentId: string) {
     try {
-      // For now, return mock data until Supabase is set up
-      // TODO: Implement actual document fetching when backend is ready
+      // Try to fetch from Supabase first
+      const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+      const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+      
+      if (supabaseUrl && supabaseKey) {
+        try {
+          const response = await fetch('/api/v1/documents/' + documentId, {
+            method: 'GET',
+            headers: {
+              'Content-Type': 'application/json',
+            }
+          });
+          
+          if (response.ok) {
+            const result = await response.json();
+            if (result.success && result.data) {
+              // Map database response to UI format
+              const doc = result.data;
+              return {
+                documentId: doc.id || documentId,
+                status: doc.status || 'completed',
+                type: doc.template_code || 'CA_RPA',
+                pdfUrl: doc.file_url ? `/api/v1/documents/${documentId}/download` : undefined,
+                createdAt: doc.created_at || doc.createdAt,
+                formData: doc.field_data || {}
+              };
+            }
+          }
+        } catch (fetchError) {
+          console.error('Failed to fetch from database, using mock data:', fetchError);
+        }
+      }
+      
+      // Fallback to mock data with correct field names
       return {
-        id: documentId,
-        templateCode: 'CA_RPA',
+        documentId: documentId,
         status: 'completed',
+        type: 'CA_RPA',
+        pdfUrl: `/api/v1/documents/${documentId}/download`,
         createdAt: new Date().toISOString(),
         formData: {
           propertyAddress: '789 Ocean View Dr, San Diego, CA 92037',
@@ -121,7 +151,7 @@ export class DocumentService {
    * Download document PDF
    */
   async downloadDocument(documentId: string): Promise<Blob> {
-    const url = `/documents/${documentId}/pdf`;
+    const url = `/api/v1/documents/${documentId}/download`;
     console.log('Attempting PDF download from:', url);
     
     try {
@@ -183,18 +213,8 @@ export class DocumentService {
     }
   }
 
-  // TODO: Implement these methods when PDF generation is ready
-  async fillPDFForm(templateCode: string, formData: Record<string, any>): Promise<Uint8Array> {
-    // This will use pdfFormService to fill the PDF
-    // For now, throw not implemented
-    throw new Error('PDF form filling not yet implemented');
-  }
-
-  async uploadToSupabase(pdfBytes: Uint8Array, fileName: string): Promise<string> {
-    // This will use storageService to upload to Supabase
-    // For now, throw not implemented
-    throw new Error('Supabase upload not yet implemented');
-  }
+  // PDF processing methods removed - all PDF handling is server-side only
+  // Use generateDocument() API method which handles everything server-side
 }
 
 // Export singleton instance

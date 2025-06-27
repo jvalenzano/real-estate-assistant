@@ -59,9 +59,7 @@ html, body {
 }
 
 /* Ensure all elements have light backgrounds */
-* {
-  background-color: transparent;
-}
+/* NOTE: Removed global transparent background as it breaks button styling */
 
 /* Ensure all inputs are readable */
 input, textarea, select {

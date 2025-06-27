@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import demoProperties from '@/../../demo-data/properties.json';
+import { demoProperties } from '@/data/demo-properties';
 
 export async function GET(request: NextRequest) {
   try {

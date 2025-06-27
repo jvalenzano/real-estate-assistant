@@ -26,10 +26,10 @@ function CreateDocumentContent() {
       <Navigation />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Header */}
-        <div className="mb-8">
+        <div className="mb-6 sm:mb-8">
           <button
             onClick={() => router.push('/documents/new')}
-            className="mb-4 text-gray-600 hover:text-gray-900 flex items-center"
+            className="mb-4 text-gray-600 hover:text-gray-900 flex items-center p-2 -ml-2 sm:p-0 sm:ml-0 min-h-[44px]"
           >
             <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -37,8 +37,8 @@ function CreateDocumentContent() {
             Back to Templates
           </button>
           
-          <h1 className="text-3xl font-bold text-gray-900">Create Document</h1>
-          <p className="mt-2 text-gray-600">
+          <h1 className="text-2xl sm:text-3xl font-bold text-gray-900">Create Document</h1>
+          <p className="mt-2 text-sm sm:text-base text-gray-600">
             Fill in the required information to generate your {templateCode === 'CA_RPA' ? 'California Residential Purchase Agreement' : 'document'}
           </p>
         </div>

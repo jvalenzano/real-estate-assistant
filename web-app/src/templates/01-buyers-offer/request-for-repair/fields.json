@@ -4,22 +4,242 @@
   "originalFileName": "Request_for_Repair___6_24.pdf",
   "fields": [
     {
-      "name": "placeholder_field_1",
+      "name": "requestDate",
+      "type": "date",
+      "label": "Request Date",
+      "required": true,
+      "section": "header",
+      "description": "Date this repair request is made"
+    },
+    {
+      "name": "propertyAddress",
       "type": "string",
-      "label": "Placeholder Field 1",
+      "label": "Property Address",
+      "required": true,
+      "section": "property",
+      "maxLength": 100
+    },
+    {
+      "name": "propertyCity",
+      "type": "string",
+      "label": "City",
+      "required": true,
+      "section": "property",
+      "maxLength": 50
+    },
+    {
+      "name": "propertyCounty",
+      "type": "string",
+      "label": "County",
+      "required": true,
+      "section": "property",
+      "maxLength": 30
+    },
+    {
+      "name": "propertyZip",
+      "type": "string",
+      "label": "ZIP Code",
+      "required": true,
+      "section": "property",
+      "pattern": "^[0-9]{5}(-[0-9]{4})?$"
+    },
+    {
+      "name": "buyerName",
+      "type": "string",
+      "label": "Buyer Name(s)",
+      "required": true,
+      "section": "parties",
+      "maxLength": 100
+    },
+    {
+      "name": "sellerName",
+      "type": "string",
+      "label": "Seller Name(s)",
+      "required": true,
+      "section": "parties",
+      "maxLength": 100
+    },
+    {
+      "name": "escrowNumber",
+      "type": "string",
+      "label": "Escrow Number",
       "required": false,
-      "placeholder": "This field needs to be implemented",
-      "section": "placeholder",
-      "implemented": false
+      "section": "reference",
+      "maxLength": 50
+    },
+    {
+      "name": "inspectionDate",
+      "type": "date",
+      "label": "Inspection Date",
+      "required": true,
+      "section": "inspection",
+      "description": "Date of property inspection"
+    },
+    {
+      "name": "inspectorName",
+      "type": "string",
+      "label": "Inspector Name",
+      "required": false,
+      "section": "inspection",
+      "maxLength": 100
+    },
+    {
+      "name": "inspectorCompany",
+      "type": "string",
+      "label": "Inspection Company",
+      "required": false,
+      "section": "inspection",
+      "maxLength": 100
+    },
+    {
+      "name": "repairItem1",
+      "type": "text",
+      "label": "Repair Item #1",
+      "required": true,
+      "section": "repairs",
+      "maxLength": 300,
+      "rows": 2
+    },
+    {
+      "name": "repairItem2",
+      "type": "text",
+      "label": "Repair Item #2",
+      "required": false,
+      "section": "repairs",
+      "maxLength": 300,
+      "rows": 2
+    },
+    {
+      "name": "repairItem3",
+      "type": "text",
+      "label": "Repair Item #3",
+      "required": false,
+      "section": "repairs",
+      "maxLength": 300,
+      "rows": 2
+    },
+    {
+      "name": "repairItem4",
+      "type": "text",
+      "label": "Repair Item #4",
+      "required": false,
+      "section": "repairs",
+      "maxLength": 300,
+      "rows": 2
+    },
+    {
+      "name": "repairItem5",
+      "type": "text",
+      "label": "Repair Item #5",
+      "required": false,
+      "section": "repairs",
+      "maxLength": 300,
+      "rows": 2
+    },
+    {
+      "name": "creditInsteadOfRepair",
+      "type": "boolean",
+      "label": "Buyer will accept credit in lieu of repairs",
+      "required": false,
+      "section": "options",
+      "default": false
+    },
+    {
+      "name": "creditAmount",
+      "type": "currency",
+      "label": "Credit Amount Requested",
+      "required": false,
+      "section": "options",
+      "min": 0,
+      "description": "Amount if credit is preferred instead of repairs"
+    },
+    {
+      "name": "responseDeadline",
+      "type": "datetime",
+      "label": "Seller Response Deadline",
+      "required": true,
+      "section": "deadline",
+      "description": "Date and time by which seller must respond"
+    },
+    {
+      "name": "additionalTerms",
+      "type": "text",
+      "label": "Additional Terms or Conditions",
+      "required": false,
+      "section": "additional",
+      "maxLength": 500,
+      "rows": 3
+    },
+    {
+      "name": "attachedReports",
+      "type": "boolean",
+      "label": "Inspection reports attached",
+      "required": false,
+      "section": "attachments",
+      "default": true
+    },
+    {
+      "name": "numberOfPages",
+      "type": "number",
+      "label": "Number of pages attached",
+      "required": false,
+      "section": "attachments",
+      "min": 0,
+      "max": 999
     }
   ],
   "sections": [
     {
-      "id": "placeholder",
-      "name": "Placeholder Section",
-      "description": "Fields will be organized by section when implemented"
+      "id": "header",
+      "name": "Request Information",
+      "description": "Basic request details"
+    },
+    {
+      "id": "property",
+      "name": "Property Information",
+      "description": "Property address and location"
+    },
+    {
+      "id": "parties",
+      "name": "Parties",
+      "description": "Buyer and seller information"
+    },
+    {
+      "id": "reference",
+      "name": "Reference Information",
+      "description": "Transaction reference details"
+    },
+    {
+      "id": "inspection",
+      "name": "Inspection Details",
+      "description": "Information about the property inspection"
+    },
+    {
+      "id": "repairs",
+      "name": "Requested Repairs",
+      "description": "List of repair items requested"
+    },
+    {
+      "id": "options",
+      "name": "Options",
+      "description": "Alternative options to repairs"
+    },
+    {
+      "id": "deadline",
+      "name": "Response Deadline",
+      "description": "Deadline for seller response"
+    },
+    {
+      "id": "additional",
+      "name": "Additional Information",
+      "description": "Other terms or conditions"
+    },
+    {
+      "id": "attachments",
+      "name": "Attachments",
+      "description": "Attached inspection reports"
     }
   ],
-  "implemented": false,
-  "implementationNotes": "This form needs to be converted from the official PDF"
+  "implemented": true,
+  "implementationNotes": "Form fields mapped for buyer repair requests based on inspection findings"
 }

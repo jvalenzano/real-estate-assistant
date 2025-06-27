@@ -897,7 +897,7 @@ export default function PropertiesPage() {
                   </Link>
                   <Link 
                     href="/documents"
-                    className="border-2 border-blue-200 text-white hover:bg-blue-600 px-6 py-3 rounded-xl font-semibold transition-colors flex items-center justify-center gap-2"
+                    className="border-2 border-white text-white hover:bg-white hover:text-blue-600 px-6 py-3 rounded-xl font-semibold transition-colors flex items-center justify-center gap-2"
                   >
                     <FileText className="w-5 h-5" />
                     View All Documents
@@ -1109,7 +1109,7 @@ export default function PropertiesPage() {
       {isFiltersOpen && (
         <div className="fixed inset-0 bg-black bg-opacity-50 z-50" onClick={() => setIsFiltersOpen(false)}>
           <div 
-            className="absolute right-0 top-0 h-full w-80 bg-white shadow-xl overflow-y-auto"
+            className="absolute right-0 top-0 h-full w-full sm:w-80 bg-white shadow-xl overflow-y-auto"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="sticky top-0 bg-white border-b p-4">

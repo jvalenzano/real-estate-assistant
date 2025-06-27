@@ -40,13 +40,13 @@ export default function TemplateSelector({ value, onChange }: TemplateSelectorPr
       {/* Quick Select for Common Forms */}
       <div>
         <h3 className="text-sm font-medium text-gray-700 mb-2">Commonly Used Forms</h3>
-        <div className="grid grid-cols-2 gap-2">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
           {commonlyUsedTemplates.slice(0, 4).map(template => (
             <button
               key={template.id}
               type="button"
               onClick={() => onChange(template.id)}
-              className={`p-3 text-left border rounded-lg transition-colors ${
+              className={`p-4 sm:p-3 text-left border rounded-lg transition-colors min-h-[60px] sm:min-h-0 ${
                 value === template.id
                   ? 'border-blue-500 bg-blue-50 text-blue-700'
                   : 'border-gray-300 hover:border-gray-400'
@@ -65,13 +65,13 @@ export default function TemplateSelector({ value, onChange }: TemplateSelectorPr
       <div>
         <h3 className="text-sm font-medium text-gray-700 mb-2">Browse by Category</h3>
         <div className="border-b border-gray-200">
-          <nav className="-mb-px flex space-x-4 overflow-x-auto">
+          <nav className="-mb-px flex space-x-2 sm:space-x-4 overflow-x-auto pb-2 sm:pb-0">
             {Object.entries(CATEGORY_NAMES).map(([categoryNum, categoryName]) => (
               <button
                 key={categoryNum}
                 type="button"
                 onClick={() => setSelectedCategory(categoryNum)}
-                className={`whitespace-nowrap py-2 px-1 border-b-2 font-medium text-sm ${
+                className={`whitespace-nowrap py-3 sm:py-2 px-2 sm:px-1 border-b-2 font-medium text-sm min-h-[44px] flex items-center ${
                   selectedCategory === categoryNum
                     ? 'border-blue-500 text-blue-600'
                     : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
