@@ -1,163 +1,169 @@
-import Image from 'next/image';
-import Link from 'next/link';
-import { Property } from '@/services/property.service';
-import { Heart, Bed, Bath, Ruler, Share2 } from 'lucide-react';
+// components/properties/PropertyCard.tsx
+
+"use client";
+
+import { useState } from "react";
+import { Card } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { BedIcon, BathIcon, SquareIcon, ChevronLeft, ChevronRight } from "lucide-react";
+import { PropertyStatusBadge } from "./PropertyStatusBadge";
+import Image from "next/image";
+import Link from "next/link";
 
 interface PropertyCardProps {
-  property: Property;
+  property: {
+    id: string;
+    mlsNumber: string;
+    address: string;
+    city: string;
+    state: string;
+    zipCode: string;
+    price: number;
+    beds: number;
+    baths: number;
+    sqft: number;
+    images: string[];
+    status: 'Active' | 'Pending' | 'In Escrow' | 'Sold';
+    listingDate: string;
+    propertyType: string;
+  };
 }
 
-// Design System Colors
-const colors = {
-  primary: '#2563eb',
-  text: '#111827',
-  gray: '#6b7280',
-  white: '#ffffff',
-  success: '#10b981',
-  warning: '#f59e0b',
-  error: '#ef4444'
-};
+export function PropertyCard({ property }: PropertyCardProps) {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [imageError, setImageError] = useState(false);
 
-export default function PropertyCard({ property }: PropertyCardProps) {
-  // Handle both image formats for compatibility
-  const primaryImage = property.images?.find?.(img => img.is_primary) || 
-                      property.images?.[0] || 
-                      (property as any).photos?.[0] || 
-                      'https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=800';
-  
-  const imageUrl = typeof primaryImage === 'string' ? primaryImage : primaryImage?.url || primaryImage;
-  
-  const formattedPrice = new Intl.NumberFormat('en-US', {
-    style: 'currency',
-    currency: 'USD',
-    maximumFractionDigits: 0
-  }).format(property.list_price);
+  const formatPrice = (price: number) => {
+    return new Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: 'USD',
+      minimumFractionDigits: 0,
+      maximumFractionDigits: 0,
+    }).format(price);
+  };
 
-  // Price change indicator for demo
-  const isPriceReduced = property.days_on_market > 30 && property.list_price < 1000000;
+  const handlePreviousImage = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setCurrentImageIndex((prev) => 
+      prev === 0 ? property.images.length - 1 : prev - 1
+    );
+  };
 
-  const isGoldenPath = property.mls_number === 'ML81234567';
+  const handleNextImage = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setCurrentImageIndex((prev) => 
+      prev === property.images.length - 1 ? 0 : prev + 1
+    );
+  };
+
+  // Calculate days on market
+  const daysOnMarket = Math.floor(
+    (new Date().getTime() - new Date(property.listingDate).getTime()) / (1000 * 60 * 60 * 24)
+  );
 
   return (
-    <div className={`bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100 h-full flex flex-col group ${
-      isGoldenPath ? 'ring-2 ring-amber-500' : ''
-    }`}>
-        {/* Image Container with enhanced styling */}
-        <div className="relative h-64 w-full flex-shrink-0">
-          {imageUrl ? (
-            <Image
-              src={imageUrl}
-              alt={property.address.line1 || 'Property image'}
-              fill
-              className="object-cover group-hover:scale-105 transition-transform duration-300"
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              priority={property.demo_priority === 1}
-            />
+    <Card className="overflow-hidden hover:shadow-lg transition-shadow">
+      <Link href={`/properties/${property.id}`} className="block">
+        <div className="relative h-64 bg-gray-100">
+          {property.images.length > 0 && !imageError ? (
+            <>
+              <Image
+                src={property.images[currentImageIndex]}
+                alt={property.address}
+                fill
+                className="object-cover"
+                onError={() => setImageError(true)}
+                priority={currentImageIndex === 0}
+              />
+              
+              {/* Image navigation */}
+              {property.images.length > 1 && (
+                <>
+                  <button
+                    onClick={handlePreviousImage}
+                    className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-1 rounded-full transition-colors"
+                    aria-label="Previous image"
+                  >
+                    <ChevronLeft className="h-5 w-5" />
+                  </button>
+                  <button
+                    onClick={handleNextImage}
+                    className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-1 rounded-full transition-colors"
+                    aria-label="Next image"
+                  >
+                    <ChevronRight className="h-5 w-5" />
+                  </button>
+                  
+                  {/* Image indicators */}
+                  <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1">
+                    {property.images.map((_, index) => (
+                      <div
+                        key={index}
+                        className={`h-1.5 w-1.5 rounded-full transition-colors ${
+                          index === currentImageIndex ? 'bg-white' : 'bg-white/50'
+                        }`}
+                      />
+                    ))}
+                  </div>
+                </>
+              )}
+            </>
           ) : (
-            <div className="w-full h-full bg-gray-200 flex items-center justify-center">
-              <span style={{ color: colors.gray }}>No image available</span>
+            <div className="w-full h-full flex items-center justify-center bg-gray-200">
+              <span className="text-gray-400">No image available</span>
             </div>
           )}
           
-          {/* Enhanced Status Badges with better positioning */}
-          <div className="absolute top-4 left-4 flex gap-2">
-            {isGoldenPath && (
-              <span className="bg-amber-500 text-white px-3 py-1 rounded-full text-sm font-medium shadow-lg flex items-center gap-1">
-                <span>⭐</span> Demo Property
-              </span>
-            )}
-            <span className="bg-green-500 text-white px-3 py-1 rounded-full text-sm font-medium shadow-lg">
-              {property.listing_status || (property as any).status || 'Active'}
-            </span>
-            {isPriceReduced && (
-              <span className="bg-orange-500 text-white px-3 py-1 rounded-full text-sm font-medium shadow-lg">
-                Price Reduced
-              </span>
-            )}
+          {/* Status badge */}
+          <div className="absolute top-3 left-3">
+            <PropertyStatusBadge status={property.status} />
           </div>
-
-          {/* Days on Market - enhanced styling */}
-          <div className="absolute top-4 right-4">
-            <span className="bg-black bg-opacity-70 text-white px-3 py-1 rounded-full text-sm">
-              {property.days_on_market} days
-            </span>
+          
+          {/* Days on market badge */}
+          <div className="absolute top-3 right-3 bg-black/70 text-white text-xs px-2 py-1 rounded">
+            {daysOnMarket} days
           </div>
         </div>
 
-        {/* Enhanced content area */}
-        <div className="p-6 flex-grow flex flex-col">
-          {/* Price with heart icon */}
-          <div className="flex justify-between items-start mb-3">
-            <h3 className="text-2xl font-bold text-gray-900">
-              {formattedPrice}
-            </h3>
-            <button 
-              onClick={(e) => {
-                e.preventDefault();
-                e.stopPropagation();
-              }}
-              className="text-gray-400 hover:text-red-500 transition-colors"
-            >
-              <Heart className="w-6 h-6" />
-            </button>
+        <div className="p-4 space-y-3">
+          <div>
+            <h3 className="text-2xl font-bold">{formatPrice(property.price)}</h3>
+            <p className="text-gray-600">{property.address}</p>
+            <p className="text-sm text-gray-500">
+              {property.city}, {property.state} {property.zipCode}
+            </p>
           </div>
 
-          {/* Address with better typography */}
-          <p className="text-lg text-gray-700 font-medium mb-2">
-            {property.address.line1}
-          </p>
-          <p className="text-gray-500 mb-4">
-            {property.address.city}, {property.address.state} {property.address.zip_code}
-          </p>
-
-          {/* Property details with icons */}
-          <div className="flex items-center gap-4 text-sm text-gray-600 mb-4">
-            <span className="flex items-center gap-1">
-              <Bed className="w-4 h-4" />
-              {property.bedrooms} bed
-            </span>
-            <span className="flex items-center gap-1">
-              <Bath className="w-4 h-4" />
-              {property.bathrooms} bath
-            </span>
-            <span className="flex items-center gap-1">
-              <Ruler className="w-4 h-4" />
-              {property.square_feet.toLocaleString()} sqft
-            </span>
+          <div className="flex items-center gap-4 text-sm text-gray-600">
+            <div className="flex items-center gap-1">
+              <BedIcon className="h-4 w-4" />
+              <span>{property.beds} bed{property.beds !== 1 ? 's' : ''}</span>
+            </div>
+            <div className="flex items-center gap-1">
+              <BathIcon className="h-4 w-4" />
+              <span>{property.baths} bath{property.baths !== 1 ? 's' : ''}</span>
+            </div>
+            <div className="flex items-center gap-1">
+              <SquareIcon className="h-4 w-4" />
+              <span>{property.sqft.toLocaleString()} sqft</span>
+            </div>
           </div>
 
-          {/* Spacer to push buttons to bottom */}
-          <div className="flex-grow" />
-          
-          {/* Action buttons */}
-          <div className="flex gap-3 mt-4">
-            <Link 
-              href={`/properties/${property.id}`}
-              className="flex-1 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-lg font-medium transition-colors text-center"
-            >
-              View Details
-            </Link>
-            <button 
-              onClick={(e) => {
-                e.preventDefault();
-                e.stopPropagation();
-              }}
-              className="px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors"
-            >
-              <Share2 className="w-5 h-5" />
-            </button>
+          <div className="flex items-center justify-between pt-2">
+            <div className="text-sm text-gray-500">
+              <span className="font-medium">{property.propertyType}</span>
+              <span className="mx-2">•</span>
+              <span>MLS# {property.mlsNumber}</span>
+            </div>
           </div>
-          
-          {/* Bottom info */}
-          <div className="mt-4 pt-4 border-t flex justify-between items-center text-sm">
-            <span className="text-gray-500">
-              {property.property_type} • ${property.price_per_sqft}/sqft
-            </span>
-            <span className="font-medium text-blue-600">
-              MLS# {property.mls_number}
-            </span>
-          </div>
+
+          <Button variant="default" className="w-full" asChild>
+            <span>View Details</span>
+          </Button>
         </div>
-      </div>
+      </Link>
+    </Card>
   );
 }
